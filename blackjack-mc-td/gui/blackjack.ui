@@ -1673,7 +1673,7 @@ color: rgba(255,255,255,150)
                           </size>
                          </property>
                          <property name="text">
-                          <string>$</string>
+                          <string/>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -5181,174 +5181,6 @@ background-color: rgba(212,185,58,100);
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_status_seat2">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_29">
-                       <property name="spacing">
-                        <number>5</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_status_topseat_text">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>top seat:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_status_seat2">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>-</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <spacer name="horizontalSpacer_5">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
-                         </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>40</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                        </spacer>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_status_seat1">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_37">
-                       <property name="spacing">
-                        <number>5</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_status_seat1">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>bot seat:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_status_botseat_text">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>15</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
-                         <property name="text">
-                          <string>-</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <spacer name="horizontalSpacer_8">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
-                         </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>40</width>
-                           <height>20</height>
-                          </size>
-                         </property>
-                        </spacer>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
                      <widget class="QFrame" name="frame_status_dealer">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -5418,6 +5250,174 @@ background-color: rgba(212,185,58,100);
                        </item>
                        <item>
                         <spacer name="horizontalSpacer_9">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_status_seat1">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_37">
+                       <property name="spacing">
+                        <number>5</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_status_botseat_text">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>bot seat:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_status_seat1">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>-</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_8">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_status_seat2">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_29">
+                       <property name="spacing">
+                        <number>5</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_status_topseat_text">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>top seat:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_status_seat2">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>-</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_5">
                          <property name="orientation">
                           <enum>Qt::Horizontal</enum>
                          </property>
@@ -5580,19 +5580,19 @@ background-color: rgba(212,185,58,100);
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_lp_seat2">
+                     <widget class="QFrame" name="frame_lp_dealer">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_44">
+                      <layout class="QHBoxLayout" name="horizontalLayout_39">
                        <property name="spacing">
-                        <number>6</number>
+                        <number>5</number>
                        </property>
                        <property name="leftMargin">
-                        <number>0</number>
+                        <number>10</number>
                        </property>
                        <property name="topMargin">
                         <number>0</number>
@@ -5604,7 +5604,7 @@ background-color: rgba(212,185,58,100);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_lp_topseat">
+                        <widget class="QLabel" name="label_lp_dealer_text">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5621,12 +5621,12 @@ background-color: rgba(212,185,58,100);
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>top seat:</string>
+                          <string>dealer:</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_latest_seat2">
+                        <widget class="QLabel" name="label_lp_latest_dealer">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5648,7 +5648,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_slash">
+                        <widget class="QLabel" name="label_lp_slash_3">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5670,7 +5670,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_total_seat2">
+                        <widget class="QLabel" name="label_lp_total_dealer">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5692,7 +5692,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <spacer name="horizontalSpacer_12">
+                        <spacer name="horizontalSpacer_10">
                          <property name="orientation">
                           <enum>Qt::Horizontal</enum>
                          </property>
@@ -5836,19 +5836,19 @@ background-color: rgba(212,185,58,100);
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_lp_dealer">
+                     <widget class="QFrame" name="frame_lp_seat2">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_39">
+                      <layout class="QHBoxLayout" name="horizontalLayout_44">
                        <property name="spacing">
-                        <number>5</number>
+                        <number>6</number>
                        </property>
                        <property name="leftMargin">
-                        <number>10</number>
+                        <number>0</number>
                        </property>
                        <property name="topMargin">
                         <number>0</number>
@@ -5860,7 +5860,7 @@ background-color: rgba(212,185,58,100);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_lp_dealer_text">
+                        <widget class="QLabel" name="label_lp_topseat">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5877,12 +5877,12 @@ background-color: rgba(212,185,58,100);
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>dealer:</string>
+                          <string>top seat:</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_latest_dealer">
+                        <widget class="QLabel" name="label_lp_latest_seat2">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5904,7 +5904,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_slash_3">
+                        <widget class="QLabel" name="label_lp_slash">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5926,7 +5926,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_lp_total_dealer">
+                        <widget class="QLabel" name="label_lp_total_seat2">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -5948,7 +5948,7 @@ background-color: rgba(212,185,58,100);
                         </widget>
                        </item>
                        <item>
-                        <spacer name="horizontalSpacer_10">
+                        <spacer name="horizontalSpacer_12">
                          <property name="orientation">
                           <enum>Qt::Horizontal</enum>
                          </property>
@@ -6242,10 +6242,7 @@ background-color: rgba(212,185,58,100);
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">
-
-
-</string>
+                 <string notr="true"/>
                 </property>
                 <property name="title">
                  <string>Move</string>
