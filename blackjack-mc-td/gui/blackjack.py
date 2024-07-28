@@ -12,31 +12,13 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 800)
-        MainWindow.setMinimumSize(QtCore.QSize(800, 800))
-        MainWindow.setMaximumSize(QtCore.QSize(800, 800))
+        MainWindow.resize(850, 800)
+        MainWindow.setMinimumSize(QtCore.QSize(850, 800))
+        MainWindow.setMaximumSize(QtCore.QSize(850, 800))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
-        self.centralwidget.setMinimumSize(QtCore.QSize(800, 800))
-        self.centralwidget.setMaximumSize(QtCore.QSize(800, 800))
-        self.centralwidget.setStyleSheet("#frame_game {\n"
-"background-color: rgb(239, 239, 239);\n"
-"border-radius: 20px\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"color: rgb(12,16,25);\n"
-"font: 16pt \"Arial\";\n"
-"text-align: left;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"#frame_nam, #frame_spm, #frame_tmm {\n"
-"background-color:rgba(0,0,0,8);\n"
-"border-radius: 25px;\n"
-"border: 2px solid rgba(0,0,0,24)\n"
-"\n"
-"}")
+        self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
+        self.centralwidget.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -48,14 +30,16 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.stackedwidget_content.sizePolicy().hasHeightForWidth())
         self.stackedwidget_content.setSizePolicy(sizePolicy)
-        self.stackedwidget_content.setMinimumSize(QtCore.QSize(800, 800))
-        self.stackedwidget_content.setMaximumSize(QtCore.QSize(800, 800))
+        self.stackedwidget_content.setMinimumSize(QtCore.QSize(0, 0))
+        self.stackedwidget_content.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.stackedwidget_content.setStyleSheet("#page_1_menu  {\n"
 "background-color:rgba(59,82,63,255);\n"
 "}\n"
 "\n"
 "#page_2_game {\n"
 "background-color: rgba(52,14,16,255);\n"
+"background-color: rgb(60,27,12);\n"
+"background-color: rgb(68,11,20);\n"
 "}\n"
 "\n"
 "")
@@ -85,7 +69,7 @@ class Ui_MainWindow(object):
 "color: rgba(212,185,58,255);\n"
 "background-color: transparent;\n"
 "font: 700 16pt \"Arial\";\n"
-"border:  2px solid rgb(12,16,25);\n"
+"border:  2px solid rgb(45, 20, 9);\n"
 "border-radius: 25px;\n"
 "margin: 10px 0 0 0;\n"
 "}\n"
@@ -237,8 +221,8 @@ class Ui_MainWindow(object):
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
         self.groupbox_agentvsuser = QtWidgets.QGroupBox(parent=self.frame_agentvsuser_game)
-        self.groupbox_agentvsuser.setMinimumSize(QtCore.QSize(300, 230))
-        self.groupbox_agentvsuser.setMaximumSize(QtCore.QSize(300, 230))
+        self.groupbox_agentvsuser.setMinimumSize(QtCore.QSize(300, 190))
+        self.groupbox_agentvsuser.setMaximumSize(QtCore.QSize(300, 190))
         self.groupbox_agentvsuser.setStyleSheet("QPushButton { text-align: center; }")
         self.groupbox_agentvsuser.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupbox_agentvsuser.setObjectName("groupbox_agentvsuser")
@@ -396,67 +380,6 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.horizontalLayout_43.addWidget(self.comboBox_2)
         self.verticalLayout_6.addWidget(self.frame_agentvsuser_agent1_3, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.frame_agentvsuser_agent1_2 = QtWidgets.QFrame(parent=self.groupbox_agentvsuser)
-        self.frame_agentvsuser_agent1_2.setMinimumSize(QtCore.QSize(300, 40))
-        self.frame_agentvsuser_agent1_2.setMaximumSize(QtCore.QSize(300, 40))
-        self.frame_agentvsuser_agent1_2.setStyleSheet("#opp_number_selection_frame {\n"
-"border: 2px solid rgb(120,124,116);\n"
-"border-radius: 20px; \n"
-"background-color: rgba(39,52,45,255);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"#frame_mark_selection{\n"
-"border: 2px solid rgb(215, 219, 221);\n"
-"background-color: rgb(215, 219, 221);\n"
-"border-radius: 25px; \n"
-"}\n"
-"\n"
-"QLabel{\n"
-"font: 14pt \"Arial\";\n"
-"padding: 0 0 0 5;\n"
-"color: rgba(212,185,58,255);\n"
-"}\n"
-"\n"
-"\n"
-"QRadioButton {\n"
-"width: 48px;\n"
-"height: 48px;\n"
-"border-radius: 25px;\n"
-"border: 1px solid rgb(120,124,116);\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"QRadioButton::indicator {\n"
-"width: 48px; /* İşaret kutusunun genişliği */\n"
-"height: 48px; /* İşaret kutusunun yüksekliği */\n"
-"border: None;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"width: 43px;\n"
-"height: 43px;\n"
-"border: 3px solid rgba(212,185,58,255);\n"
-"border-radius: 25px;\n"
-"background-color: rgba(212,185,58,55);\n"
-"border-radius: 24px;\n"
-"}\n"
-"\n"
-"\n"
-"QRadioButton::hover {\n"
-"border: 1px solid rgba(212,185,58,255);\n"
-"background-color: rgba(212,185,58,25);\n"
-"}")
-        self.frame_agentvsuser_agent1_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agentvsuser_agent1_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agentvsuser_agent1_2.setObjectName("frame_agentvsuser_agent1_2")
-        self.horizontalLayout_42 = QtWidgets.QHBoxLayout(self.frame_agentvsuser_agent1_2)
-        self.horizontalLayout_42.setContentsMargins(0, 0, 10, 0)
-        self.horizontalLayout_42.setSpacing(5)
-        self.horizontalLayout_42.setObjectName("horizontalLayout_42")
-        self.verticalLayout_6.addWidget(self.frame_agentvsuser_agent1_2, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_6.addItem(spacerItem3)
         self.button_opp_game_play_2 = QtWidgets.QPushButton(parent=self.groupbox_agentvsuser)
@@ -469,8 +392,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.button_opp_game_play_2, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.horizontalLayout_2.addWidget(self.groupbox_agentvsuser)
         self.groupbox_agentsduel = QtWidgets.QGroupBox(parent=self.frame_agentvsuser_game)
-        self.groupbox_agentsduel.setMinimumSize(QtCore.QSize(300, 230))
-        self.groupbox_agentsduel.setMaximumSize(QtCore.QSize(300, 230))
+        self.groupbox_agentsduel.setMinimumSize(QtCore.QSize(300, 190))
+        self.groupbox_agentsduel.setMaximumSize(QtCore.QSize(300, 190))
         self.groupbox_agentsduel.setStyleSheet("QPushButton { text-align: center; }")
         self.groupbox_agentsduel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupbox_agentsduel.setObjectName("groupbox_agentsduel")
@@ -624,79 +547,6 @@ class Ui_MainWindow(object):
         self.comboBox_4.addItem("")
         self.horizontalLayout_46.addWidget(self.comboBox_4)
         self.verticalLayout_3.addWidget(self.frame_agentvsuser_agent1_5, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.frame_agentvsuser_agent1_6 = QtWidgets.QFrame(parent=self.groupbox_agentsduel)
-        self.frame_agentvsuser_agent1_6.setMinimumSize(QtCore.QSize(300, 40))
-        self.frame_agentvsuser_agent1_6.setMaximumSize(QtCore.QSize(300, 40))
-        self.frame_agentvsuser_agent1_6.setStyleSheet("#opp_number_selection_frame {\n"
-"border: 2px solid rgb(120,124,116);\n"
-"border-radius: 20px; \n"
-"background-color: rgba(39,52,45,255);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"#frame_mark_selection{\n"
-"border: 2px solid rgb(215, 219, 221);\n"
-"background-color: rgb(215, 219, 221);\n"
-"border-radius: 25px; \n"
-"}\n"
-"\n"
-"QLabel{\n"
-"font: 14pt \"Arial\";\n"
-"padding: 0 0 0 5;\n"
-"color: rgba(212,185,58,255);\n"
-"}\n"
-"\n"
-"\n"
-"QRadioButton {\n"
-"width: 48px;\n"
-"height: 48px;\n"
-"border-radius: 25px;\n"
-"border: 1px solid rgb(120,124,116);\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"QRadioButton::indicator {\n"
-"width: 48px; /* İşaret kutusunun genişliği */\n"
-"height: 48px; /* İşaret kutusunun yüksekliği */\n"
-"border: None;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"width: 43px;\n"
-"height: 43px;\n"
-"border: 3px solid rgba(212,185,58,255);\n"
-"border-radius: 25px;\n"
-"background-color: rgba(212,185,58,55);\n"
-"border-radius: 24px;\n"
-"}\n"
-"\n"
-"\n"
-"QRadioButton::hover {\n"
-"border: 1px solid rgba(212,185,58,255);\n"
-"background-color: rgba(212,185,58,25);\n"
-"}")
-        self.frame_agentvsuser_agent1_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agentvsuser_agent1_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agentvsuser_agent1_6.setObjectName("frame_agentvsuser_agent1_6")
-        self.horizontalLayout_47 = QtWidgets.QHBoxLayout(self.frame_agentvsuser_agent1_6)
-        self.horizontalLayout_47.setContentsMargins(0, 0, 10, 0)
-        self.horizontalLayout_47.setSpacing(5)
-        self.horizontalLayout_47.setObjectName("horizontalLayout_47")
-        self.label_agent_duel_a3 = QtWidgets.QLabel(parent=self.frame_agentvsuser_agent1_6)
-        self.label_agent_duel_a3.setMinimumSize(QtCore.QSize(80, 20))
-        self.label_agent_duel_a3.setMaximumSize(QtCore.QSize(80, 20))
-        self.label_agent_duel_a3.setObjectName("label_agent_duel_a3")
-        self.horizontalLayout_47.addWidget(self.label_agent_duel_a3)
-        self.comboBox_5 = QtWidgets.QComboBox(parent=self.frame_agentvsuser_agent1_6)
-        self.comboBox_5.setMinimumSize(QtCore.QSize(150, 30))
-        self.comboBox_5.setMaximumSize(QtCore.QSize(150, 30))
-        self.comboBox_5.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.comboBox_5.setObjectName("comboBox_5")
-        self.comboBox_5.addItem("")
-        self.horizontalLayout_47.addWidget(self.comboBox_5)
-        self.verticalLayout_3.addWidget(self.frame_agentvsuser_agent1_6, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_3.addItem(spacerItem4)
         self.button_opp_game_play_3 = QtWidgets.QPushButton(parent=self.groupbox_agentsduel)
@@ -722,12 +572,12 @@ class Ui_MainWindow(object):
 "border: 2px solid  rgb(176,100,116);\n"
 "border-radius: 15px;\n"
 "color: rgb(176,100,116);\n"
-"background-color: rgb(144,12,36,0);\n"
+"background-color: rgba(144,12,36,40);\n"
 "}\n"
 "\n"
 "#button_exit::hover {\n"
 "border: 2px solid rgb(144,12,36);\n"
-"background-color: rgba(144,12,36,50);\n"
+"background-color: rgba(144,12,36,100);\n"
 "}\n"
 "")
         self.button_exit.setObjectName("button_exit")
@@ -741,160 +591,42 @@ class Ui_MainWindow(object):
         self.page_2_game.setStyleSheet("")
         self.page_2_game.setObjectName("page_2_game")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.page_2_game)
-        self.verticalLayout_4.setContentsMargins(0, 15, 0, 0)
-        self.verticalLayout_4.setSpacing(20)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.frame_game = QtWidgets.QFrame(parent=self.page_2_game)
-        self.frame_game.setMinimumSize(QtCore.QSize(700, 700))
-        self.frame_game.setMaximumSize(QtCore.QSize(700, 700))
+        self.frame_content = QtWidgets.QFrame(parent=self.page_2_game)
+        self.frame_content.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame_content.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.frame_content.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_content.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_content.setObjectName("frame_content")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_content)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.frame_game = QtWidgets.QFrame(parent=self.frame_content)
+        self.frame_game.setMinimumSize(QtCore.QSize(620, 700))
+        self.frame_game.setMaximumSize(QtCore.QSize(620, 700))
         self.frame_game.setToolTipDuration(0)
         self.frame_game.setStyleSheet("#frame_game * {\n"
-"font: 16pt \"Forte\";\n"
-"color:  rgba(12,16,25, 150);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"QLabel {\n"
 "background-color: transparent;\n"
-"qproperty-alignment: \'AlignCenter\';\n"
-"}\n"
-"\n"
-"#frame_table {\n"
-"background-color: rgb(229, 231, 233); }\n"
-"\n"
-"\n"
-"#frame_agent {\n"
-"border-bottom-left-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
-"background-color: rgba(39,52,45,255);\n"
-"}\n"
-"\n"
-"#frame_agent_total {\n"
-"border-bottom-left-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
-"\n"
-"background-color: rgba(39,52,45,255);\n"
-"border: 2px solid rgba(212,185,58,255);\n"
-"border-top: 2px solid transparent;\n"
-"}\n"
-"\n"
-"#frame_agent_table {\n"
-"border-bottom-left-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
-"}\n"
-"\n"
-"#frame_agent_bet {\n"
-"border-radius: 10px;\n"
+"color: rgba(212,185,58,255);\n"
+"font: 13pt \"Forte\";\n"
 "}\n"
 "\n"
 "\n"
-"\n"
-"#frame_dealer {\n"
-"border-bottom-right-radius:10px;\n"
-"border-top-right-radius: 10px;\n"
-"background-color: rgb(140,12,36);\n"
-"}\n"
-"\n"
-"#frame_dealer_total {\n"
-"border-bottom-right-radius: 10px;\n"
-"border-top-right-radius: 10px;\n"
-"\n"
-"background-color: rgb(140,12,36);\n"
-"border: 2px solid rgba(212,185,58,255);\n"
-"border-left: 2px solid transparent;\n"
-"}\n"
-"\n"
-"#frame_dealer_table {\n"
-"border-bottom-right-radius: 10px;\n"
-"border-top-right-radius: 10px;\n"
-"}\n"
-"\n"
-"#frame_opp1 {\n"
-"border-top-right-radius: 10px;\n"
-"border-top-left-radius: 10px;\n"
-"background-color: rgba(39,52,45,255);\n"
-"}\n"
-"\n"
-"#frame_opp1_total{\n"
-"border-top-right-radius: 10px;\n"
-"border-top-left-radius: 10px;\n"
-"\n"
-"background-color: rgba(39,52,45,255);\n"
-"border: 2px solid rgba(212,185,58,255);\n"
-"border-bottom: 2px solid transparent;\n"
-"}\n"
-"\n"
-"#frame_opp1_table{\n"
-"border-top-right-radius: 10px;\n"
-"border-top-left-radius: 10px;\n"
-"}\n"
-"\n"
-"#frame_opp1_bet {\n"
-"border-radius: 10px;\n"
-"}\n"
-"\n"
-"#frame_opp2 {\n"
-"border-top-left-radius: 10px;\n"
-"border-bottom-left-radius: 10px;\n"
-"background-color: rgba(39,52,45,255);\n"
-"\n"
-"}\n"
-"\n"
-"#frame_opp2_total {\n"
-"border-top-left-radius: 10px;\n"
-"border-bottom-left-radius:10px;\n"
-"\n"
-"background-color: rgba(39,52,45,255);\n"
-"border: 2px solid rgba(212,185,58,255);\n"
-"border-right: 2px solid transparent;\n"
-"}\n"
-"\n"
-"#frame_opp2_table{\n"
-"border-top-left-radius: 10px;\n"
-"border-bottom-left-radius:10px;\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"}\n"
-"\n"
-"#frame_opp2_bet {\n"
-"border-radius: 10px;\n"
-"}\n"
-"\n"
-"#frame_opp1 *, #frame_agent *, #frame_opp2 *, #frame_dealer *{\n"
-"background-color: rgba(229, 231, 233, 100);\n"
-"border-radius: 10px;\n"
-"}\n"
 "\n"
 "#frame_game {\n"
-"background-color:  rgba(30,32,29,255);\n"
-"border: 4px solid black;\n"
-"\n"
-"}\n"
-"QFrame {\n"
-"background-color: rgb(202, 207, 210);\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton {\n"
-"background-color: transparent;\n"
+"background-color:  rgba(39,52,45,255);\n"
+"border-right: 30px solid rgb(45, 20, 9);\n"
+"border-top: 30px solid rgb(45, 20, 9);\n"
+"border-bottom: 30px solid rgb(45, 20, 9);\n"
+"border-bottom-right-radius: 50px;\n"
+"border-top-right-radius: 50px;\n"
 "}\n"
 "\n"
 "\n"
 "\n"
-"\n"
-"QPushButton::hover {\n"
-"background-color: rgba(20,124,236, 20)\n"
-"}\n"
-"\n"
-"QPushButton {\n"
-"width: 100px;\n"
-"height: 100px;\n"
-"\n"
-"}\n"
 "\n"
 "")
         self.frame_game.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -902,303 +634,771 @@ class Ui_MainWindow(object):
         self.frame_game.setLineWidth(0)
         self.frame_game.setObjectName("frame_game")
         self.gridlayout = QtWidgets.QGridLayout(self.frame_game)
-        self.gridlayout.setContentsMargins(0, 0, 0, 0)
-        self.gridlayout.setSpacing(10)
+        self.gridlayout.setContentsMargins(0, 0, 200, 0)
+        self.gridlayout.setSpacing(5)
         self.gridlayout.setObjectName("gridlayout")
-        self.frame_opp2_total = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_opp2_total.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_total.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_total.setStyleSheet("#frame_opp2_total * {\n"
-"background-color: transparent;\n"
-"color: rgba(212,185,58,255);\n"
+        self.frame_seat2 = QtWidgets.QFrame(parent=self.frame_game)
+        self.frame_seat2.setMinimumSize(QtCore.QSize(590, 150))
+        self.frame_seat2.setMaximumSize(QtCore.QSize(590, 150))
+        self.frame_seat2.setStyleSheet("#frame_seat2_cards {\n"
+"background-color: rgba(0,0,0,40);\n"
+"border-radius: 20\n"
+"}\n"
 "\n"
-"}")
-        self.frame_opp2_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_total.setObjectName("frame_opp2_total")
-        self.horizontalLayout_38 = QtWidgets.QHBoxLayout(self.frame_opp2_total)
-        self.horizontalLayout_38.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_38.setSpacing(0)
-        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
-        self.label_opp2_total = QtWidgets.QLabel(parent=self.frame_opp2_total)
-        self.label_opp2_total.setText("")
-        self.label_opp2_total.setScaledContents(True)
-        self.label_opp2_total.setObjectName("label_opp2_total")
-        self.horizontalLayout_38.addWidget(self.label_opp2_total)
-        self.gridlayout.addWidget(self.frame_opp2_total, 0, 2, 1, 1, QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignBottom)
-        self.frame_opp1_total = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_opp1_total.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_total.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_total.setStyleSheet("#frame_opp1_total * {\n"
+"#frame_seat2_cards * {\n"
 "background-color: transparent;\n"
-"color: rgba(212,185,58,255);\n"
+"}\n"
 "\n"
+"#label_seat2_total {\n"
+"font: 16pt \"Forte\";\n"
+"color: white;\n"
+"}\n"
+"\n"
+"#frame_seat2_budget * {\n"
+"font: 16pt \"Forte\";\n"
+"color: rgba(212,185,58,255);\n"
+"}\n"
+"\n"
+"#frame_seat2_budget_amount {\n"
+"border-radius: 10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,185,58,25), stop:0.85 rgba(212,185,58,55), stop:1 rgba(212,185,58,105));\n"
+"border: 1 solid rgb(104,102,50);\n"
+"}\n"
+"\n"
+"#label_seat2_budget_text {\n"
+"font: 10pt \"Forte\";\n"
+"}\n"
+"\n"
+"#label_seat2_total {\n"
+"border-radius: 10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(255,255,255,25), stop:0.85 rgba(255,255,255,55), stop:1 rgba(255,255,255,105));\n"
+"border:1 solid rgb(144,144,144)\n"
+"}\n"
+"\n"
+"#label_seat2_total_text {\n"
+"font: 10pt \"Forte\";\n"
+"color: rgba(255,255,255,150)\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.frame_seat2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2.setObjectName("frame_seat2")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_seat2)
+        self.horizontalLayout_6.setContentsMargins(0, 7, 7, 5)
+        self.horizontalLayout_6.setSpacing(5)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem6)
+        self.frame_seat2_gainloss = QtWidgets.QFrame(parent=self.frame_seat2)
+        self.frame_seat2_gainloss.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_gainloss.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_gainloss.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_gainloss.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_gainloss.setObjectName("frame_seat2_gainloss")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_seat2_gainloss)
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.label_seat2_martini = QtWidgets.QLabel(parent=self.frame_seat2_gainloss)
+        self.label_seat2_martini.setMinimumSize(QtCore.QSize(55, 55))
+        self.label_seat2_martini.setMaximumSize(QtCore.QSize(55, 55))
+        self.label_seat2_martini.setText("")
+        self.label_seat2_martini.setScaledContents(True)
+        self.label_seat2_martini.setObjectName("label_seat2_martini")
+        self.verticalLayout_13.addWidget(self.label_seat2_martini)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_13.addItem(spacerItem7)
+        self.horizontalLayout_6.addWidget(self.frame_seat2_gainloss)
+        self.frame_seat2_budget = QtWidgets.QFrame(parent=self.frame_seat2)
+        self.frame_seat2_budget.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_budget.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_budget.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_budget.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_budget.setObjectName("frame_seat2_budget")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_seat2_budget)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.label_seat2_budget_chips = QtWidgets.QLabel(parent=self.frame_seat2_budget)
+        self.label_seat2_budget_chips.setMinimumSize(QtCore.QSize(55, 55))
+        self.label_seat2_budget_chips.setMaximumSize(QtCore.QSize(55, 55))
+        self.label_seat2_budget_chips.setStyleSheet("")
+        self.label_seat2_budget_chips.setLineWidth(1)
+        self.label_seat2_budget_chips.setText("")
+        self.label_seat2_budget_chips.setScaledContents(True)
+        self.label_seat2_budget_chips.setObjectName("label_seat2_budget_chips")
+        self.verticalLayout_9.addWidget(self.label_seat2_budget_chips, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_9.addItem(spacerItem8)
+        self.label_seat2_budget_text = QtWidgets.QLabel(parent=self.frame_seat2_budget)
+        self.label_seat2_budget_text.setStyleSheet("")
+        self.label_seat2_budget_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat2_budget_text.setObjectName("label_seat2_budget_text")
+        self.verticalLayout_9.addWidget(self.label_seat2_budget_text)
+        self.frame_seat2_budget_amount = QtWidgets.QFrame(parent=self.frame_seat2_budget)
+        self.frame_seat2_budget_amount.setMinimumSize(QtCore.QSize(60, 25))
+        self.frame_seat2_budget_amount.setMaximumSize(QtCore.QSize(60, 25))
+        self.frame_seat2_budget_amount.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_budget_amount.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_budget_amount.setObjectName("frame_seat2_budget_amount")
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.frame_seat2_budget_amount)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_24.addItem(spacerItem9)
+        self.label_seat2_budget_dollar = QtWidgets.QLabel(parent=self.frame_seat2_budget_amount)
+        self.label_seat2_budget_dollar.setMinimumSize(QtCore.QSize(15, 0))
+        self.label_seat2_budget_dollar.setMaximumSize(QtCore.QSize(15, 16777215))
+        self.label_seat2_budget_dollar.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat2_budget_dollar.setObjectName("label_seat2_budget_dollar")
+        self.horizontalLayout_24.addWidget(self.label_seat2_budget_dollar)
+        self.label_seat2_budget_amount = QtWidgets.QLabel(parent=self.frame_seat2_budget_amount)
+        self.label_seat2_budget_amount.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_seat2_budget_amount.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_seat2_budget_amount.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.label_seat2_budget_amount.setScaledContents(True)
+        self.label_seat2_budget_amount.setObjectName("label_seat2_budget_amount")
+        self.horizontalLayout_24.addWidget(self.label_seat2_budget_amount)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_24.addItem(spacerItem10)
+        self.verticalLayout_9.addWidget(self.frame_seat2_budget_amount)
+        self.horizontalLayout_6.addWidget(self.frame_seat2_budget)
+        self.frame_seat2_total = QtWidgets.QFrame(parent=self.frame_seat2)
+        self.frame_seat2_total.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_total.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat2_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_total.setObjectName("frame_seat2_total")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_seat2_total)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.label_seat2_status = QtWidgets.QLabel(parent=self.frame_seat2_total)
+        self.label_seat2_status.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_seat2_status.setMaximumSize(QtCore.QSize(50, 50))
+        self.label_seat2_status.setText("")
+        self.label_seat2_status.setPixmap(QtGui.QPixmap(":/icons/win.png"))
+        self.label_seat2_status.setScaledContents(True)
+        self.label_seat2_status.setObjectName("label_seat2_status")
+        self.verticalLayout_10.addWidget(self.label_seat2_status)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_10.addItem(spacerItem11)
+        self.label_seat2_total_text = QtWidgets.QLabel(parent=self.frame_seat2_total)
+        self.label_seat2_total_text.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.label_seat2_total_text.setStyleSheet("#label_stand{\n"
+"    font: 13pt \"Forte\";\n"
+"    color: rgba(255,255,255,150);\n"
+"    background-color: transparent;\n"
 "}")
-        self.frame_opp1_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_total.setObjectName("frame_opp1_total")
-        self.horizontalLayout_39 = QtWidgets.QHBoxLayout(self.frame_opp1_total)
-        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_39.setSpacing(0)
-        self.horizontalLayout_39.setObjectName("horizontalLayout_39")
-        self.label_opp1_total = QtWidgets.QLabel(parent=self.frame_opp1_total)
-        self.label_opp1_total.setText("")
-        self.label_opp1_total.setScaledContents(True)
-        self.label_opp1_total.setObjectName("label_opp1_total")
-        self.horizontalLayout_39.addWidget(self.label_opp1_total)
-        self.gridlayout.addWidget(self.frame_opp1_total, 2, 2, 1, 1, QtCore.Qt.AlignmentFlag.AlignBottom)
+        self.label_seat2_total_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat2_total_text.setObjectName("label_seat2_total_text")
+        self.verticalLayout_10.addWidget(self.label_seat2_total_text, 0, QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_seat2_total = QtWidgets.QLabel(parent=self.frame_seat2_total)
+        self.label_seat2_total.setMinimumSize(QtCore.QSize(45, 0))
+        self.label_seat2_total.setMaximumSize(QtCore.QSize(45, 25))
+        self.label_seat2_total.setStyleSheet("")
+        self.label_seat2_total.setText("")
+        self.label_seat2_total.setScaledContents(True)
+        self.label_seat2_total.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat2_total.setObjectName("label_seat2_total")
+        self.verticalLayout_10.addWidget(self.label_seat2_total, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.horizontalLayout_6.addWidget(self.frame_seat2_total)
+        self.frame_seat2_cards = QtWidgets.QFrame(parent=self.frame_seat2)
+        self.frame_seat2_cards.setMinimumSize(QtCore.QSize(260, 140))
+        self.frame_seat2_cards.setMaximumSize(QtCore.QSize(260, 140))
+        self.frame_seat2_cards.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_cards.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_cards.setObjectName("frame_seat2_cards")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.frame_seat2_cards)
+        self.gridLayout_6.setContentsMargins(2, 5, 1, 5)
+        self.gridLayout_6.setHorizontalSpacing(0)
+        self.gridLayout_6.setVerticalSpacing(5)
+        self.gridLayout_6.setObjectName("gridLayout_6")
+        self.frame_seat2_card9 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card9.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card9.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card9.setObjectName("frame_seat2_card9")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_seat2_card9)
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_18.setSpacing(0)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.label_seat3_card9 = QtWidgets.QLabel(parent=self.frame_seat2_card9)
+        self.label_seat3_card9.setText("")
+        self.label_seat3_card9.setScaledContents(True)
+        self.label_seat3_card9.setObjectName("label_seat3_card9")
+        self.horizontalLayout_18.addWidget(self.label_seat3_card9)
+        self.gridLayout_6.addWidget(self.frame_seat2_card9, 1, 1, 1, 1)
+        self.frame_seat2_card10 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card10.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card10.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card10.setObjectName("frame_seat2_card10")
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_seat2_card10)
+        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.label_seat3_card10 = QtWidgets.QLabel(parent=self.frame_seat2_card10)
+        self.label_seat3_card10.setText("")
+        self.label_seat3_card10.setScaledContents(True)
+        self.label_seat3_card10.setObjectName("label_seat3_card10")
+        self.horizontalLayout_17.addWidget(self.label_seat3_card10)
+        self.gridLayout_6.addWidget(self.frame_seat2_card10, 1, 0, 1, 1)
+        self.frame_seat2_card8 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card8.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card8.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card8.setObjectName("frame_seat2_card8")
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout(self.frame_seat2_card8)
+        self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_30.setSpacing(0)
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.label_seat3_card8 = QtWidgets.QLabel(parent=self.frame_seat2_card8)
+        self.label_seat3_card8.setText("")
+        self.label_seat3_card8.setScaledContents(True)
+        self.label_seat3_card8.setObjectName("label_seat3_card8")
+        self.horizontalLayout_30.addWidget(self.label_seat3_card8)
+        self.gridLayout_6.addWidget(self.frame_seat2_card8, 1, 2, 1, 1)
+        self.frame_seat2_card6 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card6.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card6.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card6.setObjectName("frame_seat2_card6")
+        self.horizontalLayout_32 = QtWidgets.QHBoxLayout(self.frame_seat2_card6)
+        self.horizontalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_32.setSpacing(0)
+        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
+        self.label_seat3_card6 = QtWidgets.QLabel(parent=self.frame_seat2_card6)
+        self.label_seat3_card6.setText("")
+        self.label_seat3_card6.setScaledContents(True)
+        self.label_seat3_card6.setObjectName("label_seat3_card6")
+        self.horizontalLayout_32.addWidget(self.label_seat3_card6)
+        self.gridLayout_6.addWidget(self.frame_seat2_card6, 1, 4, 1, 1)
+        self.frame_seat2_card7 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card7.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card7.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card7.setObjectName("frame_seat2_card7")
+        self.horizontalLayout_31 = QtWidgets.QHBoxLayout(self.frame_seat2_card7)
+        self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_31.setSpacing(0)
+        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
+        self.label_seat3_card7 = QtWidgets.QLabel(parent=self.frame_seat2_card7)
+        self.label_seat3_card7.setText("")
+        self.label_seat3_card7.setScaledContents(True)
+        self.label_seat3_card7.setObjectName("label_seat3_card7")
+        self.horizontalLayout_31.addWidget(self.label_seat3_card7)
+        self.gridLayout_6.addWidget(self.frame_seat2_card7, 1, 3, 1, 1)
+        self.frame_seat2_card1 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card1.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card1.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card1.setObjectName("frame_seat2_card1")
+        self.horizontalLayout_33 = QtWidgets.QHBoxLayout(self.frame_seat2_card1)
+        self.horizontalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_33.setSpacing(0)
+        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
+        self.label_seat3_card1 = QtWidgets.QLabel(parent=self.frame_seat2_card1)
+        self.label_seat3_card1.setText("")
+        self.label_seat3_card1.setScaledContents(True)
+        self.label_seat3_card1.setObjectName("label_seat3_card1")
+        self.horizontalLayout_33.addWidget(self.label_seat3_card1)
+        self.gridLayout_6.addWidget(self.frame_seat2_card1, 2, 4, 1, 1)
+        self.frame_seat2_card2 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card2.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card2.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card2.setObjectName("frame_seat2_card2")
+        self.horizontalLayout_34 = QtWidgets.QHBoxLayout(self.frame_seat2_card2)
+        self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_34.setSpacing(0)
+        self.horizontalLayout_34.setObjectName("horizontalLayout_34")
+        self.label_seat3_card2 = QtWidgets.QLabel(parent=self.frame_seat2_card2)
+        self.label_seat3_card2.setText("")
+        self.label_seat3_card2.setScaledContents(True)
+        self.label_seat3_card2.setObjectName("label_seat3_card2")
+        self.horizontalLayout_34.addWidget(self.label_seat3_card2)
+        self.gridLayout_6.addWidget(self.frame_seat2_card2, 2, 3, 1, 1)
+        self.frame_seat2_card3 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card3.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card3.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card3.setObjectName("frame_seat2_card3")
+        self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.frame_seat2_card3)
+        self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_35.setSpacing(0)
+        self.horizontalLayout_35.setObjectName("horizontalLayout_35")
+        self.label_seat3_card3 = QtWidgets.QLabel(parent=self.frame_seat2_card3)
+        self.label_seat3_card3.setText("")
+        self.label_seat3_card3.setScaledContents(True)
+        self.label_seat3_card3.setObjectName("label_seat3_card3")
+        self.horizontalLayout_35.addWidget(self.label_seat3_card3)
+        self.gridLayout_6.addWidget(self.frame_seat2_card3, 2, 2, 1, 1)
+        self.frame_seat2_card4 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card4.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card4.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card4.setObjectName("frame_seat2_card4")
+        self.horizontalLayout_36 = QtWidgets.QHBoxLayout(self.frame_seat2_card4)
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_36.setSpacing(0)
+        self.horizontalLayout_36.setObjectName("horizontalLayout_36")
+        self.label_seat3_card4 = QtWidgets.QLabel(parent=self.frame_seat2_card4)
+        self.label_seat3_card4.setText("")
+        self.label_seat3_card4.setScaledContents(True)
+        self.label_seat3_card4.setObjectName("label_seat3_card4")
+        self.horizontalLayout_36.addWidget(self.label_seat3_card4)
+        self.gridLayout_6.addWidget(self.frame_seat2_card4, 2, 1, 1, 1)
+        self.frame_seat2_card5 = QtWidgets.QFrame(parent=self.frame_seat2_cards)
+        self.frame_seat2_card5.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card5.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat2_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_card5.setObjectName("frame_seat2_card5")
+        self.horizontalLayout_40 = QtWidgets.QHBoxLayout(self.frame_seat2_card5)
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_40.setSpacing(0)
+        self.horizontalLayout_40.setObjectName("horizontalLayout_40")
+        self.label_seat3_card5 = QtWidgets.QLabel(parent=self.frame_seat2_card5)
+        self.label_seat3_card5.setText("")
+        self.label_seat3_card5.setScaledContents(True)
+        self.label_seat3_card5.setObjectName("label_seat3_card5")
+        self.horizontalLayout_40.addWidget(self.label_seat3_card5)
+        self.gridLayout_6.addWidget(self.frame_seat2_card5, 2, 0, 1, 1)
+        self.horizontalLayout_6.addWidget(self.frame_seat2_cards, 0, QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.gridlayout.addWidget(self.frame_seat2, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.frame_seat1 = QtWidgets.QFrame(parent=self.frame_game)
+        self.frame_seat1.setMinimumSize(QtCore.QSize(590, 150))
+        self.frame_seat1.setMaximumSize(QtCore.QSize(590, 150))
+        self.frame_seat1.setStyleSheet("#frame_seat1_cards {\n"
+"background-color: rgba(0,0,0,40);\n"
+"border-radius: 20;\n"
+"}\n"
+"\n"
+"#frame_seat1_cards * {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"#label_seat1_total {\n"
+"font: 16pt \"Forte\";\n"
+"color: white;\n"
+"}\n"
+"\n"
+"#frame_seat1_budget * {\n"
+"font: 16pt \"Forte\";\n"
+"color: rgba(212,185,58,255);\n"
+"}\n"
+"\n"
+"#frame_seat1_budget_amount {\n"
+"border-radius: 10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,185,58,25), stop:0.85 rgba(212,185,58,55), stop:1 rgba(212,185,58,105));\n"
+"border: 1 solid rgb(104,102,50);\n"
+"}\n"
+"\n"
+"#label_seat1_budget_text {\n"
+"font: 10pt \"Forte\";\n"
+"}\n"
+"\n"
+"#label_seat1_total {\n"
+"border-radius: 10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(255,255,255,25), stop:0.85 rgba(255,255,255,55), stop:1 rgba(255,255,255,105));\n"
+"border:1 solid rgb(144,144,144)\n"
+"}\n"
+"\n"
+"#label_seat1_total_text {\n"
+"font: 10pt \"Forte\";\n"
+"color: rgba(255,255,255,150)\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.frame_seat1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1.setObjectName("frame_seat1")
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.frame_seat1)
+        self.horizontalLayout_20.setContentsMargins(0, 0, 7, 5)
+        self.horizontalLayout_20.setSpacing(5)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        spacerItem12 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_20.addItem(spacerItem12)
+        self.frame_seat1_gainloss = QtWidgets.QFrame(parent=self.frame_seat1)
+        self.frame_seat1_gainloss.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_gainloss.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_gainloss.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_gainloss.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_gainloss.setObjectName("frame_seat1_gainloss")
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_seat1_gainloss)
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        spacerItem13 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_15.addItem(spacerItem13)
+        self.label_seat1_martini = QtWidgets.QLabel(parent=self.frame_seat1_gainloss)
+        self.label_seat1_martini.setMinimumSize(QtCore.QSize(55, 55))
+        self.label_seat1_martini.setMaximumSize(QtCore.QSize(55, 55))
+        self.label_seat1_martini.setText("")
+        self.label_seat1_martini.setScaledContents(True)
+        self.label_seat1_martini.setObjectName("label_seat1_martini")
+        self.verticalLayout_15.addWidget(self.label_seat1_martini)
+        self.horizontalLayout_20.addWidget(self.frame_seat1_gainloss)
+        self.frame_seat1_budget = QtWidgets.QFrame(parent=self.frame_seat1)
+        self.frame_seat1_budget.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_budget.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_budget.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_budget.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_budget.setObjectName("frame_seat1_budget")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_seat1_budget)
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.frame_seat1_budget_amount = QtWidgets.QFrame(parent=self.frame_seat1_budget)
+        self.frame_seat1_budget_amount.setMinimumSize(QtCore.QSize(60, 25))
+        self.frame_seat1_budget_amount.setMaximumSize(QtCore.QSize(60, 25))
+        self.frame_seat1_budget_amount.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_budget_amount.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_budget_amount.setObjectName("frame_seat1_budget_amount")
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.frame_seat1_budget_amount)
+        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_25.setSpacing(0)
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem14)
+        self.label_seat1_budget_dollar = QtWidgets.QLabel(parent=self.frame_seat1_budget_amount)
+        self.label_seat1_budget_dollar.setMinimumSize(QtCore.QSize(15, 0))
+        self.label_seat1_budget_dollar.setMaximumSize(QtCore.QSize(15, 16777215))
+        self.label_seat1_budget_dollar.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat1_budget_dollar.setObjectName("label_seat1_budget_dollar")
+        self.horizontalLayout_25.addWidget(self.label_seat1_budget_dollar)
+        self.label_seat1_budget_amount = QtWidgets.QLabel(parent=self.frame_seat1_budget_amount)
+        self.label_seat1_budget_amount.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_seat1_budget_amount.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_seat1_budget_amount.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.label_seat1_budget_amount.setScaledContents(True)
+        self.label_seat1_budget_amount.setObjectName("label_seat1_budget_amount")
+        self.horizontalLayout_25.addWidget(self.label_seat1_budget_amount)
+        spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem15)
+        self.verticalLayout_11.addWidget(self.frame_seat1_budget_amount)
+        self.label_seat1_budget_text = QtWidgets.QLabel(parent=self.frame_seat1_budget)
+        self.label_seat1_budget_text.setStyleSheet("#label_stand{\n"
+"    font: 13pt \"Forte\";\n"
+"    color: rgba(255,255,255,150);\n"
+"    background-color: transparent;\n"
+"}")
+        self.label_seat1_budget_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat1_budget_text.setObjectName("label_seat1_budget_text")
+        self.verticalLayout_11.addWidget(self.label_seat1_budget_text)
+        spacerItem16 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_11.addItem(spacerItem16)
+        self.label_seat1_budget_chips = QtWidgets.QLabel(parent=self.frame_seat1_budget)
+        self.label_seat1_budget_chips.setMinimumSize(QtCore.QSize(55, 55))
+        self.label_seat1_budget_chips.setMaximumSize(QtCore.QSize(55, 55))
+        self.label_seat1_budget_chips.setStyleSheet("")
+        self.label_seat1_budget_chips.setLineWidth(1)
+        self.label_seat1_budget_chips.setText("")
+        self.label_seat1_budget_chips.setPixmap(QtGui.QPixmap(":/chips/chips.png"))
+        self.label_seat1_budget_chips.setScaledContents(True)
+        self.label_seat1_budget_chips.setObjectName("label_seat1_budget_chips")
+        self.verticalLayout_11.addWidget(self.label_seat1_budget_chips, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.horizontalLayout_20.addWidget(self.frame_seat1_budget)
+        self.frame_seat1_total = QtWidgets.QFrame(parent=self.frame_seat1)
+        self.frame_seat1_total.setMinimumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_total.setMaximumSize(QtCore.QSize(60, 105))
+        self.frame_seat1_total.setStyleSheet("")
+        self.frame_seat1_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_total.setObjectName("frame_seat1_total")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_seat1_total)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 5)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.label_seat1_total = QtWidgets.QLabel(parent=self.frame_seat1_total)
+        self.label_seat1_total.setMinimumSize(QtCore.QSize(45, 25))
+        self.label_seat1_total.setMaximumSize(QtCore.QSize(45, 25))
+        self.label_seat1_total.setStyleSheet("")
+        self.label_seat1_total.setText("")
+        self.label_seat1_total.setScaledContents(True)
+        self.label_seat1_total.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat1_total.setObjectName("label_seat1_total")
+        self.verticalLayout_12.addWidget(self.label_seat1_total, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.label_seat1_total_text = QtWidgets.QLabel(parent=self.frame_seat1_total)
+        self.label_seat1_total_text.setStyleSheet("#label_stand{\n"
+"    font: 13pt \"Forte\";\n"
+"    color: rgba(255,255,255,150);\n"
+"    background-color: transparent;\n"
+"}")
+        self.label_seat1_total_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_seat1_total_text.setObjectName("label_seat1_total_text")
+        self.verticalLayout_12.addWidget(self.label_seat1_total_text)
+        spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_12.addItem(spacerItem17)
+        self.label_seat1_status = QtWidgets.QLabel(parent=self.frame_seat1_total)
+        self.label_seat1_status.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_seat1_status.setMaximumSize(QtCore.QSize(50, 50))
+        self.label_seat1_status.setText("")
+        self.label_seat1_status.setScaledContents(True)
+        self.label_seat1_status.setObjectName("label_seat1_status")
+        self.verticalLayout_12.addWidget(self.label_seat1_status, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.horizontalLayout_20.addWidget(self.frame_seat1_total)
+        self.frame_seat1_cards = QtWidgets.QFrame(parent=self.frame_seat1)
+        self.frame_seat1_cards.setMinimumSize(QtCore.QSize(260, 140))
+        self.frame_seat1_cards.setMaximumSize(QtCore.QSize(260, 140))
+        self.frame_seat1_cards.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_cards.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_cards.setObjectName("frame_seat1_cards")
+        self.gridLayout_9 = QtWidgets.QGridLayout(self.frame_seat1_cards)
+        self.gridLayout_9.setContentsMargins(2, 5, 2, 5)
+        self.gridLayout_9.setHorizontalSpacing(0)
+        self.gridLayout_9.setVerticalSpacing(5)
+        self.gridLayout_9.setObjectName("gridLayout_9")
+        self.frame_seat1_card8 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card8.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card8.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card8.setObjectName("frame_seat1_card8")
+        self.horizontalLayout_67 = QtWidgets.QHBoxLayout(self.frame_seat1_card8)
+        self.horizontalLayout_67.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_67.setSpacing(0)
+        self.horizontalLayout_67.setObjectName("horizontalLayout_67")
+        self.label_seat1_card8 = QtWidgets.QLabel(parent=self.frame_seat1_card8)
+        self.label_seat1_card8.setText("")
+        self.label_seat1_card8.setScaledContents(True)
+        self.label_seat1_card8.setObjectName("label_seat1_card8")
+        self.horizontalLayout_67.addWidget(self.label_seat1_card8)
+        self.gridLayout_9.addWidget(self.frame_seat1_card8, 2, 2, 1, 1)
+        self.frame_seat1_card7 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card7.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card7.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card7.setObjectName("frame_seat1_card7")
+        self.horizontalLayout_68 = QtWidgets.QHBoxLayout(self.frame_seat1_card7)
+        self.horizontalLayout_68.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_68.setSpacing(0)
+        self.horizontalLayout_68.setObjectName("horizontalLayout_68")
+        self.label_seat1_card7 = QtWidgets.QLabel(parent=self.frame_seat1_card7)
+        self.label_seat1_card7.setText("")
+        self.label_seat1_card7.setScaledContents(True)
+        self.label_seat1_card7.setObjectName("label_seat1_card7")
+        self.horizontalLayout_68.addWidget(self.label_seat1_card7)
+        self.gridLayout_9.addWidget(self.frame_seat1_card7, 2, 1, 1, 1)
+        self.frame_seat1_card1 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card1.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card1.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card1.setObjectName("frame_seat1_card1")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.frame_seat1_card1)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_22.setSpacing(0)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.label_seat1_card1 = QtWidgets.QLabel(parent=self.frame_seat1_card1)
+        self.label_seat1_card1.setText("")
+        self.label_seat1_card1.setScaledContents(True)
+        self.label_seat1_card1.setObjectName("label_seat1_card1")
+        self.horizontalLayout_22.addWidget(self.label_seat1_card1)
+        self.gridLayout_9.addWidget(self.frame_seat1_card1, 1, 0, 1, 1)
+        self.frame_seat1_card4 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card4.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card4.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card4.setObjectName("frame_seat1_card4")
+        self.horizontalLayout_64 = QtWidgets.QHBoxLayout(self.frame_seat1_card4)
+        self.horizontalLayout_64.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_64.setSpacing(0)
+        self.horizontalLayout_64.setObjectName("horizontalLayout_64")
+        self.label_seat1_card4 = QtWidgets.QLabel(parent=self.frame_seat1_card4)
+        self.label_seat1_card4.setText("")
+        self.label_seat1_card4.setScaledContents(True)
+        self.label_seat1_card4.setObjectName("label_seat1_card4")
+        self.horizontalLayout_64.addWidget(self.label_seat1_card4)
+        self.gridLayout_9.addWidget(self.frame_seat1_card4, 1, 3, 1, 1)
+        self.frame_seat1_card9 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card9.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card9.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card9.setObjectName("frame_seat1_card9")
+        self.horizontalLayout_66 = QtWidgets.QHBoxLayout(self.frame_seat1_card9)
+        self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_66.setSpacing(0)
+        self.horizontalLayout_66.setObjectName("horizontalLayout_66")
+        self.label_seat1_card9 = QtWidgets.QLabel(parent=self.frame_seat1_card9)
+        self.label_seat1_card9.setText("")
+        self.label_seat1_card9.setScaledContents(True)
+        self.label_seat1_card9.setObjectName("label_seat1_card9")
+        self.horizontalLayout_66.addWidget(self.label_seat1_card9)
+        self.gridLayout_9.addWidget(self.frame_seat1_card9, 2, 3, 1, 1)
+        self.frame_seat1_card5 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card5.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card5.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card5.setObjectName("frame_seat1_card5")
+        self.horizontalLayout_63 = QtWidgets.QHBoxLayout(self.frame_seat1_card5)
+        self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_63.setSpacing(0)
+        self.horizontalLayout_63.setObjectName("horizontalLayout_63")
+        self.label_seat1_card5 = QtWidgets.QLabel(parent=self.frame_seat1_card5)
+        self.label_seat1_card5.setText("")
+        self.label_seat1_card5.setScaledContents(True)
+        self.label_seat1_card5.setObjectName("label_seat1_card5")
+        self.horizontalLayout_63.addWidget(self.label_seat1_card5)
+        self.gridLayout_9.addWidget(self.frame_seat1_card5, 1, 4, 1, 1)
+        self.frame_seat1_card2 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card2.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card2.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card2.setObjectName("frame_seat1_card2")
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.frame_seat1_card2)
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.label_seat1_card2 = QtWidgets.QLabel(parent=self.frame_seat1_card2)
+        self.label_seat1_card2.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_seat1_card2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.label_seat1_card2.setText("")
+        self.label_seat1_card2.setScaledContents(True)
+        self.label_seat1_card2.setObjectName("label_seat1_card2")
+        self.horizontalLayout_21.addWidget(self.label_seat1_card2)
+        self.gridLayout_9.addWidget(self.frame_seat1_card2, 1, 1, 1, 1)
+        self.frame_seat1_card6 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card6.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card6.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card6.setObjectName("frame_seat1_card6")
+        self.horizontalLayout_69 = QtWidgets.QHBoxLayout(self.frame_seat1_card6)
+        self.horizontalLayout_69.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_69.setSpacing(0)
+        self.horizontalLayout_69.setObjectName("horizontalLayout_69")
+        self.label_seat1_card6 = QtWidgets.QLabel(parent=self.frame_seat1_card6)
+        self.label_seat1_card6.setText("")
+        self.label_seat1_card6.setScaledContents(True)
+        self.label_seat1_card6.setObjectName("label_seat1_card6")
+        self.horizontalLayout_69.addWidget(self.label_seat1_card6)
+        self.gridLayout_9.addWidget(self.frame_seat1_card6, 2, 0, 1, 1)
+        self.frame_seat1_card10 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card10.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card10.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card10.setObjectName("frame_seat1_card10")
+        self.horizontalLayout_65 = QtWidgets.QHBoxLayout(self.frame_seat1_card10)
+        self.horizontalLayout_65.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_65.setSpacing(0)
+        self.horizontalLayout_65.setObjectName("horizontalLayout_65")
+        self.label_seat1_card10 = QtWidgets.QLabel(parent=self.frame_seat1_card10)
+        self.label_seat1_card10.setText("")
+        self.label_seat1_card10.setScaledContents(True)
+        self.label_seat1_card10.setObjectName("label_seat1_card10")
+        self.horizontalLayout_65.addWidget(self.label_seat1_card10)
+        self.gridLayout_9.addWidget(self.frame_seat1_card10, 2, 4, 1, 1)
+        self.frame_seat1_card3 = QtWidgets.QFrame(parent=self.frame_seat1_cards)
+        self.frame_seat1_card3.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card3.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_seat1_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_card3.setObjectName("frame_seat1_card3")
+        self.horizontalLayout_62 = QtWidgets.QHBoxLayout(self.frame_seat1_card3)
+        self.horizontalLayout_62.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_62.setSpacing(0)
+        self.horizontalLayout_62.setObjectName("horizontalLayout_62")
+        self.label_seat1_card3 = QtWidgets.QLabel(parent=self.frame_seat1_card3)
+        self.label_seat1_card3.setText("")
+        self.label_seat1_card3.setScaledContents(True)
+        self.label_seat1_card3.setObjectName("label_seat1_card3")
+        self.horizontalLayout_62.addWidget(self.label_seat1_card3)
+        self.gridLayout_9.addWidget(self.frame_seat1_card3, 1, 2, 1, 1)
+        self.horizontalLayout_20.addWidget(self.frame_seat1_cards, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.gridlayout.addWidget(self.frame_seat1, 2, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignBottom)
         self.frame_table = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_table.setMinimumSize(QtCore.QSize(422, 422))
-        self.frame_table.setMaximumSize(QtCore.QSize(422, 422))
-        self.frame_table.setStyleSheet("#frame_table * {\n"
-"font: 8pt \"Arial\";\n"
-"background-color: rgba(39,52,45,255);\n"
+        self.frame_table.setMinimumSize(QtCore.QSize(600, 330))
+        self.frame_table.setMaximumSize(QtCore.QSize(600, 330))
+        self.frame_table.setStyleSheet("#frame_dealer_cards {\n"
+"background-color: rgba(212,185,58,30);\n"
+"border-radius: 10px;\n"
 "}\n"
 "\n"
-"#frame_table {\n"
-"\n"
-"background-color: rgba(59,82,63,255);\n"
-"border: 4px solid rgba(212,185,58,255);\n"
-"\n"
-"}\n"
-"\n"
-"#frame_opp1_table { border-bottom: 4px solid rgba(212,185,58,255); }\n"
-"\n"
-"#frame_opp2_table { border-right: 4px solid rgba(212,185,58,255); }\n"
-"\n"
-"#frame_agent_table { border-top: 4px solid rgba(212,185,58,255); }\n"
-"\n"
-"#frame_dealer_table {border-left:4px solid rgba(212,185,58,255); }\n"
-"\n"
-"#frame_table QLabel {\n"
-"    font: 16pt \"Forte\";\n"
-"    color: rgba(212,185,58,255);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"#button_hit, #button_stand {\n"
-"background-color: rgba(250,250,250,20);\n"
-"border-radius: 20px;\n"
-"\n"
-"}\n"
-"\n"
-"#button_hit::hover, #button_stand::hover {\n"
-"background-color: rgba(250,250,250,40);\n"
-"border-radius: 20px;\n"
-"\n"
-"}\n"
-"\n"
-"#label_martini_agent, #label_martini_opp1, #label_martini_opp2 {\n"
+"#frame_dealer_cards * {\n"
 "background-color: transparent;\n"
-"\n"
 "}\n"
+"\n"
+"#label_dealer_total {\n"
+"font: 16pt \"Forte\";\n"
+"color: white;\n"
+"}\n"
+"\n"
+"#frame_dealer_budget * {\n"
+"font: 16pt \"Forte\";\n"
+"color: rgba(212,185,58,255);\n"
+"}\n"
+"\n"
+"\n"
+"#label_dealer_budget_text {\n"
+"font: 10pt \"Forte\";\n"
+"}\n"
+"\n"
+"#label_dealer_total {\n"
+"border-radius: 10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(255,255,255,25), stop:0.85 rgba(255,255,255,55), stop:1 rgba(255,255,255,105));\n"
+"border:1 solid rgb(144,144,144)\n"
+"}\n"
+"\n"
+"#label_dealer_total_text {\n"
+"font: 10pt \"Forte\";\n"
+"color: rgba(255,255,255,150)\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
 "")
         self.frame_table.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_table.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_table.setObjectName("frame_table")
-        self.frame_opp1_table = QtWidgets.QFrame(parent=self.frame_table)
-        self.frame_opp1_table.setGeometry(QtCore.QRect(155, 352, 120, 70))
-        self.frame_opp1_table.setMinimumSize(QtCore.QSize(120, 70))
-        self.frame_opp1_table.setMaximumSize(QtCore.QSize(120, 70))
-        self.frame_opp1_table.setStyleSheet("")
-        self.frame_opp1_table.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_table.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_table.setObjectName("frame_opp1_table")
-        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_opp1_table)
-        self.horizontalLayout_6.setContentsMargins(1, 1, 1, 1)
-        self.horizontalLayout_6.setSpacing(1)
-        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.label_agent_gainloss_6 = QtWidgets.QLabel(parent=self.frame_opp1_table)
-        self.label_agent_gainloss_6.setMinimumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_6.setMaximumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_6.setText("")
-        self.label_agent_gainloss_6.setScaledContents(True)
-        self.label_agent_gainloss_6.setObjectName("label_agent_gainloss_6")
-        self.horizontalLayout_6.addWidget(self.label_agent_gainloss_6)
-        self.label_opp1_chips_image = QtWidgets.QLabel(parent=self.frame_opp1_table)
-        self.label_opp1_chips_image.setMinimumSize(QtCore.QSize(30, 30))
-        self.label_opp1_chips_image.setMaximumSize(QtCore.QSize(30, 30))
-        self.label_opp1_chips_image.setText("")
-        self.label_opp1_chips_image.setScaledContents(True)
-        self.label_opp1_chips_image.setObjectName("label_opp1_chips_image")
-        self.horizontalLayout_6.addWidget(self.label_opp1_chips_image)
-        self.frame_opp2_table = QtWidgets.QFrame(parent=self.frame_table)
-        self.frame_opp2_table.setGeometry(QtCore.QRect(352, 155, 70, 120))
-        self.frame_opp2_table.setMinimumSize(QtCore.QSize(70, 120))
-        self.frame_opp2_table.setMaximumSize(QtCore.QSize(70, 120))
-        self.frame_opp2_table.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_table.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_table.setObjectName("frame_opp2_table")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_opp2_table)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.label_opp2_chips_image = QtWidgets.QLabel(parent=self.frame_opp2_table)
-        self.label_opp2_chips_image.setMinimumSize(QtCore.QSize(30, 30))
-        self.label_opp2_chips_image.setMaximumSize(QtCore.QSize(30, 30))
-        self.label_opp2_chips_image.setText("")
-        self.label_opp2_chips_image.setScaledContents(True)
-        self.label_opp2_chips_image.setObjectName("label_opp2_chips_image")
-        self.verticalLayout_8.addWidget(self.label_opp2_chips_image, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.label_agent_gainloss_10 = QtWidgets.QLabel(parent=self.frame_opp2_table)
-        self.label_agent_gainloss_10.setMinimumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_10.setMaximumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_10.setText("")
-        self.label_agent_gainloss_10.setScaledContents(True)
-        self.label_agent_gainloss_10.setObjectName("label_agent_gainloss_10")
-        self.verticalLayout_8.addWidget(self.label_agent_gainloss_10)
-        self.frame_dealer_table = QtWidgets.QFrame(parent=self.frame_table)
-        self.frame_dealer_table.setGeometry(QtCore.QRect(0, 150, 70, 130))
-        self.frame_dealer_table.setMinimumSize(QtCore.QSize(70, 130))
-        self.frame_dealer_table.setMaximumSize(QtCore.QSize(70, 120))
-        self.frame_dealer_table.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_table.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_table.setObjectName("frame_dealer_table")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_dealer_table)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.label_agent_gainloss_12 = QtWidgets.QLabel(parent=self.frame_dealer_table)
-        self.label_agent_gainloss_12.setMinimumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_12.setMaximumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_12.setText("")
-        self.label_agent_gainloss_12.setScaledContents(True)
-        self.label_agent_gainloss_12.setObjectName("label_agent_gainloss_12")
-        self.verticalLayout_7.addWidget(self.label_agent_gainloss_12)
-        self.label_dealer_chips_image = QtWidgets.QLabel(parent=self.frame_dealer_table)
-        self.label_dealer_chips_image.setMinimumSize(QtCore.QSize(48, 48))
-        self.label_dealer_chips_image.setMaximumSize(QtCore.QSize(48, 48))
-        self.label_dealer_chips_image.setText("")
-        self.label_dealer_chips_image.setScaledContents(True)
-        self.label_dealer_chips_image.setObjectName("label_dealer_chips_image")
-        self.verticalLayout_7.addWidget(self.label_dealer_chips_image)
-        self.frame_agent_table = QtWidgets.QFrame(parent=self.frame_table)
-        self.frame_agent_table.setGeometry(QtCore.QRect(155, 0, 120, 70))
-        self.frame_agent_table.setMinimumSize(QtCore.QSize(120, 70))
-        self.frame_agent_table.setMaximumSize(QtCore.QSize(120, 70))
-        self.frame_agent_table.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_table.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_table.setObjectName("frame_agent_table")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_agent_table)
-        self.horizontalLayout_4.setContentsMargins(1, 1, 1, 1)
-        self.horizontalLayout_4.setSpacing(1)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_agent_chips_image = QtWidgets.QLabel(parent=self.frame_agent_table)
-        self.label_agent_chips_image.setMinimumSize(QtCore.QSize(30, 30))
-        self.label_agent_chips_image.setMaximumSize(QtCore.QSize(30, 30))
-        self.label_agent_chips_image.setText("")
-        self.label_agent_chips_image.setScaledContents(True)
-        self.label_agent_chips_image.setObjectName("label_agent_chips_image")
-        self.horizontalLayout_4.addWidget(self.label_agent_chips_image)
-        self.label_agent_gainloss_8 = QtWidgets.QLabel(parent=self.frame_agent_table)
-        self.label_agent_gainloss_8.setMinimumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_8.setMaximumSize(QtCore.QSize(48, 48))
-        self.label_agent_gainloss_8.setText("")
-        self.label_agent_gainloss_8.setScaledContents(True)
-        self.label_agent_gainloss_8.setObjectName("label_agent_gainloss_8")
-        self.horizontalLayout_4.addWidget(self.label_agent_gainloss_8)
-        self.button_stand = QtWidgets.QPushButton(parent=self.frame_table)
-        self.button_stand.setGeometry(QtCore.QRect(220, 310, 40, 40))
-        self.button_stand.setMinimumSize(QtCore.QSize(40, 40))
-        self.button_stand.setMaximumSize(QtCore.QSize(40, 40))
-        self.button_stand.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
-        self.button_stand.setStyleSheet("")
-        self.button_stand.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/deck/stand.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.button_stand.setIcon(icon)
-        self.button_stand.setIconSize(QtCore.QSize(30, 30))
-        self.button_stand.setObjectName("button_stand")
-        self.button_hit = QtWidgets.QPushButton(parent=self.frame_table)
-        self.button_hit.setGeometry(QtCore.QRect(170, 310, 40, 40))
-        self.button_hit.setMinimumSize(QtCore.QSize(40, 40))
-        self.button_hit.setMaximumSize(QtCore.QSize(40, 40))
-        self.button_hit.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.button_hit.setStyleSheet("")
-        self.button_hit.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/deck/hit.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.button_hit.setIcon(icon1)
-        self.button_hit.setIconSize(QtCore.QSize(30, 30))
-        self.button_hit.setObjectName("button_hit")
-        self.button_deck = QtWidgets.QPushButton(parent=self.frame_table)
-        self.button_deck.setGeometry(QtCore.QRect(70, 185, 55, 55))
-        self.button_deck.setMinimumSize(QtCore.QSize(55, 55))
-        self.button_deck.setMaximumSize(QtCore.QSize(55, 55))
-        self.button_deck.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
-        self.button_deck.setStyleSheet("#button_deck {\n"
-"background-color: transparent;\n"
-"border: none;\n"
-"\n"
-"}")
-        self.button_deck.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/deck/card-deck.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.button_deck.setIcon(icon2)
-        self.button_deck.setIconSize(QtCore.QSize(55, 55))
-        self.button_deck.setObjectName("button_deck")
-        self.gridlayout.addWidget(self.frame_table, 1, 1, 1, 1)
-        self.frame_dealer = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_dealer.setMinimumSize(QtCore.QSize(125, 422))
-        self.frame_dealer.setMaximumSize(QtCore.QSize(125, 422))
-        self.frame_dealer.setStyleSheet("#frame_dealer * {\n"
-"background-color: transparent;\n"
-"}\n"
-"\n"
-"")
-        self.frame_dealer.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer.setObjectName("frame_dealer")
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_dealer)
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.frame_table)
+        self.horizontalLayout_28.setContentsMargins(5, 5, 5, 5)
+        self.horizontalLayout_28.setSpacing(5)
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.frame_dealer_cards = QtWidgets.QFrame(parent=self.frame_table)
+        self.frame_dealer_cards.setMinimumSize(QtCore.QSize(140, 320))
+        self.frame_dealer_cards.setMaximumSize(QtCore.QSize(140, 320))
+        self.frame_dealer_cards.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_cards.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_cards.setObjectName("frame_dealer_cards")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_dealer_cards)
+        self.gridLayout_4.setContentsMargins(5, 5, 5, 5)
+        self.gridLayout_4.setSpacing(5)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        self.frame_dealer_card9 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card9.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card9.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card9.setObjectName("frame_dealer_card9")
-        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_dealer_card9)
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_11.setSpacing(0)
-        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.label_dealer_card9 = QtWidgets.QLabel(parent=self.frame_dealer_card9)
-        self.label_dealer_card9.setText("")
-        self.label_dealer_card9.setScaledContents(True)
-        self.label_dealer_card9.setObjectName("label_dealer_card9")
-        self.horizontalLayout_11.addWidget(self.label_dealer_card9)
-        self.gridLayout_4.addWidget(self.frame_dealer_card9, 3, 0, 1, 1)
-        self.frame_dealer_card1 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card1.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card1.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card1.setObjectName("frame_dealer_card1")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_dealer_card1)
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_7.setSpacing(0)
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.label_dealer_card1 = QtWidgets.QLabel(parent=self.frame_dealer_card1)
-        self.label_dealer_card1.setText("")
-        self.label_dealer_card1.setScaledContents(True)
-        self.label_dealer_card1.setObjectName("label_dealer_card1")
-        self.horizontalLayout_7.addWidget(self.label_dealer_card1)
-        self.gridLayout_4.addWidget(self.frame_dealer_card1, 0, 1, 1, 1)
-        self.frame_dealer_card7 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card7.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card7.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card7.setObjectName("frame_dealer_card7")
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_dealer_card7)
-        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_9.setSpacing(0)
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.label_dealer_card7 = QtWidgets.QLabel(parent=self.frame_dealer_card7)
-        self.label_dealer_card7.setText("")
-        self.label_dealer_card7.setScaledContents(True)
-        self.label_dealer_card7.setObjectName("label_dealer_card7")
-        self.horizontalLayout_9.addWidget(self.label_dealer_card7)
-        self.gridLayout_4.addWidget(self.frame_dealer_card7, 1, 0, 1, 1)
-        self.frame_dealer_card2 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card2.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card2.setMaximumSize(QtCore.QSize(50, 50))
+        self.frame_dealer_card2 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card2.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card2.setMaximumSize(QtCore.QSize(50, 60))
         self.frame_dealer_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_dealer_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_dealer_card2.setObjectName("frame_dealer_card2")
@@ -1212,41 +1412,9 @@ class Ui_MainWindow(object):
         self.label_dealer_card2.setObjectName("label_dealer_card2")
         self.horizontalLayout_13.addWidget(self.label_dealer_card2)
         self.gridLayout_4.addWidget(self.frame_dealer_card2, 1, 1, 1, 1)
-        self.frame_dealer_card6 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card6.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card6.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card6.setObjectName("frame_dealer_card6")
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_dealer_card6)
-        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_8.setSpacing(0)
-        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.label_dealer_card6 = QtWidgets.QLabel(parent=self.frame_dealer_card6)
-        self.label_dealer_card6.setText("")
-        self.label_dealer_card6.setScaledContents(True)
-        self.label_dealer_card6.setObjectName("label_dealer_card6")
-        self.horizontalLayout_8.addWidget(self.label_dealer_card6)
-        self.gridLayout_4.addWidget(self.frame_dealer_card6, 0, 0, 1, 1)
-        self.frame_dealer_card10 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card10.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card10.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card10.setObjectName("frame_dealer_card10")
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_dealer_card10)
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_12.setSpacing(0)
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.label_dealer_card10 = QtWidgets.QLabel(parent=self.frame_dealer_card10)
-        self.label_dealer_card10.setText("")
-        self.label_dealer_card10.setScaledContents(True)
-        self.label_dealer_card10.setObjectName("label_dealer_card10")
-        self.horizontalLayout_12.addWidget(self.label_dealer_card10)
-        self.gridLayout_4.addWidget(self.frame_dealer_card10, 4, 0, 1, 1)
-        self.frame_dealer_card8 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card8.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card8.setMaximumSize(QtCore.QSize(50, 50))
+        self.frame_dealer_card8 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card8.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card8.setMaximumSize(QtCore.QSize(50, 60))
         self.frame_dealer_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_dealer_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_dealer_card8.setObjectName("frame_dealer_card8")
@@ -1260,9 +1428,9 @@ class Ui_MainWindow(object):
         self.label_dealer_card8.setObjectName("label_dealer_card8")
         self.horizontalLayout_10.addWidget(self.label_dealer_card8)
         self.gridLayout_4.addWidget(self.frame_dealer_card8, 2, 0, 1, 1)
-        self.frame_dealer_card3 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card3.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card3.setMaximumSize(QtCore.QSize(50, 50))
+        self.frame_dealer_card3 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card3.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card3.setMaximumSize(QtCore.QSize(50, 60))
         self.frame_dealer_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_dealer_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_dealer_card3.setObjectName("frame_dealer_card3")
@@ -1276,25 +1444,9 @@ class Ui_MainWindow(object):
         self.label_dealer_card3.setObjectName("label_dealer_card3")
         self.horizontalLayout_14.addWidget(self.label_dealer_card3)
         self.gridLayout_4.addWidget(self.frame_dealer_card3, 2, 1, 1, 1)
-        self.frame_dealer_card4 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card4.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card4.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_card4.setObjectName("frame_dealer_card4")
-        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_dealer_card4)
-        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_16.setSpacing(0)
-        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.label_dealer_card4 = QtWidgets.QLabel(parent=self.frame_dealer_card4)
-        self.label_dealer_card4.setText("")
-        self.label_dealer_card4.setScaledContents(True)
-        self.label_dealer_card4.setObjectName("label_dealer_card4")
-        self.horizontalLayout_16.addWidget(self.label_dealer_card4)
-        self.gridLayout_4.addWidget(self.frame_dealer_card4, 3, 1, 1, 1)
-        self.frame_dealer_card5 = QtWidgets.QFrame(parent=self.frame_dealer)
-        self.frame_dealer_card5.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_card5.setMaximumSize(QtCore.QSize(50, 50))
+        self.frame_dealer_card5 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card5.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card5.setMaximumSize(QtCore.QSize(50, 60))
         self.frame_dealer_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_dealer_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_dealer_card5.setObjectName("frame_dealer_card5")
@@ -1308,604 +1460,1011 @@ class Ui_MainWindow(object):
         self.label_dealer_card5.setObjectName("label_dealer_card5")
         self.horizontalLayout_15.addWidget(self.label_dealer_card5)
         self.gridLayout_4.addWidget(self.frame_dealer_card5, 4, 1, 1, 1)
-        self.gridlayout.addWidget(self.frame_dealer, 1, 0, 1, 1)
-        self.frame_agent_total = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_agent_total.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_total.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_total.setStyleSheet("#frame_agent_total * {\n"
-"background-color: transparent;\n"
-"color: rgba(212,185,58,255);\n"
-"}")
-        self.frame_agent_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_total.setObjectName("frame_agent_total")
-        self.horizontalLayout_37 = QtWidgets.QHBoxLayout(self.frame_agent_total)
-        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_37.setSpacing(0)
-        self.horizontalLayout_37.setObjectName("horizontalLayout_37")
-        self.label_agent_total = QtWidgets.QLabel(parent=self.frame_agent_total)
-        self.label_agent_total.setStyleSheet("")
-        self.label_agent_total.setText("")
-        self.label_agent_total.setScaledContents(True)
-        self.label_agent_total.setObjectName("label_agent_total")
-        self.horizontalLayout_37.addWidget(self.label_agent_total)
-        self.gridlayout.addWidget(self.frame_agent_total, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTop)
-        self.frame_opp1 = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_opp1.setMinimumSize(QtCore.QSize(422, 125))
-        self.frame_opp1.setMaximumSize(QtCore.QSize(422, 125))
-        self.frame_opp1.setStyleSheet("#frame_opp1 * {\n"
-"background-color: transparent;\n"
-"\n"
-"\n"
-"}")
-        self.frame_opp1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1.setObjectName("frame_opp1")
-        self.gridLayout = QtWidgets.QGridLayout(self.frame_opp1)
-        self.gridLayout.setObjectName("gridLayout")
-        self.frame_opp1_card5 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card5.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card5.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card5.setObjectName("frame_opp1_card5")
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_opp1_card5)
-        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_19.setSpacing(0)
-        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
-        self.label_opp1_card5 = QtWidgets.QLabel(parent=self.frame_opp1_card5)
-        self.label_opp1_card5.setText("")
-        self.label_opp1_card5.setScaledContents(True)
-        self.label_opp1_card5.setObjectName("label_opp1_card5")
-        self.horizontalLayout_19.addWidget(self.label_opp1_card5)
-        self.gridLayout.addWidget(self.frame_opp1_card5, 0, 4, 1, 1)
-        self.frame_opp1_card2 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card2.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card2.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card2.setObjectName("frame_opp1_card2")
-        self.horizontalLayout_24 = QtWidgets.QHBoxLayout(self.frame_opp1_card2)
-        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_24.setSpacing(0)
-        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
-        self.label_opp1_card2 = QtWidgets.QLabel(parent=self.frame_opp1_card2)
-        self.label_opp1_card2.setText("")
-        self.label_opp1_card2.setScaledContents(True)
-        self.label_opp1_card2.setObjectName("label_opp1_card2")
-        self.horizontalLayout_24.addWidget(self.label_opp1_card2)
-        self.gridLayout.addWidget(self.frame_opp1_card2, 0, 1, 1, 1)
-        self.frame_opp1_card6 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card6.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card6.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card6.setObjectName("frame_opp1_card6")
-        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.frame_opp1_card6)
-        self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_28.setSpacing(0)
-        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
-        self.label_opp1_card6 = QtWidgets.QLabel(parent=self.frame_opp1_card6)
-        self.label_opp1_card6.setText("")
-        self.label_opp1_card6.setScaledContents(True)
-        self.label_opp1_card6.setObjectName("label_opp1_card6")
-        self.horizontalLayout_28.addWidget(self.label_opp1_card6)
-        self.gridLayout.addWidget(self.frame_opp1_card6, 1, 0, 1, 1)
-        self.frame_opp1_card9 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card9.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card9.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card9.setObjectName("frame_opp1_card9")
-        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.frame_opp1_card9)
-        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_22.setSpacing(0)
-        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
-        self.label_opp1_card9 = QtWidgets.QLabel(parent=self.frame_opp1_card9)
-        self.label_opp1_card9.setText("")
-        self.label_opp1_card9.setScaledContents(True)
-        self.label_opp1_card9.setObjectName("label_opp1_card9")
-        self.horizontalLayout_22.addWidget(self.label_opp1_card9)
-        self.gridLayout.addWidget(self.frame_opp1_card9, 1, 3, 1, 1)
-        self.frame_opp1_card4 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card4.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card4.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card4.setObjectName("frame_opp1_card4")
-        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.frame_opp1_card4)
-        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_21.setSpacing(0)
-        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
-        self.label_opp1_card4 = QtWidgets.QLabel(parent=self.frame_opp1_card4)
-        self.label_opp1_card4.setText("")
-        self.label_opp1_card4.setScaledContents(True)
-        self.label_opp1_card4.setObjectName("label_opp1_card4")
-        self.horizontalLayout_21.addWidget(self.label_opp1_card4)
-        self.gridLayout.addWidget(self.frame_opp1_card4, 0, 3, 1, 1)
-        self.frame_opp1_card8 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card8.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card8.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card8.setObjectName("frame_opp1_card8")
-        self.horizontalLayout_25 = QtWidgets.QHBoxLayout(self.frame_opp1_card8)
-        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_25.setSpacing(0)
-        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
-        self.label_opp1_card8 = QtWidgets.QLabel(parent=self.frame_opp1_card8)
-        self.label_opp1_card8.setText("")
-        self.label_opp1_card8.setScaledContents(True)
-        self.label_opp1_card8.setObjectName("label_opp1_card8")
-        self.horizontalLayout_25.addWidget(self.label_opp1_card8)
-        self.gridLayout.addWidget(self.frame_opp1_card8, 1, 2, 1, 1)
-        self.frame_opp1_card7 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card7.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card7.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card7.setObjectName("frame_opp1_card7")
-        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.frame_opp1_card7)
-        self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_26.setSpacing(0)
-        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
-        self.label_opp1_card7 = QtWidgets.QLabel(parent=self.frame_opp1_card7)
-        self.label_opp1_card7.setText("")
-        self.label_opp1_card7.setScaledContents(True)
-        self.label_opp1_card7.setObjectName("label_opp1_card7")
-        self.horizontalLayout_26.addWidget(self.label_opp1_card7)
-        self.gridLayout.addWidget(self.frame_opp1_card7, 1, 1, 1, 1)
-        self.frame_opp1_card3 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card3.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card3.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card3.setObjectName("frame_opp1_card3")
-        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.frame_opp1_card3)
-        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_23.setSpacing(0)
-        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
-        self.label_opp1_card3 = QtWidgets.QLabel(parent=self.frame_opp1_card3)
-        self.label_opp1_card3.setText("")
-        self.label_opp1_card3.setScaledContents(True)
-        self.label_opp1_card3.setObjectName("label_opp1_card3")
-        self.horizontalLayout_23.addWidget(self.label_opp1_card3)
-        self.gridLayout.addWidget(self.frame_opp1_card3, 0, 2, 1, 1)
-        self.frame_opp1_card1 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card1.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card1.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card1.setObjectName("frame_opp1_card1")
-        self.horizontalLayout_27 = QtWidgets.QHBoxLayout(self.frame_opp1_card1)
-        self.horizontalLayout_27.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_27.setSpacing(0)
-        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
-        self.label_opp2_card1 = QtWidgets.QLabel(parent=self.frame_opp1_card1)
-        self.label_opp2_card1.setText("")
-        self.label_opp2_card1.setScaledContents(True)
-        self.label_opp2_card1.setObjectName("label_opp2_card1")
-        self.horizontalLayout_27.addWidget(self.label_opp2_card1)
-        self.gridLayout.addWidget(self.frame_opp1_card1, 0, 0, 1, 1)
-        self.frame_opp1_card10 = QtWidgets.QFrame(parent=self.frame_opp1)
-        self.frame_opp1_card10.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card10.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp1_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp1_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp1_card10.setObjectName("frame_opp1_card10")
-        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.frame_opp1_card10)
-        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_20.setSpacing(0)
-        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
-        self.label_opp1_card10 = QtWidgets.QLabel(parent=self.frame_opp1_card10)
-        self.label_opp1_card10.setText("")
-        self.label_opp1_card10.setScaledContents(True)
-        self.label_opp1_card10.setObjectName("label_opp1_card10")
-        self.horizontalLayout_20.addWidget(self.label_opp1_card10)
-        self.gridLayout.addWidget(self.frame_opp1_card10, 1, 4, 1, 1)
-        self.label_opp1_martini = QtWidgets.QLabel(parent=self.frame_opp1)
-        self.label_opp1_martini.setMinimumSize(QtCore.QSize(50, 50))
-        self.label_opp1_martini.setMaximumSize(QtCore.QSize(50, 50))
-        self.label_opp1_martini.setText("")
-        self.label_opp1_martini.setScaledContents(True)
-        self.label_opp1_martini.setObjectName("label_opp1_martini")
-        self.gridLayout.addWidget(self.label_opp1_martini, 1, 5, 1, 1)
-        self.gridlayout.addWidget(self.frame_opp1, 2, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.frame_dealer_total = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_dealer_total.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_total.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_dealer_total.setStyleSheet("#frame_dealer_total * {\n"
-"background-color: transparent;\n"
-"color: rgba(212,185,58,255);\n"
-"}")
-        self.frame_dealer_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_dealer_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_dealer_total.setObjectName("frame_dealer_total")
-        self.horizontalLayout_40 = QtWidgets.QHBoxLayout(self.frame_dealer_total)
-        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_40.setSpacing(0)
-        self.horizontalLayout_40.setObjectName("horizontalLayout_40")
-        self.label_dealer_total = QtWidgets.QLabel(parent=self.frame_dealer_total)
-        self.label_dealer_total.setText("")
-        self.label_dealer_total.setScaledContents(True)
-        self.label_dealer_total.setObjectName("label_dealer_total")
-        self.horizontalLayout_40.addWidget(self.label_dealer_total)
-        self.gridlayout.addWidget(self.frame_dealer_total, 2, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop)
-        self.frame_agent = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_agent.setMinimumSize(QtCore.QSize(422, 125))
-        self.frame_agent.setMaximumSize(QtCore.QSize(422, 125))
-        self.frame_agent.setStyleSheet("#frame_agent * {\n"
-"background-color: transparent;\n"
-"\n"
+        self.frame_dealer_card10 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card10.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card10.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card10.setObjectName("frame_dealer_card10")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_dealer_card10)
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12.setSpacing(0)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.label_dealer_card10 = QtWidgets.QLabel(parent=self.frame_dealer_card10)
+        self.label_dealer_card10.setText("")
+        self.label_dealer_card10.setScaledContents(True)
+        self.label_dealer_card10.setObjectName("label_dealer_card10")
+        self.horizontalLayout_12.addWidget(self.label_dealer_card10)
+        self.gridLayout_4.addWidget(self.frame_dealer_card10, 4, 0, 1, 1)
+        self.frame_dealer_card4 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card4.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card4.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card4.setObjectName("frame_dealer_card4")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_dealer_card4)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.label_dealer_card4 = QtWidgets.QLabel(parent=self.frame_dealer_card4)
+        self.label_dealer_card4.setText("")
+        self.label_dealer_card4.setScaledContents(True)
+        self.label_dealer_card4.setObjectName("label_dealer_card4")
+        self.horizontalLayout_16.addWidget(self.label_dealer_card4)
+        self.gridLayout_4.addWidget(self.frame_dealer_card4, 3, 1, 1, 1)
+        self.frame_dealer_card9 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card9.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card9.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card9.setObjectName("frame_dealer_card9")
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_dealer_card9)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
+        self.label_dealer_card9 = QtWidgets.QLabel(parent=self.frame_dealer_card9)
+        self.label_dealer_card9.setText("")
+        self.label_dealer_card9.setScaledContents(True)
+        self.label_dealer_card9.setObjectName("label_dealer_card9")
+        self.horizontalLayout_11.addWidget(self.label_dealer_card9)
+        self.gridLayout_4.addWidget(self.frame_dealer_card9, 3, 0, 1, 1)
+        self.frame_dealer_card1 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card1.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card1.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card1.setObjectName("frame_dealer_card1")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_dealer_card1)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.label_dealer_card1 = QtWidgets.QLabel(parent=self.frame_dealer_card1)
+        self.label_dealer_card1.setText("")
+        self.label_dealer_card1.setScaledContents(True)
+        self.label_dealer_card1.setObjectName("label_dealer_card1")
+        self.horizontalLayout_7.addWidget(self.label_dealer_card1)
+        self.gridLayout_4.addWidget(self.frame_dealer_card1, 0, 1, 1, 1)
+        self.frame_dealer_card7 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card7.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card7.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card7.setObjectName("frame_dealer_card7")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_dealer_card7)
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_9.setSpacing(0)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.label_dealer_card7 = QtWidgets.QLabel(parent=self.frame_dealer_card7)
+        self.label_dealer_card7.setText("")
+        self.label_dealer_card7.setScaledContents(True)
+        self.label_dealer_card7.setObjectName("label_dealer_card7")
+        self.horizontalLayout_9.addWidget(self.label_dealer_card7)
+        self.gridLayout_4.addWidget(self.frame_dealer_card7, 1, 0, 1, 1)
+        self.frame_dealer_card6 = QtWidgets.QFrame(parent=self.frame_dealer_cards)
+        self.frame_dealer_card6.setMinimumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card6.setMaximumSize(QtCore.QSize(50, 60))
+        self.frame_dealer_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_card6.setObjectName("frame_dealer_card6")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_dealer_card6)
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.label_dealer_card6 = QtWidgets.QLabel(parent=self.frame_dealer_card6)
+        self.label_dealer_card6.setText("")
+        self.label_dealer_card6.setScaledContents(True)
+        self.label_dealer_card6.setObjectName("label_dealer_card6")
+        self.horizontalLayout_8.addWidget(self.label_dealer_card6)
+        self.gridLayout_4.addWidget(self.frame_dealer_card6, 0, 0, 1, 1)
+        self.horizontalLayout_28.addWidget(self.frame_dealer_cards)
+        self.frame_blackjack_text = QtWidgets.QFrame(parent=self.frame_table)
+        self.frame_blackjack_text.setMinimumSize(QtCore.QSize(25, 320))
+        self.frame_blackjack_text.setMaximumSize(QtCore.QSize(25, 320))
+        self.frame_blackjack_text.setStyleSheet("QLabel {\n"
+"    font: 18pt \"Forte\";\n"
 "\n"
 "}")
-        self.frame_agent.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent.setObjectName("frame_agent")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame_agent)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setSpacing(0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.frame_agent_card2 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card2.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card2.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card2.setObjectName("frame_agent_card2")
-        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.frame_agent_card2)
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_14.setSpacing(0)
-        self.verticalLayout_14.setObjectName("verticalLayout_14")
-        self.label_agent_card2 = QtWidgets.QLabel(parent=self.frame_agent_card2)
-        self.label_agent_card2.setText("")
-        self.label_agent_card2.setScaledContents(True)
-        self.label_agent_card2.setObjectName("label_agent_card2")
-        self.verticalLayout_14.addWidget(self.label_agent_card2)
-        self.gridLayout_2.addWidget(self.frame_agent_card2, 1, 4, 1, 1)
-        self.frame_agent_card6 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card6.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card6.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card6.setObjectName("frame_agent_card6")
-        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_agent_card6)
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_12.setSpacing(0)
-        self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_agent_card6 = QtWidgets.QLabel(parent=self.frame_agent_card6)
-        self.label_agent_card6.setText("")
-        self.label_agent_card6.setScaledContents(True)
-        self.label_agent_card6.setObjectName("label_agent_card6")
-        self.verticalLayout_12.addWidget(self.label_agent_card6)
-        self.gridLayout_2.addWidget(self.frame_agent_card6, 0, 5, 1, 1)
-        self.frame_agent_card1 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card1.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card1.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card1.setObjectName("frame_agent_card1")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_agent_card1)
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_13.setSpacing(0)
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.label_agent_card1 = QtWidgets.QLabel(parent=self.frame_agent_card1)
-        self.label_agent_card1.setText("")
-        self.label_agent_card1.setScaledContents(True)
-        self.label_agent_card1.setObjectName("label_agent_card1")
-        self.verticalLayout_13.addWidget(self.label_agent_card1)
-        self.gridLayout_2.addWidget(self.frame_agent_card1, 1, 5, 1, 1)
-        self.frame_agent_card8 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card8.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card8.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card8.setObjectName("frame_agent_card8")
-        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_agent_card8)
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_11.setSpacing(0)
-        self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.label_agent_card8 = QtWidgets.QLabel(parent=self.frame_agent_card8)
-        self.label_agent_card8.setText("")
-        self.label_agent_card8.setScaledContents(True)
-        self.label_agent_card8.setObjectName("label_agent_card8")
-        self.verticalLayout_11.addWidget(self.label_agent_card8)
-        self.gridLayout_2.addWidget(self.frame_agent_card8, 0, 3, 1, 1)
-        self.frame_agent_card7 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card7.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card7.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card7.setObjectName("frame_agent_card7")
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_agent_card7)
-        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_18.setSpacing(0)
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_agent_card7 = QtWidgets.QLabel(parent=self.frame_agent_card7)
-        self.label_agent_card7.setText("")
-        self.label_agent_card7.setScaledContents(True)
-        self.label_agent_card7.setObjectName("label_agent_card7")
-        self.horizontalLayout_18.addWidget(self.label_agent_card7)
-        self.gridLayout_2.addWidget(self.frame_agent_card7, 0, 4, 1, 1)
-        self.frame_agent_card4 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card4.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card4.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card4.setObjectName("frame_agent_card4")
-        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.frame_agent_card4)
-        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_16.setSpacing(0)
-        self.verticalLayout_16.setObjectName("verticalLayout_16")
-        self.label_agent_card4 = QtWidgets.QLabel(parent=self.frame_agent_card4)
-        self.label_agent_card4.setText("")
-        self.label_agent_card4.setScaledContents(True)
-        self.label_agent_card4.setObjectName("label_agent_card4")
-        self.verticalLayout_16.addWidget(self.label_agent_card4)
-        self.gridLayout_2.addWidget(self.frame_agent_card4, 1, 2, 1, 1)
-        self.frame_agent_card5 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card5.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card5.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card5.setObjectName("frame_agent_card5")
-        self.verticalLayout_17 = QtWidgets.QVBoxLayout(self.frame_agent_card5)
-        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_17.setSpacing(0)
-        self.verticalLayout_17.setObjectName("verticalLayout_17")
-        self.label_agent_card5 = QtWidgets.QLabel(parent=self.frame_agent_card5)
-        self.label_agent_card5.setText("")
-        self.label_agent_card5.setScaledContents(True)
-        self.label_agent_card5.setObjectName("label_agent_card5")
-        self.verticalLayout_17.addWidget(self.label_agent_card5)
-        self.gridLayout_2.addWidget(self.frame_agent_card5, 1, 1, 1, 1)
-        self.frame_agent_card3 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card3.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card3.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card3.setObjectName("frame_agent_card3")
-        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_agent_card3)
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_15.setSpacing(0)
-        self.verticalLayout_15.setObjectName("verticalLayout_15")
-        self.label_agent_card3 = QtWidgets.QLabel(parent=self.frame_agent_card3)
-        self.label_agent_card3.setText("")
-        self.label_agent_card3.setScaledContents(True)
-        self.label_agent_card3.setObjectName("label_agent_card3")
-        self.verticalLayout_15.addWidget(self.label_agent_card3)
-        self.gridLayout_2.addWidget(self.frame_agent_card3, 1, 3, 1, 1)
-        self.frame_agent_card10 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card10.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card10.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card10.setObjectName("frame_agent_card10")
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_agent_card10)
-        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.label_agent_card10 = QtWidgets.QLabel(parent=self.frame_agent_card10)
-        self.label_agent_card10.setText("")
-        self.label_agent_card10.setScaledContents(True)
-        self.label_agent_card10.setObjectName("label_agent_card10")
-        self.horizontalLayout_17.addWidget(self.label_agent_card10)
-        self.gridLayout_2.addWidget(self.frame_agent_card10, 0, 1, 1, 1)
-        self.frame_agent_card9 = QtWidgets.QFrame(parent=self.frame_agent)
-        self.frame_agent_card9.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card9.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_agent_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_agent_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_agent_card9.setObjectName("frame_agent_card9")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_agent_card9)
-        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_10.setSpacing(0)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.label_agent_card9 = QtWidgets.QLabel(parent=self.frame_agent_card9)
-        self.label_agent_card9.setText("")
-        self.label_agent_card9.setScaledContents(True)
-        self.label_agent_card9.setObjectName("label_agent_card9")
-        self.verticalLayout_10.addWidget(self.label_agent_card9)
-        self.gridLayout_2.addWidget(self.frame_agent_card9, 0, 2, 1, 1)
-        self.label_agent_martini = QtWidgets.QLabel(parent=self.frame_agent)
-        self.label_agent_martini.setMinimumSize(QtCore.QSize(50, 50))
-        self.label_agent_martini.setMaximumSize(QtCore.QSize(50, 50))
-        self.label_agent_martini.setText("")
-        self.label_agent_martini.setScaledContents(True)
-        self.label_agent_martini.setObjectName("label_agent_martini")
-        self.gridLayout_2.addWidget(self.label_agent_martini, 0, 0, 1, 1)
-        self.gridlayout.addWidget(self.frame_agent, 0, 1, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.frame_opp2 = QtWidgets.QFrame(parent=self.frame_game)
-        self.frame_opp2.setMinimumSize(QtCore.QSize(125, 422))
-        self.frame_opp2.setMaximumSize(QtCore.QSize(125, 422))
-        self.frame_opp2.setStyleSheet("#frame_opp2 * {\n"
-"background-color: transparent;\n"
-"\n"
-"\n"
-"}")
-        self.frame_opp2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2.setObjectName("frame_opp2")
-        self.gridLayout_3 = QtWidgets.QGridLayout(self.frame_opp2)
-        self.gridLayout_3.setContentsMargins(5, 5, 5, 5)
-        self.gridLayout_3.setSpacing(5)
-        self.gridLayout_3.setObjectName("gridLayout_3")
-        self.frame_opp2_card1 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card1.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card1.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card1.setObjectName("frame_opp2_card1")
-        self.verticalLayout_26 = QtWidgets.QVBoxLayout(self.frame_opp2_card1)
-        self.verticalLayout_26.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_26.setSpacing(0)
-        self.verticalLayout_26.setObjectName("verticalLayout_26")
-        self.label_opp2_card1_2 = QtWidgets.QLabel(parent=self.frame_opp2_card1)
-        self.label_opp2_card1_2.setText("")
-        self.label_opp2_card1_2.setScaledContents(True)
-        self.label_opp2_card1_2.setObjectName("label_opp2_card1_2")
-        self.verticalLayout_26.addWidget(self.label_opp2_card1_2)
-        self.gridLayout_3.addWidget(self.frame_opp2_card1, 6, 0, 1, 1)
-        self.frame_opp2_card4 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card4.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card4.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card4.setObjectName("frame_opp2_card4")
-        self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.frame_opp2_card4)
+        self.frame_blackjack_text.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_blackjack_text.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_blackjack_text.setObjectName("frame_blackjack_text")
+        self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.frame_blackjack_text)
         self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_20.setSpacing(0)
         self.verticalLayout_20.setObjectName("verticalLayout_20")
-        self.label_opp2_card4 = QtWidgets.QLabel(parent=self.frame_opp2_card4)
-        self.label_opp2_card4.setText("")
-        self.label_opp2_card4.setScaledContents(True)
-        self.label_opp2_card4.setObjectName("label_opp2_card4")
-        self.verticalLayout_20.addWidget(self.label_opp2_card4)
-        self.gridLayout_3.addWidget(self.frame_opp2_card4, 2, 0, 1, 1)
-        self.frame_opp2_card3 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card3.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card3.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card3.setObjectName("frame_opp2_card3")
-        self.verticalLayout_22 = QtWidgets.QVBoxLayout(self.frame_opp2_card3)
-        self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_22.setSpacing(0)
-        self.verticalLayout_22.setObjectName("verticalLayout_22")
-        self.label_opp2_card3 = QtWidgets.QLabel(parent=self.frame_opp2_card3)
-        self.label_opp2_card3.setText("")
-        self.label_opp2_card3.setScaledContents(True)
-        self.label_opp2_card3.setObjectName("label_opp2_card3")
-        self.verticalLayout_22.addWidget(self.label_opp2_card3)
-        self.gridLayout_3.addWidget(self.frame_opp2_card3, 3, 0, 1, 1)
-        self.frame_opp2_card6 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card6.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card6.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card6.setObjectName("frame_opp2_card6")
-        self.verticalLayout_27 = QtWidgets.QVBoxLayout(self.frame_opp2_card6)
-        self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_27.setSpacing(0)
-        self.verticalLayout_27.setObjectName("verticalLayout_27")
-        self.label_opp2_card6 = QtWidgets.QLabel(parent=self.frame_opp2_card6)
-        self.label_opp2_card6.setText("")
-        self.label_opp2_card6.setScaledContents(True)
-        self.label_opp2_card6.setObjectName("label_opp2_card6")
-        self.verticalLayout_27.addWidget(self.label_opp2_card6)
-        self.gridLayout_3.addWidget(self.frame_opp2_card6, 6, 1, 1, 1)
-        self.frame_opp2_card8 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card8.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card8.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card8.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card8.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card8.setObjectName("frame_opp2_card8")
-        self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.frame_opp2_card8)
-        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_23.setSpacing(0)
-        self.verticalLayout_23.setObjectName("verticalLayout_23")
-        self.label_opp2_card8 = QtWidgets.QLabel(parent=self.frame_opp2_card8)
-        self.label_opp2_card8.setText("")
-        self.label_opp2_card8.setScaledContents(True)
-        self.label_opp2_card8.setObjectName("label_opp2_card8")
-        self.verticalLayout_23.addWidget(self.label_opp2_card8)
-        self.gridLayout_3.addWidget(self.frame_opp2_card8, 3, 1, 1, 1)
-        self.frame_opp2_card7 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card7.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card7.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card7.setObjectName("frame_opp2_card7")
-        self.verticalLayout_25 = QtWidgets.QVBoxLayout(self.frame_opp2_card7)
-        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_25.setSpacing(0)
-        self.verticalLayout_25.setObjectName("verticalLayout_25")
-        self.label_opp2_card7 = QtWidgets.QLabel(parent=self.frame_opp2_card7)
-        self.label_opp2_card7.setText("")
-        self.label_opp2_card7.setScaledContents(True)
-        self.label_opp2_card7.setObjectName("label_opp2_card7")
-        self.verticalLayout_25.addWidget(self.label_opp2_card7)
-        self.gridLayout_3.addWidget(self.frame_opp2_card7, 4, 1, 1, 1)
-        self.frame_opp2_card9 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card9.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card9.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card9.setObjectName("frame_opp2_card9")
-        self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.frame_opp2_card9)
+        self.labe_blackjack_text = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text.setStyleSheet("")
+        self.labe_blackjack_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text.setObjectName("labe_blackjack_text")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text)
+        self.labe_blackjack_text_2 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_2.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_2.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_2.setStyleSheet("")
+        self.labe_blackjack_text_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_2.setObjectName("labe_blackjack_text_2")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_2)
+        self.labe_blackjack_text_3 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_3.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_3.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_3.setStyleSheet("")
+        self.labe_blackjack_text_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_3.setObjectName("labe_blackjack_text_3")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_3)
+        self.labe_blackjack_text_4 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_4.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_4.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_4.setStyleSheet("")
+        self.labe_blackjack_text_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_4.setObjectName("labe_blackjack_text_4")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_4)
+        self.labe_blackjack_text_5 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_5.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_5.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_5.setStyleSheet("")
+        self.labe_blackjack_text_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_5.setObjectName("labe_blackjack_text_5")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_5)
+        self.labe_blackjack_text_6 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_6.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_6.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_6.setStyleSheet("")
+        self.labe_blackjack_text_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_6.setObjectName("labe_blackjack_text_6")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_6)
+        self.labe_blackjack_text_7 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_7.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_7.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_7.setStyleSheet("")
+        self.labe_blackjack_text_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_7.setObjectName("labe_blackjack_text_7")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_7)
+        self.labe_blackjack_text_8 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_8.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_8.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_8.setStyleSheet("")
+        self.labe_blackjack_text_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_8.setObjectName("labe_blackjack_text_8")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_8)
+        self.labe_blackjack_text_9 = QtWidgets.QLabel(parent=self.frame_blackjack_text)
+        self.labe_blackjack_text_9.setMinimumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_9.setMaximumSize(QtCore.QSize(25, 25))
+        self.labe_blackjack_text_9.setStyleSheet("")
+        self.labe_blackjack_text_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.labe_blackjack_text_9.setObjectName("labe_blackjack_text_9")
+        self.verticalLayout_20.addWidget(self.labe_blackjack_text_9)
+        self.horizontalLayout_28.addWidget(self.frame_blackjack_text)
+        self.frame_dealer_total = QtWidgets.QFrame(parent=self.frame_table)
+        self.frame_dealer_total.setMinimumSize(QtCore.QSize(55, 220))
+        self.frame_dealer_total.setMaximumSize(QtCore.QSize(55, 220))
+        self.frame_dealer_total.setStyleSheet("")
+        self.frame_dealer_total.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_total.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_total.setObjectName("frame_dealer_total")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_dealer_total)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.button_deck_2 = QtWidgets.QPushButton(parent=self.frame_dealer_total)
+        self.button_deck_2.setMinimumSize(QtCore.QSize(50, 65))
+        self.button_deck_2.setMaximumSize(QtCore.QSize(50, 65))
+        self.button_deck_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.button_deck_2.setStyleSheet("#button_deck {\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"\n"
+"}")
+        self.button_deck_2.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/deck/card-deck.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.button_deck_2.setIcon(icon)
+        self.button_deck_2.setIconSize(QtCore.QSize(65, 65))
+        self.button_deck_2.setObjectName("button_deck_2")
+        self.verticalLayout_7.addWidget(self.button_deck_2, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.frame_dealer_total_inner = QtWidgets.QFrame(parent=self.frame_dealer_total)
+        self.frame_dealer_total_inner.setMinimumSize(QtCore.QSize(50, 80))
+        self.frame_dealer_total_inner.setMaximumSize(QtCore.QSize(50, 80))
+        self.frame_dealer_total_inner.setStyleSheet("")
+        self.frame_dealer_total_inner.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_dealer_total_inner.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_dealer_total_inner.setObjectName("frame_dealer_total_inner")
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.frame_dealer_total_inner)
+        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16.setSpacing(0)
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_16.addItem(spacerItem18)
+        self.label_dealer_total_text = QtWidgets.QLabel(parent=self.frame_dealer_total_inner)
+        self.label_dealer_total_text.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.label_dealer_total_text.setStyleSheet("#label_stand{\n"
+"    font: 13pt \"Forte\";\n"
+"    color: rgba(255,255,255,150);\n"
+"    background-color: transparent;\n"
+"}")
+        self.label_dealer_total_text.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_dealer_total_text.setObjectName("label_dealer_total_text")
+        self.verticalLayout_16.addWidget(self.label_dealer_total_text, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.label_dealer_total = QtWidgets.QLabel(parent=self.frame_dealer_total_inner)
+        self.label_dealer_total.setMinimumSize(QtCore.QSize(45, 45))
+        self.label_dealer_total.setMaximumSize(QtCore.QSize(45, 45))
+        self.label_dealer_total.setStyleSheet("")
+        self.label_dealer_total.setText("")
+        self.label_dealer_total.setScaledContents(True)
+        self.label_dealer_total.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_dealer_total.setObjectName("label_dealer_total")
+        self.verticalLayout_16.addWidget(self.label_dealer_total, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        spacerItem19 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_16.addItem(spacerItem19)
+        self.verticalLayout_7.addWidget(self.frame_dealer_total_inner, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.button_deck_6 = QtWidgets.QPushButton(parent=self.frame_dealer_total)
+        self.button_deck_6.setMinimumSize(QtCore.QSize(50, 65))
+        self.button_deck_6.setMaximumSize(QtCore.QSize(50, 65))
+        self.button_deck_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.button_deck_6.setStyleSheet("#button_deck {\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"\n"
+"}")
+        self.button_deck_6.setText("")
+        self.button_deck_6.setIcon(icon)
+        self.button_deck_6.setIconSize(QtCore.QSize(65, 65))
+        self.button_deck_6.setObjectName("button_deck_6")
+        self.verticalLayout_7.addWidget(self.button_deck_6, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.horizontalLayout_28.addWidget(self.frame_dealer_total)
+        self.label_dealer_status = QtWidgets.QLabel(parent=self.frame_table)
+        self.label_dealer_status.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_dealer_status.setMaximumSize(QtCore.QSize(50, 50))
+        self.label_dealer_status.setText("")
+        self.label_dealer_status.setScaledContents(True)
+        self.label_dealer_status.setObjectName("label_dealer_status")
+        self.horizontalLayout_28.addWidget(self.label_dealer_status)
+        self.frame_table_inner = QtWidgets.QFrame(parent=self.frame_table)
+        self.frame_table_inner.setMinimumSize(QtCore.QSize(300, 320))
+        self.frame_table_inner.setMaximumSize(QtCore.QSize(300, 320))
+        self.frame_table_inner.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_table_inner.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_table_inner.setObjectName("frame_table_inner")
+        self.frame_seat2_chips = QtWidgets.QFrame(parent=self.frame_table_inner)
+        self.frame_seat2_chips.setGeometry(QtCore.QRect(100, 10, 106, 60))
+        self.frame_seat2_chips.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat2_chips.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat2_chips.setObjectName("frame_seat2_chips")
+        self.horizontalLayout_27 = QtWidgets.QHBoxLayout(self.frame_seat2_chips)
+        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
+        self.label_seat2_chips_image = QtWidgets.QLabel(parent=self.frame_seat2_chips)
+        self.label_seat2_chips_image.setMinimumSize(QtCore.QSize(40, 40))
+        self.label_seat2_chips_image.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_seat2_chips_image.setStyleSheet("")
+        self.label_seat2_chips_image.setText("")
+        self.label_seat2_chips_image.setScaledContents(True)
+        self.label_seat2_chips_image.setObjectName("label_seat2_chips_image")
+        self.horizontalLayout_27.addWidget(self.label_seat2_chips_image)
+        self.label_seat2_chips_image_2 = QtWidgets.QLabel(parent=self.frame_seat2_chips)
+        self.label_seat2_chips_image_2.setMinimumSize(QtCore.QSize(40, 40))
+        self.label_seat2_chips_image_2.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_seat2_chips_image_2.setText("")
+        self.label_seat2_chips_image_2.setScaledContents(True)
+        self.label_seat2_chips_image_2.setObjectName("label_seat2_chips_image_2")
+        self.horizontalLayout_27.addWidget(self.label_seat2_chips_image_2)
+        self.frame_seat1_chips = QtWidgets.QFrame(parent=self.frame_table_inner)
+        self.frame_seat1_chips.setGeometry(QtCore.QRect(100, 250, 106, 60))
+        self.frame_seat1_chips.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_seat1_chips.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_seat1_chips.setObjectName("frame_seat1_chips")
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.frame_seat1_chips)
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.label_seat1_chips_image = QtWidgets.QLabel(parent=self.frame_seat1_chips)
+        self.label_seat1_chips_image.setMinimumSize(QtCore.QSize(40, 40))
+        self.label_seat1_chips_image.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_seat1_chips_image.setStyleSheet("")
+        self.label_seat1_chips_image.setText("")
+        self.label_seat1_chips_image.setScaledContents(True)
+        self.label_seat1_chips_image.setObjectName("label_seat1_chips_image")
+        self.horizontalLayout_26.addWidget(self.label_seat1_chips_image)
+        self.label_seat1_chips_image_2 = QtWidgets.QLabel(parent=self.frame_seat1_chips)
+        self.label_seat1_chips_image_2.setMinimumSize(QtCore.QSize(40, 40))
+        self.label_seat1_chips_image_2.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_seat1_chips_image_2.setText("")
+        self.label_seat1_chips_image_2.setScaledContents(True)
+        self.label_seat1_chips_image_2.setObjectName("label_seat1_chips_image_2")
+        self.horizontalLayout_26.addWidget(self.label_seat1_chips_image_2)
+        self.horizontalLayout_28.addWidget(self.frame_table_inner)
+        self.gridlayout.addWidget(self.frame_table, 1, 0, 1, 1)
+        self.horizontalLayout_4.addWidget(self.frame_game)
+        self.frame_options = QtWidgets.QFrame(parent=self.frame_content)
+        self.frame_options.setStyleSheet("#groupbox_bet {\n"
+"    font: 700 20pt \"Forte\";\n"
+"    color:  rgba(212,185,58,80);\n"
+"    background-color: rgba(33,44,38,180);\n"
+"    border-radius: 20px;    \n"
+"    margin-top: 0.9em;\n"
+"}\n"
+"\n"
+"#groupbox_bet::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* Başlığı ortalamak için */\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_bet QLabel {\n"
+"    background-color: transparent;\n"
+"    font: 700 12pt \"Forte\";\n"
+"    color: rgba(212,185,58,70)\n"
+"}\n"
+"\n"
+"#groupbox_bet #label_stake_amount {\n"
+"    font: 700 16pt \"Forte\";\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_bet QPushButton {\n"
+"    background-color: rgba(212, 185, 58,20);\n"
+"    border-radius: 10px;\n"
+"    font: 700 16pt \"Forte\";\n"
+"    color: rgb(212, 185, 58);\n"
+"}\n"
+"\n"
+"#groupbox_bet QPushButton::hover {\n"
+"    background-color:rgba(212, 185, 58,50);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#groupbox_bet QSlider {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"#groupbox_bet QSlider::groove:horizontal {\n"
+"    height: 20px;\n"
+"    background-color: rgba(0,0,0,20);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"#groupbox_bet #frame_stake {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"#groupbox_bet #label_bet_info {\n"
+"\n"
+"    font: 10pt \"Forte\";\n"
+"    color: rgba(212,185,58,35);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/* --------------------------------------------------------*/\n"
+"\n"
+"\n"
+"#groupbox_move {\n"
+"    font: 700 20pt \"Forte\";\n"
+"    color: rgba(212,185,58,80);\n"
+"    background-color: rgba(33,44,38,180);\n"
+"    border-radius: 20px;    \n"
+"    margin-top: 0.9em;\n"
+"}\n"
+"\n"
+"#groupbox_move::title{\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* Başlığı ortalamak için */\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_move #label_stake_amount {\n"
+"    font: 700 16pt \"Forte\";\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_move QPushButton {\n"
+"    background-color: rgba(212, 185, 58,20);\n"
+"    border-radius: 20px;\n"
+"    font: 700 16pt \"Forte\";\n"
+"    color: rgb(212, 185, 58);\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_move #frame_stake {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"#groupbox_move #frame_stand_hit {\n"
+"    font: 700 16pt \"Forte\";\n"
+"    color:  rgb(150,150,150);\n"
+"    background-color:  transparent;\n"
+"    border-radius: 10px;    \n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#groupbox_move QPushButton {\n"
+"border:none;\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"#groupbox_move Line {\n"
+"background-color: rgba(212,185,58,30);\n"
+"}\n"
+"")
+        self.frame_options.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_options.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_options.setMidLineWidth(0)
+        self.frame_options.setObjectName("frame_options")
+        self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.frame_options)
+        self.verticalLayout_18.setContentsMargins(10, 40, 10, 40)
+        self.verticalLayout_18.setSpacing(10)
+        self.verticalLayout_18.setObjectName("verticalLayout_18")
+        self.frame_round = QtWidgets.QFrame(parent=self.frame_options)
+        self.frame_round.setMinimumSize(QtCore.QSize(100, 25))
+        self.frame_round.setMaximumSize(QtCore.QSize(100, 25))
+        self.frame_round.setStyleSheet("#frame_round {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"#frame_round * {\n"
+"background-color: transparent;\n"
+"color: rgba(212,185,58,255);\n"
+"font: 16pt \"Forte\";\n"
+"}\n"
+"\n"
+"")
+        self.frame_round.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_round.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_round.setObjectName("frame_round")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_round)
+        self.horizontalLayout_5.setContentsMargins(8, 0, 0, 0)
+        self.horizontalLayout_5.setSpacing(3)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.label_round = QtWidgets.QLabel(parent=self.frame_round)
+        self.label_round.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.label_round.setStyleSheet("")
+        self.label_round.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_round.setObjectName("label_round")
+        self.horizontalLayout_5.addWidget(self.label_round)
+        self.label_round_number = QtWidgets.QLabel(parent=self.frame_round)
+        self.label_round_number.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.label_round_number.setStyleSheet("")
+        self.label_round_number.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_round_number.setObjectName("label_round_number")
+        self.horizontalLayout_5.addWidget(self.label_round_number)
+        spacerItem20 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem20)
+        self.verticalLayout_18.addWidget(self.frame_round)
+        self.line = QtWidgets.QFrame(parent=self.frame_options)
+        self.line.setMinimumSize(QtCore.QSize(195, 2))
+        self.line.setMaximumSize(QtCore.QSize(195, 2))
+        self.line.setStyleSheet("#line {\n"
+"background-color: rgba(212,185,58,255);\n"
+"border-radius: 1px;\n"
+"}")
+        self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout_18.addWidget(self.line, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.groupbox_board = QtWidgets.QGroupBox(parent=self.frame_options)
+        self.groupbox_board.setEnabled(True)
+        self.groupbox_board.setMinimumSize(QtCore.QSize(200, 300))
+        self.groupbox_board.setMaximumSize(QtCore.QSize(200, 300))
+        self.groupbox_board.setStyleSheet("QGroupBox {\n"
+"    font: 700 20pt \"Forte\";\n"
+"    color:  rgba(212,185,58,255);\n"
+"    background-color: rgb(33,44,38);\n"
+"    border-radius: 20px;    \n"
+"    margin-top: 0.9em;\n"
+"    border: 1px solid rgb(212,185,58)\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* Başlığı ortalamak için */\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QGroupBox QLineEdit {\n"
+"    background-color: rgba(212,185,58,40);\n"
+"    border-radius: 10px;    \n"
+"    font: 700 16pt \"Forte\";\n"
+"    color: rgba(212,185,58,255);\n"
+"\n"
+"}\n"
+"\n"
+"QGroupBox QLabel {\n"
+"    background-color: transparent;\n"
+"    font: 700 12pt \"Forte\";\n"
+"    color: rgba(212,185,58, 100)\n"
+"}\n"
+"\n"
+"#label_stake_amount {\n"
+"    font: 700 16pt \"Forte\";\n"
+"}\n"
+"\n"
+"\n"
+"QGroupBox QPushButton {\n"
+"    background-color: rgba(212, 185, 58,20);\n"
+"    border-radius: 10px;\n"
+"    font: 700 16pt \"Forte\";\n"
+"    color: rgb(212, 185, 58);\n"
+"}\n"
+"\n"
+"QGroupBox QPushButton::hover {\n"
+"    background-color:rgba(212, 185, 58,50);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QGroupBox QSlider {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QGroupBox QSlider::groove:horizontal {\n"
+"    border: 1px solid rgb(212, 185, 58);\n"
+"    height: 10px;\n"
+"    background: rgba(212, 185, 58, 40);\n"
+"    border-radius: 6px;\n"
+"}\n"
+"\n"
+"QGroupBox QSlider::handle:horizontal {\n"
+"    background: rgb(180,180,180);\n"
+"    width: 10px;\n"
+"    height: 10px;\n"
+"    /* margin: -5px 0; Handle, groove\'da ortalanacak */\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QGroupBox QSlider::handle:horizontal:pressed {\n"
+"    background: rgb(212, 185, 58);\n"
+"}\n"
+"\n"
+"\n"
+"#frame_stake {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"Line {\n"
+"background-color: rgba(212,185,58,100);\n"
+"}\n"
+"\n"
+"#label_lp_lt")
+        self.groupbox_board.setObjectName("groupbox_board")
+        self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.groupbox_board)
+        self.verticalLayout_19.setContentsMargins(5, 3, 5, 3)
+        self.verticalLayout_19.setSpacing(0)
+        self.verticalLayout_19.setObjectName("verticalLayout_19")
+        self.frame_board_status = QtWidgets.QFrame(parent=self.groupbox_board)
+        self.frame_board_status.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_board_status.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_board_status.setObjectName("frame_board_status")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_board_status)
+        self.verticalLayout_5.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout_5.setSpacing(5)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_status = QtWidgets.QLabel(parent=self.frame_board_status)
+        self.label_status.setMinimumSize(QtCore.QSize(0, 20))
+        self.label_status.setMaximumSize(QtCore.QSize(16777215, 20))
+        font = QtGui.QFont()
+        font.setFamily("Forte")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label_status.setFont(font)
+        self.label_status.setStyleSheet("QLabel {\n"
+"    background-color: transparent;\n"
+"    font: 700 14pt \"Forte\";\n"
+"    color: rgba(255,255,255, 200)\n"
+"}")
+        self.label_status.setObjectName("label_status")
+        self.verticalLayout_5.addWidget(self.label_status)
+        self.frame_status_seat2 = QtWidgets.QFrame(parent=self.frame_board_status)
+        self.frame_status_seat2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_status_seat2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_status_seat2.setObjectName("frame_status_seat2")
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout(self.frame_status_seat2)
+        self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_29.setSpacing(5)
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.label_status_topseat_text = QtWidgets.QLabel(parent=self.frame_status_seat2)
+        self.label_status_topseat_text.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_topseat_text.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_topseat_text.setStyleSheet("")
+        self.label_status_topseat_text.setObjectName("label_status_topseat_text")
+        self.horizontalLayout_29.addWidget(self.label_status_topseat_text)
+        self.label_status_seat2 = QtWidgets.QLabel(parent=self.frame_status_seat2)
+        self.label_status_seat2.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_seat2.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_seat2.setStyleSheet("")
+        self.label_status_seat2.setObjectName("label_status_seat2")
+        self.horizontalLayout_29.addWidget(self.label_status_seat2)
+        spacerItem21 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_29.addItem(spacerItem21)
+        self.verticalLayout_5.addWidget(self.frame_status_seat2)
+        self.frame_status_seat1 = QtWidgets.QFrame(parent=self.frame_board_status)
+        self.frame_status_seat1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_status_seat1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_status_seat1.setObjectName("frame_status_seat1")
+        self.horizontalLayout_37 = QtWidgets.QHBoxLayout(self.frame_status_seat1)
+        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_37.setSpacing(5)
+        self.horizontalLayout_37.setObjectName("horizontalLayout_37")
+        self.label_status_seat1 = QtWidgets.QLabel(parent=self.frame_status_seat1)
+        self.label_status_seat1.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_seat1.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_seat1.setStyleSheet("")
+        self.label_status_seat1.setObjectName("label_status_seat1")
+        self.horizontalLayout_37.addWidget(self.label_status_seat1)
+        self.label_status_botseat_text = QtWidgets.QLabel(parent=self.frame_status_seat1)
+        self.label_status_botseat_text.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_botseat_text.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_botseat_text.setStyleSheet("")
+        self.label_status_botseat_text.setObjectName("label_status_botseat_text")
+        self.horizontalLayout_37.addWidget(self.label_status_botseat_text)
+        spacerItem22 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_37.addItem(spacerItem22)
+        self.verticalLayout_5.addWidget(self.frame_status_seat1)
+        self.frame_status_dealer = QtWidgets.QFrame(parent=self.frame_board_status)
+        self.frame_status_dealer.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_status_dealer.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_status_dealer.setObjectName("frame_status_dealer")
+        self.horizontalLayout_38 = QtWidgets.QHBoxLayout(self.frame_status_dealer)
+        self.horizontalLayout_38.setContentsMargins(10, 0, 0, 0)
+        self.horizontalLayout_38.setSpacing(5)
+        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
+        self.label_status_dealer_text = QtWidgets.QLabel(parent=self.frame_status_dealer)
+        self.label_status_dealer_text.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_dealer_text.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_dealer_text.setStyleSheet("")
+        self.label_status_dealer_text.setObjectName("label_status_dealer_text")
+        self.horizontalLayout_38.addWidget(self.label_status_dealer_text)
+        self.label_status_dealer = QtWidgets.QLabel(parent=self.frame_status_dealer)
+        self.label_status_dealer.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_status_dealer.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_status_dealer.setStyleSheet("")
+        self.label_status_dealer.setObjectName("label_status_dealer")
+        self.horizontalLayout_38.addWidget(self.label_status_dealer)
+        spacerItem23 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_38.addItem(spacerItem23)
+        self.verticalLayout_5.addWidget(self.frame_status_dealer)
+        self.verticalLayout_19.addWidget(self.frame_board_status)
+        self.line_board = QtWidgets.QFrame(parent=self.groupbox_board)
+        self.line_board.setMinimumSize(QtCore.QSize(150, 2))
+        self.line_board.setMaximumSize(QtCore.QSize(150, 2))
+        self.line_board.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line_board.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line_board.setObjectName("line_board")
+        self.verticalLayout_19.addWidget(self.line_board, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.frame_board_lp = QtWidgets.QFrame(parent=self.groupbox_board)
+        self.frame_board_lp.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_board_lp.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_board_lp.setObjectName("frame_board_lp")
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.frame_board_lp)
+        self.verticalLayout_14.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout_14.setSpacing(5)
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.frame_lp_lt = QtWidgets.QFrame(parent=self.frame_board_lp)
+        self.frame_lp_lt.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_lp_lt.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_lp_lt.setObjectName("frame_lp_lt")
+        self.verticalLayout_17 = QtWidgets.QVBoxLayout(self.frame_lp_lt)
+        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_17.setSpacing(5)
+        self.verticalLayout_17.setObjectName("verticalLayout_17")
+        self.label_lp = QtWidgets.QLabel(parent=self.frame_lp_lt)
+        self.label_lp.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp.setMaximumSize(QtCore.QSize(16777215, 15))
+        font = QtGui.QFont()
+        font.setFamily("Forte")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label_lp.setFont(font)
+        self.label_lp.setStyleSheet("QLabel {\n"
+"    background-color: transparent;\n"
+"    font: 700 14pt \"Forte\";\n"
+"    color: rgba(255,255,255, 200)\n"
+"}")
+        self.label_lp.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_lp.setObjectName("label_lp")
+        self.verticalLayout_17.addWidget(self.label_lp)
+        self.label_lp_lt = QtWidgets.QLabel(parent=self.frame_lp_lt)
+        self.label_lp_lt.setMinimumSize(QtCore.QSize(0, 20))
+        self.label_lp_lt.setMaximumSize(QtCore.QSize(16777215, 20))
+        font = QtGui.QFont()
+        font.setFamily("Forte")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label_lp_lt.setFont(font)
+        self.label_lp_lt.setStyleSheet("QLabel {\n"
+"    background-color: transparent;\n"
+"    font: 700 12pt \"Forte\";\n"
+"    color: rgba(255,255,255, 150)\n"
+"}")
+        self.label_lp_lt.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_lp_lt.setObjectName("label_lp_lt")
+        self.verticalLayout_17.addWidget(self.label_lp_lt)
+        self.verticalLayout_14.addWidget(self.frame_lp_lt)
+        self.frame_lp_seat2 = QtWidgets.QFrame(parent=self.frame_board_lp)
+        self.frame_lp_seat2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_lp_seat2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_lp_seat2.setObjectName("frame_lp_seat2")
+        self.horizontalLayout_44 = QtWidgets.QHBoxLayout(self.frame_lp_seat2)
+        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_44.setSpacing(6)
+        self.horizontalLayout_44.setObjectName("horizontalLayout_44")
+        self.label_lp_topseat = QtWidgets.QLabel(parent=self.frame_lp_seat2)
+        self.label_lp_topseat.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_topseat.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_topseat.setStyleSheet("")
+        self.label_lp_topseat.setObjectName("label_lp_topseat")
+        self.horizontalLayout_44.addWidget(self.label_lp_topseat)
+        self.label_lp_latest_seat2 = QtWidgets.QLabel(parent=self.frame_lp_seat2)
+        self.label_lp_latest_seat2.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_latest_seat2.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_latest_seat2.setStyleSheet("")
+        self.label_lp_latest_seat2.setObjectName("label_lp_latest_seat2")
+        self.horizontalLayout_44.addWidget(self.label_lp_latest_seat2)
+        self.label_lp_slash = QtWidgets.QLabel(parent=self.frame_lp_seat2)
+        self.label_lp_slash.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_slash.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_slash.setStyleSheet("")
+        self.label_lp_slash.setObjectName("label_lp_slash")
+        self.horizontalLayout_44.addWidget(self.label_lp_slash)
+        self.label_lp_total_seat2 = QtWidgets.QLabel(parent=self.frame_lp_seat2)
+        self.label_lp_total_seat2.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_total_seat2.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_total_seat2.setStyleSheet("")
+        self.label_lp_total_seat2.setObjectName("label_lp_total_seat2")
+        self.horizontalLayout_44.addWidget(self.label_lp_total_seat2)
+        spacerItem24 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_44.addItem(spacerItem24)
+        self.verticalLayout_14.addWidget(self.frame_lp_seat2)
+        self.frame_lp_seat1 = QtWidgets.QFrame(parent=self.frame_board_lp)
+        self.frame_lp_seat1.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_lp_seat1.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_lp_seat1.setObjectName("frame_lp_seat1")
+        self.horizontalLayout_42 = QtWidgets.QHBoxLayout(self.frame_lp_seat1)
+        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_42.setSpacing(6)
+        self.horizontalLayout_42.setObjectName("horizontalLayout_42")
+        self.label_lp_botseat = QtWidgets.QLabel(parent=self.frame_lp_seat1)
+        self.label_lp_botseat.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_botseat.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_botseat.setStyleSheet("")
+        self.label_lp_botseat.setObjectName("label_lp_botseat")
+        self.horizontalLayout_42.addWidget(self.label_lp_botseat)
+        self.label_lp_latest_seat1 = QtWidgets.QLabel(parent=self.frame_lp_seat1)
+        self.label_lp_latest_seat1.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_latest_seat1.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_latest_seat1.setStyleSheet("")
+        self.label_lp_latest_seat1.setObjectName("label_lp_latest_seat1")
+        self.horizontalLayout_42.addWidget(self.label_lp_latest_seat1)
+        self.label_lp_slash_2 = QtWidgets.QLabel(parent=self.frame_lp_seat1)
+        self.label_lp_slash_2.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_slash_2.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_slash_2.setStyleSheet("")
+        self.label_lp_slash_2.setObjectName("label_lp_slash_2")
+        self.horizontalLayout_42.addWidget(self.label_lp_slash_2)
+        self.label_lp_total_seat1 = QtWidgets.QLabel(parent=self.frame_lp_seat1)
+        self.label_lp_total_seat1.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_total_seat1.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_total_seat1.setStyleSheet("")
+        self.label_lp_total_seat1.setObjectName("label_lp_total_seat1")
+        self.horizontalLayout_42.addWidget(self.label_lp_total_seat1)
+        spacerItem25 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_42.addItem(spacerItem25)
+        self.verticalLayout_14.addWidget(self.frame_lp_seat1)
+        self.frame_lp_dealer = QtWidgets.QFrame(parent=self.frame_board_lp)
+        self.frame_lp_dealer.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_lp_dealer.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_lp_dealer.setObjectName("frame_lp_dealer")
+        self.horizontalLayout_39 = QtWidgets.QHBoxLayout(self.frame_lp_dealer)
+        self.horizontalLayout_39.setContentsMargins(10, 0, 0, 0)
+        self.horizontalLayout_39.setSpacing(5)
+        self.horizontalLayout_39.setObjectName("horizontalLayout_39")
+        self.label_lp_dealer_text = QtWidgets.QLabel(parent=self.frame_lp_dealer)
+        self.label_lp_dealer_text.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_dealer_text.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_dealer_text.setStyleSheet("")
+        self.label_lp_dealer_text.setObjectName("label_lp_dealer_text")
+        self.horizontalLayout_39.addWidget(self.label_lp_dealer_text)
+        self.label_lp_latest_dealer = QtWidgets.QLabel(parent=self.frame_lp_dealer)
+        self.label_lp_latest_dealer.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_latest_dealer.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_latest_dealer.setStyleSheet("")
+        self.label_lp_latest_dealer.setObjectName("label_lp_latest_dealer")
+        self.horizontalLayout_39.addWidget(self.label_lp_latest_dealer)
+        self.label_lp_slash_3 = QtWidgets.QLabel(parent=self.frame_lp_dealer)
+        self.label_lp_slash_3.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_slash_3.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_slash_3.setStyleSheet("")
+        self.label_lp_slash_3.setObjectName("label_lp_slash_3")
+        self.horizontalLayout_39.addWidget(self.label_lp_slash_3)
+        self.label_lp_total_dealer = QtWidgets.QLabel(parent=self.frame_lp_dealer)
+        self.label_lp_total_dealer.setMinimumSize(QtCore.QSize(0, 15))
+        self.label_lp_total_dealer.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_lp_total_dealer.setStyleSheet("")
+        self.label_lp_total_dealer.setObjectName("label_lp_total_dealer")
+        self.horizontalLayout_39.addWidget(self.label_lp_total_dealer)
+        spacerItem26 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_39.addItem(spacerItem26)
+        self.verticalLayout_14.addWidget(self.frame_lp_dealer)
+        self.verticalLayout_19.addWidget(self.frame_board_lp)
+        self.verticalLayout_18.addWidget(self.groupbox_board)
+        spacerItem27 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_18.addItem(spacerItem27)
+        self.groupbox_bet = QtWidgets.QGroupBox(parent=self.frame_options)
+        self.groupbox_bet.setEnabled(True)
+        self.groupbox_bet.setMinimumSize(QtCore.QSize(200, 100))
+        self.groupbox_bet.setMaximumSize(QtCore.QSize(200, 100))
+        self.groupbox_bet.setStyleSheet("")
+        self.groupbox_bet.setObjectName("groupbox_bet")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.groupbox_bet)
+        self.verticalLayout_8.setContentsMargins(10, 5, 10, 10)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.frame_stake = QtWidgets.QFrame(parent=self.groupbox_bet)
+        self.frame_stake.setMinimumSize(QtCore.QSize(0, 25))
+        self.frame_stake.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.frame_stake.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_stake.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_stake.setObjectName("frame_stake")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_stake)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_stake = QtWidgets.QLabel(parent=self.frame_stake)
+        self.label_stake.setObjectName("label_stake")
+        self.horizontalLayout_19.addWidget(self.label_stake)
+        spacerItem28 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_19.addItem(spacerItem28)
+        self.frame_bet_amount = QtWidgets.QFrame(parent=self.frame_stake)
+        self.frame_bet_amount.setMinimumSize(QtCore.QSize(100, 25))
+        self.frame_bet_amount.setMaximumSize(QtCore.QSize(100, 25))
+        self.frame_bet_amount.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_bet_amount.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_bet_amount.setObjectName("frame_bet_amount")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.frame_bet_amount)
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_23.setSpacing(3)
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        spacerItem29 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_23.addItem(spacerItem29)
+        self.label_stake_amount = QtWidgets.QLabel(parent=self.frame_bet_amount)
+        self.label_stake_amount.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.label_stake_amount.setText("")
+        self.label_stake_amount.setScaledContents(True)
+        self.label_stake_amount.setObjectName("label_stake_amount")
+        self.horizontalLayout_23.addWidget(self.label_stake_amount)
+        self.label_stake_dollar = QtWidgets.QLabel(parent=self.frame_bet_amount)
+        self.label_stake_dollar.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_stake_dollar.setObjectName("label_stake_dollar")
+        self.horizontalLayout_23.addWidget(self.label_stake_dollar)
+        self.horizontalLayout_19.addWidget(self.frame_bet_amount)
+        self.verticalLayout_8.addWidget(self.frame_stake)
+        self.slider_bet = QtWidgets.QSlider(parent=self.groupbox_bet)
+        self.slider_bet.setEnabled(True)
+        self.slider_bet.setMinimumSize(QtCore.QSize(180, 20))
+        self.slider_bet.setMaximumSize(QtCore.QSize(180, 20))
+        self.slider_bet.setMinimum(1)
+        self.slider_bet.setMaximum(10)
+        self.slider_bet.setSingleStep(1)
+        self.slider_bet.setPageStep(1)
+        self.slider_bet.setSliderPosition(1)
+        self.slider_bet.setTracking(True)
+        self.slider_bet.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.slider_bet.setObjectName("slider_bet")
+        self.verticalLayout_8.addWidget(self.slider_bet)
+        self.label_bet_info = QtWidgets.QLabel(parent=self.groupbox_bet)
+        self.label_bet_info.setStyleSheet("")
+        self.label_bet_info.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_bet_info.setObjectName("label_bet_info")
+        self.verticalLayout_8.addWidget(self.label_bet_info)
+        spacerItem30 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_8.addItem(spacerItem30)
+        self.verticalLayout_18.addWidget(self.groupbox_bet)
+        self.groupbox_move = QtWidgets.QGroupBox(parent=self.frame_options)
+        self.groupbox_move.setEnabled(True)
+        self.groupbox_move.setMinimumSize(QtCore.QSize(200, 155))
+        self.groupbox_move.setMaximumSize(QtCore.QSize(200, 155))
+        self.groupbox_move.setStyleSheet("\n"
+"\n"
+"\n"
+"")
+        self.groupbox_move.setObjectName("groupbox_move")
+        self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.groupbox_move)
         self.verticalLayout_21.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_21.setSpacing(0)
         self.verticalLayout_21.setObjectName("verticalLayout_21")
-        self.label_opp2_card9 = QtWidgets.QLabel(parent=self.frame_opp2_card9)
-        self.label_opp2_card9.setText("")
-        self.label_opp2_card9.setScaledContents(True)
-        self.label_opp2_card9.setObjectName("label_opp2_card9")
-        self.verticalLayout_21.addWidget(self.label_opp2_card9)
-        self.gridLayout_3.addWidget(self.frame_opp2_card9, 2, 1, 1, 1)
-        self.frame_opp2_card10 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card10.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card10.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card10.setObjectName("frame_opp2_card10")
-        self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.frame_opp2_card10)
-        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_19.setSpacing(0)
-        self.verticalLayout_19.setObjectName("verticalLayout_19")
-        self.label_opp2_card10 = QtWidgets.QLabel(parent=self.frame_opp2_card10)
-        self.label_opp2_card10.setText("")
-        self.label_opp2_card10.setScaledContents(True)
-        self.label_opp2_card10.setObjectName("label_opp2_card10")
-        self.verticalLayout_19.addWidget(self.label_opp2_card10)
-        self.gridLayout_3.addWidget(self.frame_opp2_card10, 1, 1, 1, 1)
-        self.frame_opp2_card2 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card2.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card2.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card2.setObjectName("frame_opp2_card2")
-        self.verticalLayout_24 = QtWidgets.QVBoxLayout(self.frame_opp2_card2)
-        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_24.setSpacing(0)
-        self.verticalLayout_24.setObjectName("verticalLayout_24")
-        self.label_opp2_card2 = QtWidgets.QLabel(parent=self.frame_opp2_card2)
-        self.label_opp2_card2.setText("")
-        self.label_opp2_card2.setScaledContents(True)
-        self.label_opp2_card2.setObjectName("label_opp2_card2")
-        self.verticalLayout_24.addWidget(self.label_opp2_card2)
-        self.gridLayout_3.addWidget(self.frame_opp2_card2, 4, 0, 1, 1)
-        self.frame_opp2_card5 = QtWidgets.QFrame(parent=self.frame_opp2)
-        self.frame_opp2_card5.setMinimumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card5.setMaximumSize(QtCore.QSize(50, 50))
-        self.frame_opp2_card5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_opp2_card5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_opp2_card5.setObjectName("frame_opp2_card5")
-        self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.frame_opp2_card5)
-        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_18.setSpacing(0)
-        self.verticalLayout_18.setObjectName("verticalLayout_18")
-        self.label_opp2_card5 = QtWidgets.QLabel(parent=self.frame_opp2_card5)
-        self.label_opp2_card5.setText("")
-        self.label_opp2_card5.setScaledContents(True)
-        self.label_opp2_card5.setObjectName("label_opp2_card5")
-        self.verticalLayout_18.addWidget(self.label_opp2_card5)
-        self.gridLayout_3.addWidget(self.frame_opp2_card5, 1, 0, 1, 1)
-        self.label_opp2_martini = QtWidgets.QLabel(parent=self.frame_opp2)
-        self.label_opp2_martini.setMinimumSize(QtCore.QSize(50, 50))
-        self.label_opp2_martini.setMaximumSize(QtCore.QSize(50, 50))
-        self.label_opp2_martini.setText("")
-        self.label_opp2_martini.setScaledContents(True)
-        self.label_opp2_martini.setObjectName("label_opp2_martini")
-        self.gridLayout_3.addWidget(self.label_opp2_martini, 0, 1, 1, 1)
-        self.gridlayout.addWidget(self.frame_opp2, 1, 2, 1, 1)
-        self.verticalLayout_4.addWidget(self.frame_game, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.button_double = QtWidgets.QPushButton(parent=self.groupbox_move)
+        self.button_double.setEnabled(True)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.button_double.sizePolicy().hasHeightForWidth())
+        self.button_double.setSizePolicy(sizePolicy)
+        self.button_double.setMinimumSize(QtCore.QSize(200, 60))
+        self.button_double.setMaximumSize(QtCore.QSize(200, 60))
+        self.button_double.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ClosedHandCursor))
+        self.button_double.setStyleSheet("padding: 25px;")
+        self.button_double.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/deck/double-up.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.button_double.setIcon(icon1)
+        self.button_double.setIconSize(QtCore.QSize(50, 50))
+        self.button_double.setObjectName("button_double")
+        self.verticalLayout_21.addWidget(self.button_double, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.line_move_1 = QtWidgets.QFrame(parent=self.groupbox_move)
+        self.line_move_1.setMinimumSize(QtCore.QSize(150, 2))
+        self.line_move_1.setMaximumSize(QtCore.QSize(150, 2))
+        self.line_move_1.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line_move_1.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line_move_1.setObjectName("line_move_1")
+        self.verticalLayout_21.addWidget(self.line_move_1, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        spacerItem31 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_21.addItem(spacerItem31)
+        self.frame_stand_hit = QtWidgets.QFrame(parent=self.groupbox_move)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame_stand_hit.sizePolicy().hasHeightForWidth())
+        self.frame_stand_hit.setSizePolicy(sizePolicy)
+        self.frame_stand_hit.setMinimumSize(QtCore.QSize(200, 60))
+        self.frame_stand_hit.setMaximumSize(QtCore.QSize(200, 60))
+        self.frame_stand_hit.setStyleSheet("")
+        self.frame_stand_hit.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_stand_hit.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_stand_hit.setObjectName("frame_stand_hit")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.frame_stand_hit)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.button_stand = QtWidgets.QPushButton(parent=self.frame_stand_hit)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.button_stand.sizePolicy().hasHeightForWidth())
+        self.button_stand.setSizePolicy(sizePolicy)
+        self.button_stand.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.button_stand.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/deck/stand.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.button_stand.setIcon(icon2)
+        self.button_stand.setIconSize(QtCore.QSize(40, 40))
+        self.button_stand.setObjectName("button_stand")
+        self.horizontalLayout.addWidget(self.button_stand)
+        self.line_move_2 = QtWidgets.QFrame(parent=self.frame_stand_hit)
+        self.line_move_2.setMinimumSize(QtCore.QSize(2, 45))
+        self.line_move_2.setMaximumSize(QtCore.QSize(2, 45))
+        self.line_move_2.setFrameShape(QtWidgets.QFrame.Shape.VLine)
+        self.line_move_2.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line_move_2.setObjectName("line_move_2")
+        self.horizontalLayout.addWidget(self.line_move_2, 0, QtCore.Qt.AlignmentFlag.AlignTop)
+        self.button_hit = QtWidgets.QPushButton(parent=self.frame_stand_hit)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.button_hit.sizePolicy().hasHeightForWidth())
+        self.button_hit.setSizePolicy(sizePolicy)
+        self.button_hit.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.button_hit.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/deck/hit.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.button_hit.setIcon(icon3)
+        self.button_hit.setIconSize(QtCore.QSize(40, 40))
+        self.button_hit.setObjectName("button_hit")
+        self.horizontalLayout.addWidget(self.button_hit)
+        self.verticalLayout_21.addWidget(self.frame_stand_hit, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.verticalLayout_18.addWidget(self.groupbox_move)
+        self.horizontalLayout_4.addWidget(self.frame_options)
+        self.verticalLayout_4.addWidget(self.frame_content)
         self.frame_menu = QtWidgets.QFrame(parent=self.page_2_game)
-        self.frame_menu.setMinimumSize(QtCore.QSize(700, 75))
-        self.frame_menu.setMaximumSize(QtCore.QSize(700, 75))
+        self.frame_menu.setMinimumSize(QtCore.QSize(830, 75))
+        self.frame_menu.setMaximumSize(QtCore.QSize(762, 75))
         self.frame_menu.setStyleSheet("#frame_menu {\n"
-"background-color: rgba(39,52,45,255);\n"
-"border: 4px solid black;\n"
-"border-top-left-radius: 20px;\n"
-"border-top-right-radius: 20px;\n"
+"border-top-right-radius: 75px;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0.95, stop:0.90 rgb(45, 20, 9),  stop:1 rgba(212,185,58,30));\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton::hover {\n"
@@ -1925,53 +2484,55 @@ class Ui_MainWindow(object):
 "font: 87 32pt \"Arial Black\";\n"
 "color: rgb(250,251,255);\n"
 "border-radius: 40px;\n"
-"}")
+"}\n"
+"\n"
+"#label_announce {\n"
+"margin: 0 10 0 0;\n"
+"}\n"
+"")
         self.frame_menu.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_menu.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_menu.setObjectName("frame_menu")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_menu)
-        self.gridLayout_5.setContentsMargins(10, 0, 5, 0)
+        self.gridLayout_5.setContentsMargins(12, 0, 10, 0)
+        self.gridLayout_5.setHorizontalSpacing(8)
+        self.gridLayout_5.setVerticalSpacing(6)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        self.button_reset = QtWidgets.QPushButton(parent=self.frame_menu)
-        self.button_reset.setMinimumSize(QtCore.QSize(100, 35))
-        self.button_reset.setMaximumSize(QtCore.QSize(100, 35))
-        self.button_reset.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.button_reset.setObjectName("button_reset")
-        self.gridLayout_5.addWidget(self.button_reset, 0, 0, 1, 1)
         self.button_menu = QtWidgets.QPushButton(parent=self.frame_menu)
-        self.button_menu.setMinimumSize(QtCore.QSize(100, 35))
-        self.button_menu.setMaximumSize(QtCore.QSize(100, 35))
+        self.button_menu.setMinimumSize(QtCore.QSize(80, 35))
+        self.button_menu.setMaximumSize(QtCore.QSize(80, 35))
         self.button_menu.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.button_menu.setObjectName("button_menu")
         self.gridLayout_5.addWidget(self.button_menu, 0, 1, 1, 1)
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.gridLayout_5.addItem(spacerItem6, 0, 2, 1, 1)
+        spacerItem32 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_5.addItem(spacerItem32, 0, 2, 1, 1)
         self.frame_announce = QtWidgets.QFrame(parent=self.frame_menu)
-        self.frame_announce.setMinimumSize(QtCore.QSize(400, 0))
-        self.frame_announce.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.frame_announce.setMinimumSize(QtCore.QSize(600, 0))
+        self.frame_announce.setMaximumSize(QtCore.QSize(600, 16777215))
         self.frame_announce.setStyleSheet("#label_announce {\n"
-"font: 700 16pt \"Forte\";;\n"
+"font: 700 18pt \"Forte\";;\n"
 "}\n"
 "\n"
 "#label_cd {\n"
 "font: 700 32pt \"Forte\";\n"
 "color: rgba(212,185,58,255);\n"
-"background-color: rgba(255,255,255,15);\n"
-"border-radius: 20px;\n"
+"background-color: transparent;\n"
 "}\n"
 "")
         self.frame_announce.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_announce.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_announce.setObjectName("frame_announce")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_announce)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 10, 0)
         self.horizontalLayout_3.setSpacing(5)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem7)
+        spacerItem33 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem33)
         self.label_announce = QtWidgets.QLabel(parent=self.frame_announce)
-        self.label_announce.setMinimumSize(QtCore.QSize(250, 0))
+        self.label_announce.setMinimumSize(QtCore.QSize(530, 0))
+        self.label_announce.setMaximumSize(QtCore.QSize(530, 16777215))
         self.label_announce.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.label_announce.setText("")
         self.label_announce.setScaledContents(False)
         self.label_announce.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_announce.setObjectName("label_announce")
@@ -1980,14 +2541,19 @@ class Ui_MainWindow(object):
         self.label_cd.setEnabled(True)
         self.label_cd.setMinimumSize(QtCore.QSize(50, 0))
         self.label_cd.setMaximumSize(QtCore.QSize(99999, 16777215))
-        self.label_cd.setText("")
         self.label_cd.setTextFormat(QtCore.Qt.TextFormat.PlainText)
         self.label_cd.setScaledContents(False)
         self.label_cd.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_cd.setObjectName("label_cd")
         self.horizontalLayout_3.addWidget(self.label_cd, 0, QtCore.Qt.AlignmentFlag.AlignRight)
         self.gridLayout_5.addWidget(self.frame_announce, 0, 3, 1, 1)
-        self.verticalLayout_4.addWidget(self.frame_menu, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.button_reset = QtWidgets.QPushButton(parent=self.frame_menu)
+        self.button_reset.setMinimumSize(QtCore.QSize(80, 35))
+        self.button_reset.setMaximumSize(QtCore.QSize(80, 35))
+        self.button_reset.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.button_reset.setObjectName("button_reset")
+        self.gridLayout_5.addWidget(self.button_reset, 0, 0, 1, 1)
+        self.verticalLayout_4.addWidget(self.frame_menu, 0, QtCore.Qt.AlignmentFlag.AlignLeft)
         self.stackedwidget_content.addWidget(self.page_2_game)
         self.verticalLayout.addWidget(self.stackedwidget_content)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -2015,14 +2581,59 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(0, _translate("MainWindow", "None"))
         self.label_agent_duel_a2.setText(_translate("MainWindow", "Agent 2"))
         self.comboBox_4.setItemText(0, _translate("MainWindow", "None"))
-        self.label_agent_duel_a3.setText(_translate("MainWindow", "Agent 3"))
-        self.comboBox_5.setItemText(0, _translate("MainWindow", "None"))
         self.button_opp_game_play_3.setText(_translate("MainWindow", "Play!"))
         self.button_exit.setText(_translate("MainWindow", "Exit"))
         self.by_anil_ergan.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">by Anıl ERGAN</p></body></html>"))
-        self.button_reset.setText(_translate("MainWindow", "Reset"))
+        self.label_seat2_budget_text.setText(_translate("MainWindow", "budget"))
+        self.label_seat2_budget_dollar.setText(_translate("MainWindow", "$"))
+        self.label_seat2_budget_amount.setText(_translate("MainWindow", "<html><head/><body><p align=\"right\"><br/></p></body></html>"))
+        self.label_seat2_total_text.setText(_translate("MainWindow", "total"))
+        self.label_seat1_budget_dollar.setText(_translate("MainWindow", "$"))
+        self.label_seat1_budget_amount.setText(_translate("MainWindow", "<html><head/><body><p align=\"right\">10</p><p align=\"right\"><br/></p></body></html>"))
+        self.label_seat1_budget_text.setText(_translate("MainWindow", "budget"))
+        self.label_seat1_total_text.setText(_translate("MainWindow", "total"))
+        self.labe_blackjack_text.setText(_translate("MainWindow", "<html><head/><body><p>B</p></body></html>"))
+        self.labe_blackjack_text_2.setText(_translate("MainWindow", "<html><head/><body><p>L</p></body></html>"))
+        self.labe_blackjack_text_3.setText(_translate("MainWindow", "<html><head/><body><p>A</p></body></html>"))
+        self.labe_blackjack_text_4.setText(_translate("MainWindow", "<html><head/><body><p>C</p></body></html>"))
+        self.labe_blackjack_text_5.setText(_translate("MainWindow", "<html><head/><body><p>K</p></body></html>"))
+        self.labe_blackjack_text_6.setText(_translate("MainWindow", "<html><head/><body><p>J</p></body></html>"))
+        self.labe_blackjack_text_7.setText(_translate("MainWindow", "<html><head/><body><p>A</p></body></html>"))
+        self.labe_blackjack_text_8.setText(_translate("MainWindow", "<html><head/><body><p>C</p></body></html>"))
+        self.labe_blackjack_text_9.setText(_translate("MainWindow", "<html><head/><body><p>K</p></body></html>"))
+        self.label_dealer_total_text.setText(_translate("MainWindow", "total"))
+        self.label_round.setText(_translate("MainWindow", "Round:"))
+        self.label_round_number.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
+        self.groupbox_board.setTitle(_translate("MainWindow", "Board"))
+        self.label_status.setText(_translate("MainWindow", "Status"))
+        self.label_status_topseat_text.setText(_translate("MainWindow", "top seat:"))
+        self.label_status_seat2.setText(_translate("MainWindow", "-"))
+        self.label_status_seat1.setText(_translate("MainWindow", "bot seat:"))
+        self.label_status_botseat_text.setText(_translate("MainWindow", "-"))
+        self.label_status_dealer_text.setText(_translate("MainWindow", "dealer:"))
+        self.label_status_dealer.setText(_translate("MainWindow", "-"))
+        self.label_lp.setText(_translate("MainWindow", "Loss/Profit"))
+        self.label_lp_lt.setText(_translate("MainWindow", "latest / total"))
+        self.label_lp_topseat.setText(_translate("MainWindow", "top seat:"))
+        self.label_lp_latest_seat2.setText(_translate("MainWindow", "-"))
+        self.label_lp_slash.setText(_translate("MainWindow", "/"))
+        self.label_lp_total_seat2.setText(_translate("MainWindow", "-"))
+        self.label_lp_botseat.setText(_translate("MainWindow", "bot seat:"))
+        self.label_lp_latest_seat1.setText(_translate("MainWindow", "-"))
+        self.label_lp_slash_2.setText(_translate("MainWindow", "/"))
+        self.label_lp_total_seat1.setText(_translate("MainWindow", "-"))
+        self.label_lp_dealer_text.setText(_translate("MainWindow", "dealer:"))
+        self.label_lp_latest_dealer.setText(_translate("MainWindow", "-"))
+        self.label_lp_slash_3.setText(_translate("MainWindow", "/"))
+        self.label_lp_total_dealer.setText(_translate("MainWindow", "-"))
+        self.groupbox_bet.setTitle(_translate("MainWindow", "Place Your Bet!"))
+        self.label_stake.setText(_translate("MainWindow", "Stake"))
+        self.label_stake_dollar.setText(_translate("MainWindow", "$"))
+        self.label_bet_info.setText(_translate("MainWindow", "drag the coin horizontal"))
+        self.groupbox_move.setTitle(_translate("MainWindow", "Move"))
         self.button_menu.setText(_translate("MainWindow", "Menu"))
         self.label_announce.setToolTip(_translate("MainWindow", "<html><head/><body><p>Welcome to Blackjack!</p></body></html>"))
         self.label_announce.setWhatsThis(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
-        self.label_announce.setText(_translate("MainWindow", "Welcome!"))
         self.label_cd.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>10</p></body></html>"))
+        self.label_cd.setText(_translate("MainWindow", "10"))
+        self.button_reset.setText(_translate("MainWindow", "Reset"))

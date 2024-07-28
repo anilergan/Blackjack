@@ -1,38 +1,29 @@
-class Parent:
-    def __init__(self):
-        print('Parent is initialized.')
-        self.parent_attr = 10
-        
-    
-    def change_parent_attr(self):
-        self.parent_attr = 99
-        
+liste = ['seat1', 'seat2', 'seat3', 'seat1']
 
-    def display_parent_attr(self):
-        print('Parent attr:', self.parent_attr)
+dict1 = {key: value for key, value in zip([item for item in liste if item != 'seat1'], [10]*len(liste))}
+print(dict1)
 
-    def craete_sub_class_object(self):
-        sub_class_obj = Child()
-        sub_class_obj.call_super_class_object()
-        
+# print(liste.count('seat1'))
 
+# dict1 = {
+#     'seat1': None, 
+#     'seat2': None,
+# }
 
-class Child(Parent):
-    def __init__(self):
-        print('Child is initialized.')
-        super().__init__()
-        print('Childs super is initialized.')
+# dict2 = {
+#     'hey': 'selam'
+# }
 
-    def call_super_class_object(self):
-        print('Child method is called')
-        self.change_parent_attr()
-        self.display_parent_attr()
-    
-    
+# if None not in dict
+# u = dict1.values()).count(None)
 
-parent_obj = Parent()
-parent_obj.craete_sub_class_object()
+# print(u)
+
+# import ss
+
+# print(ss.ss_groupbox_bet_active)
 
 
+# set1 = set()
 
-
+# print(type(set1))

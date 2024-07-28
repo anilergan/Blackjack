@@ -28,9 +28,62 @@ class BlackjackDynamics():
         # Hands:  Bir oyuncunun elindeki kartlara "hand" denir. Blackjack'te oyuncular ellerini oluştururken veya kararlar alırken "hand" terimi sıkça kullanılır.
         self.hands = {
             'dealer': [],
-            'table1': [],
-            'table2': [],
-            'table3': [],
+            'seat1': [],
+            'seat2': [],
         }
 
-        self.players = set(['dealer', 'agent', 'opp1', 'opp2'])
+        self.hand_values = {
+            'dealer': 0,
+            'seat1': 0,
+            'seat2': 0,
+        } 
+
+        self.player_status = {
+            'dealer': None,
+            'seat1': None,
+            'seat2': None
+        }
+
+        self.player_loss_profit = {
+
+        }
+
+        self.players_stand = set()
+        self.players_bust = set()
+
+        self.stakes = {
+            'seat1': None,
+            'seat2': None
+        }
+
+       
+        self.house = 100  # it's random number but 100 picked to make it easy to calculate gain/loss of house
+
+
+
+    def update_hand_values(self):
+        for player, hand in self.hands.items():
+            ace_num = hand.count('A')
+            total = 0
+            for card in hand:
+                total += self.card_values[card]
+                if total > 21 and ace_num != 0:
+                    total -= 10
+                    ace_num -= 1
+            self.hand_values[player] = total
+    
+
+
+    def update_status(self, player:str, status:str):
+        possible_status = ['in play', 'stand', 'win', 'draw', 'bust', 'double', 'double bust', 'double win']
+        if status not in possible_status:
+            raise Exception('Status could not be updated: VALID STATUS.')
+        
+        if player not in self.players:
+            raise Exception('Status could not be updated: VALID PLAYER')
+        
+        self.player_status[player] = status
+            
+
+        
+

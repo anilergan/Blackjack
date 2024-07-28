@@ -1,20 +1,17 @@
-import numpy as np
-import sys
-
-# sys.path.append("tic-tac-toe-dp//gui")
-from gui.blackjack import Ui_MainWindow
 import gui.resources_rc
+from gui.blackjack import Ui_MainWindow
+from play import Play
 
 # Game Dynamis
+import ss
 
 # User Interface Libs (PyQt6)
-from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton, QLabel
+from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton, QLabel, QFrame
 from PyQt6.QtGui import QPixmap, QIcon
-from PyQt6.QtCore import QTimer
+from PyQt6.QtCore import QTimer, QEventLoop, Qt
 
 
-
-class BlackjackGUI(QMainWindow):
+class BlackjackGUI(QMainWindow, Play):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
@@ -22,190 +19,690 @@ class BlackjackGUI(QMainWindow):
     
         # SIGNAL-SLOTS ------------------------
         # Login Page Buttons
-        self.ui.button_one_player_game.clicked.connect(self.func_button_one_player_game)
+        self.ui.button_one_player_game.clicked.connect(lambda: self.func_button_one_player_game(True))
 
+        self.ui.button_exit.clicked.connect(self.func_button_exit)
 
         # Game Page Slots
-        self.ui.button_hit.clicked.connect(self.func_hit)
-        self.ui.button_stand.clicked.connect(self.func_hit)
+        self.ui.button_hit.clicked.connect(lambda: self.func_hit())
+        self.ui.button_stand.clicked.connect(lambda: self.func_stand())
+        self.ui.button_double.clicked.connect(lambda: self.func_double())
+        self.ui.slider_bet.valueChanged.connect(self.func_bet_slider)
 
         # Game Page Menu
         self.ui.button_menu.clicked.connect(self.func_menu)
         self.ui.button_reset.clicked.connect(self.func_reset)
 
-        self.init_page()
+        self.menu_page()
         
     
-    # SİGNAL-SLOTS Functions
-    def func_button_one_player_game(self):
-        self.game_mode = 'one_player_game' 
-        from OnePlayerGame import OnePlayerGame
-        play_obj = OnePlayerGame(self.ui)
-        play_obj.play()
+# SİGNAL-SLOTS Functions -------------------------------------
 
+    # Menu page Signal-Slots ---------------------------------
+    def func_button_one_player_game(self, init:bool = False):
 
-    # UI SUPPORT FUNCTIONS ---------------------------------
-    def reset_game_page(self):
-        for frame in [self.ui.frame_dealer, self.ui.frame_agent, self.ui.frame_opp1, self.ui.frame_opp2]:
-            for label in frame.findChildren(QLabel):
-                label.setPixmap(QPixmap())  # Boş bir pixmap ile ikonu silmek için
+        self.game_mode = 'OnePlayerGame'
 
-                for label in [self.ui.label_dealer_total, self.ui.label_agent_total, self.ui.label_opp1_total, self.ui.label_opp2_total]:
-                    label.setText("")
+        self.round = 0
         
-        self.ui.label_announce.setText("")
-        self.ui.label_cd.setText("")
 
+        self.players = ['dealer', 'seat1']
+        
+        self.bankroll = {
+            'seat1': 10
+        }
+
+        self.bets = {
+            'seat1': 0  
+        }
+
+        self.move_buttons_usability(False)
+        self.bet_frame_usabilty(False)
+
+        self.reset_game_page()
+        self.game_page()
+                
+        while True:
+            self.pipeline_init_next_round()
+            check = self.pipeline_check_blackjack()
+            if not check: break
+
+
+    # --------------------------------------------------------
+
+
+    # Game page Signal-Slots ---------------------------------       
+    def func_button_exit(self):
+        QApplication.quit()
+    
+    
+    def func_hit(self, player='seat1'):
+        if self.ui.button_hit.isEnabled() == True:
+            self.ui.button_double.setEnabled(False)
+            super().hit()
+            super().update_hand_values()
+            self.display_cards([player])
+            self.set_total()
+
+            if self.hand_values['seat1'] > 21:
+
+                self.set_table(bust='seat1')
+                self.players_bust.add('seat1')
+
+
+                if len(self.players_bust) + len(self.players_stand) == len(self.players) - 1 and len(self.players_bust) != len(self.players) - 1:
+                    self.countdown = 1
+                    self.init_timer(mode='dealer_hit')
+                    
+
+
+                elif len(self.players_bust) + len(self.players_stand) == len(self.players) - 1 and len(self.players_bust) == len(self.players) - 1: 
+                    self.announce(winner=['dealer'])
+                    self.set_table(winner = ['dealer']) 
+
+
+                self.move_buttons_usability(False)
+
+                # initialize new round
+                self.countdown = 4
+                self.init_timer('init')
+
+                if self.ui.stackedwidget_content.currentIndex() == 0: return
+
+                self.init_next_round()
+                    
+        else: 
+            return
+
+
+    def func_stand(self, player = 'seat1'):
+        if self.ui.button_hit.isEnabled() == True:
+            self.players_stand.add(player)
+            self.set_table(stand=player)
             
-        self.ui.stackedwidget_content.setStyleSheet(
-        """
-        #page_1_menu {
-            background-color: rgba(59,82,63,255);
-        }
-        #page_2_game {
-            background-color: rgba(52,14,16,255);
-        }
-        """
-        )
+            if len(self.players_bust) + len(self.players_stand) == len(self.players) - 1:
+                self.countdown = 1
+                self.init_timer(mode='dealer_hit')
+                if self.ui.stackedwidget_content.currentIndex() == 0: 
+                    return
 
-        self.ui.frame_dealer.setStyleSheet(
-        """
-        #frame_dealer * {
-        background-color: transparent;
-        }
+            self.move_buttons_usability(False)
 
-        """
-        )
-    
-        self.ui.frame_dealer_total.setStyleSheet(
-        """
-        #frame_dealer_total * {
-        background-color: transparent;
-        color: rgba(212,185,58,255);
-        }
-        """
-        )
-    
-    def blackjack(self):
-        self.ui.stackedwidget_content.setStyleSheet(
-            """
-            #page_1_menu {
-                background-color: rgba(59,82,63,255);
-            }
-            #page_2_game {
-                background-color: rgba(52,14,16,255);
-                background-color: black;
-            }
-            """
-            )
-
-        self.ui.frame_dealer.setStyleSheet(
-            """
-            #frame_dealer * {
-            background-color: transparent;
-            }
-
-            #frame_dealer {
-            background-color: black;
-            }
-            """
-            )
-        
-        self.ui.frame_dealer_total.setStyleSheet(
-            """
-            #frame_dealer_total * {
-            background-color: transparent;
-            color: rgba(212,185,58,255);
-            }
-
-            #frame_dealer_total {
-            background-color: black;
-            }
-            """
-            )
-
-        self.ui.label_announce.setText("BLACKJACK!")
-
-
-    def display_cards(self, hand):
-        for index, card in enumerate(self.hands[hand]):
-            print('Card: ', card)
-            icon = QPixmap(f":/cards/{card}.png")
-            label = self.findChild(QLabel, f"label_dealer_card{index+1}")
-            if label: label.setPixmap(icon)
-
-    def countdown(self, sec):
-        return [i for i in range(sec, 1, -1)]
-    
-    def check_blackjack(self):
-        if 'A' not in self.hands['dealer']: return False
+            # initialize new round
+            self.countdown = 4
+            self.init_timer('init')
+            if self.ui.stackedwidget_content.currentIndex() == 0: return
+ 
+                
+                
         else: 
-            total = 0
-            for card in self.hands['dealer']:
-                if card != 'A':
-                    total += self.card_values[card]
-                else: 
-                    total += 11 # A is 11 here.
-            if total == 21: return True
-            else: return False
-    
-    def calculate_hand_value(self, hand):
-        ace_num = hand.count('A')
-        total = 0
-        for card in hand:
-            total += self.card_values[card]
-            if total > 21 and ace_num != 0:
-                total -= 10
-                ace_num -= 1
-        
-        return total
-
-
-    def set_chips_image(self, winner, losers):
-        winners_label = self.findChild(QLabel, f'label_{winner}_chips_image')
-        winners_label.setPixmap(QPixmap(":/chips/wins_chips.png"))
-
-        for loser in losers:
-            losers_label = self.findChild(QLabel, f'label_{loser}_chips_image')
-            losers_label.setPixmap(QPixmap(""))
-    
-
-    def reset_chips_image(self, players, bets):
-        if not bets: 
-            for player in players:
-                player_label = self.findChild(QLabel, f'label_{player}_chips_image')
-                player_label.setPixmap(QPixmap(""))
-
-        else: 
-            for player in players:
-                player_label = self.findChild(QLabel, f'label_{player}_chips_image')
-                player_label.setPixmap(QPixmap(":/chips/chips.png"))
-    
-    
-    def init_page(self):
-        self.ui.stackedwidget_content.setCurrentIndex(0)
-
-
-
-    # PLAY FUNCTİONS ----------------------------------
-
-    def func_hit(self):
-        pass
-
-    def func_stand(self):
-        pass
+            return
 
 
     def func_menu(self):
         self.reset_game_page()
-        self.reset_chips_image(self.players, False)
-        self.init_page()
+        self.menu_page()
+        if self.timer: self.timer.stop()
+
 
     def func_reset(self):
         self.reset_game_page()
-        self.reset_chips_image(self.players, False)
+        if self.timer: self.timer.stop()
 
-        if self.game_mode == 'one_player_game':
+        if self.game_mode == 'OnePlayerGame':
             self.func_button_one_player_game()
+
+    
+    def func_bet_slider(self, value):
+        if self.bankroll['seat1'] < 10:
+            self.ui.slider_bet.setMaximum(self.bankroll['seat1'])
         
+        else: 
+            self.ui.slider_bet.setMaximum(10)
+
+        self.ui.label_stake_amount.setText(str(value))
+        self.bankroll['seat1'] = value
+        self.set_chips(bets=True)
+
+        self.bets['seat1'] = value
+        budget = self.bankroll['seat1'] - self.bets['seat1']
+        self.bankroll['seat1'] = budget
+
+        self.ui.label_seat1_budget_amount.setText(str(budget))
+    
+    # --------------------------------------------------------
+
+
+# UI SUPPORT FUNCTIONS ---------------------------------
+    def init_next_round(self):
+            Play.__init__(self)
+            
+            self.round += 1
+            self.ui.label_round_number.setText(str(self.round))
+
+            self.players = ['dealer', 'seat1']
+            
+            self.reset_game_page()
+            self.move_buttons_usability(True)
+            self.ui.button_double.setEnabled(True)
+
+            super().initialize_hands(self.players)
+
+            self.display_cards(self.players)
+            self.set_total()
+     
+            self.set_chips(bets=True)
+
+
+    def init_timer(self, mode):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(lambda: self.handle_timeout(mode))
+        self.runtime_actions()
+
+
+    def runtime_actions(self):
+        self.event_loop = QEventLoop()
+        self.timer.start(1000)
+        self.event_loop.exec()
+
+
+    def handle_timeout(self, mode):
+        if mode == 'init':
+            if self.countdown == 0:
+                self.announce(game_on=True)
+                self.set_table(game_on=True)
+                self.bet_frame_usabilty(False)
+                self.timer.stop()
+                self.event_loop.quit()
+                return
+            
+            self.announce()
+
+            if self.countdown <= 5:
+                self.bet_frame_usabilty(True)
+                if self.ui.label_stake_amount.text() == '': self.func_bet_slider(1)
+
+
+            if self.ui.stackedwidget_content.currentIndex() == 0:
+                self.timer.stop()
+                self.event_loop.quit()
+                return
+
+            else:
+                self.announce()
+        
+        elif mode == 'dealer_hit':
+            if self.ui.stackedwidget_content.currentIndex() == 0:
+                self.timer.stop()
+                self.event_loop.quit()
+                return
+            
+            self.dealer_turn()
+
+        elif mode == 'players_hit':
+            if self.ui.stackedwidget_content.currentIndex() == 0:
+                self.timer.stop()
+                self.event_loop.quit()
+                return
+            
+            self.opponent_turn()
+
+
+        if mode != 'init' and self.countdown == 1: self.countdown -= 1
+        elif mode == 'init': self.countdown -= 1
+
+
+    def reset_game_page(self):
+        # Reset card icons
+        for player in self.players:
+            frame = self.findChild(QFrame, f'frame_{player}_cards')
+            for label in frame.findChildren(QLabel):
+                label.setPixmap(QPixmap())
+
+            total_label = self.findChild(QLabel, f'label_{player}_total')
+            total_label.setText('')
+        
+        # Reset menu labels
+        self.announce(reset=True)
+        self.set_chips(reset=True)
+
+ 
+    def move_buttons_usability(self, usability:bool):
+        self.ui.button_stand.setEnabled(usability)
+        self.ui.button_hit.setEnabled(usability)
+        
+        if self.bets['seat1'] > self.bankroll['seat1']:
+            self.ui.button_double.setEnabled(False)
+        
+        else:
+            self.ui.button_double.setEnabled(usability)
+
+    
+    def bet_frame_usabilty(self, usability:bool):
+        self.ui.slider_bet.setEnabled(usability)
+
+
+    def set_table(self, reset:bool):
+
+        if reset:
+            for player in self.players:
+                frame = self.findChild(QFrame, f'frame_{player}_total')
+                label = self.findChild(QLabel, f'label_{player}_status')
+                
+                if label: label.setPixmap(QPixmap(""))
+                
+                if frame:
+                    frame.setStyleSheet(
+                    """
+                    """
+                    )
+            return
+    
+
+        for player, status in self.player_status.items():
+            if status:
+                frame = self.findChild(QFrame, f'frame_{player}_total')
+                label = self.findChild(QLabel, f'label_{player}_status')   
+
+                if status == 'blackjack':
+                    icon = QPixmap(":/status/jack.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgba(29,25,43,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    )
+                
+                elif status == 'stand':
+                    icon = QPixmap(":/icons/lose.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgba(255,255,255,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    )
+
+                elif status == 'win' or status == 'double_win':
+                    icon = QPixmap(f":/status/win.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(212,185,58,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    )
+                
+                elif status == 'push':
+                    icon = QPixmap(f":/status/push.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(43,148,242,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    ) 
+                
+                elif status == 'bust' or status == 'double_bust':
+                    icon = QPixmap(f":/status/lose.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color:  qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(29,25,43,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    )
+                
+                elif status == 'double':
+                    icon = QPixmap(":/icons/lose.png")
+                    frame.setStyleSheet(
+                    f"""
+                    #frame_{player}_total {{
+                    background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgba(166,42,53,100), stop:0.75 transparent);
+                    border-radius: 10px;
+                    }}
+                    """
+                    )
+
+
+    def display_cards(self, current_hands:list, show_close_card:bool=False):
+        for hand in current_hands:
+            if hand == 'dealer' and len(self.hands[hand]) == 2 and show_close_card == False:
+                for index, card in enumerate(self.hands[hand]):
+                    if index == 0:
+                        icon = QPixmap(f":/cards/{card}.png")
+                        label = self.findChild(QLabel, f"label_{hand}_card{index+1}")
+                        if label: label.setPixmap(icon)
+                    elif index == 1:
+                        icon = QPixmap(f":/cards/close_card.png")
+                        label = self.findChild(QLabel, f"label_{hand}_card{index+1}")
+                        if label: label.setPixmap(icon)
+
+            
+            else:
+                for index, card in enumerate(self.hands[hand]):
+                    icon = QPixmap(f":/cards/{card}.png")
+                    label = self.findChild(QLabel, f"label_{hand}_card{index+1}")
+                    if label: label.setPixmap(icon)
+        
+
+    def check_blackjack(self):
+        for player in self.players:
+            if 'A' not in self.hands[player]: 
+                continue
+            
+            else: 
+                total = 0
+                for card in self.hands[player]:
+                    if card != 'A':
+                        total += self.card_values[card]
+                    else: 
+                        total += 11 # A is 11 here.
+                if total == 21:
+                    self.update_status(player = player, status= 'blackjack')
+            
+   
+    def set_players_cocktail_and_smoke(self, reset:bool):
+        for player, status in self.player_status.items():
+            if reset or status == 'push':
+                martini = self.findChild(QLabel, f'label_{player}_martini')
+                martini.setPixmap(QPixmap(""))
+            
+            elif status == 'win' or 'blackjack' or 'double_win':
+                martini = self.findChild(QLabel, f'label_{player}_martini')
+                martini.setPixmap(QPixmap(":/alcohol/cokctail.png"))
+            
+            elif status == 'bust':
+                martini = self.findChild(QLabel, f'label_{player}_martini')
+                martini.setPixmap(QPixmap(":/alcohol/smoke.png"))           
+        
+
+    def announce(self, reset:bool):
+
+        if reset:
+            self.ui.label_announce.setText("")
+            self.ui.label_cd.setText("")
+            return
+        
+        self.ui.label_cd.setText(str(self.countdown))
+        
+        if list(self.player_status.values()).count(None) == 3 and self.countdown > 5:
+            self.ui.label_announce.setText('Welcome! Take your place.')
+
+        elif list(self.player_status.values()).count(None) == 3 and self.countdown <= 5:
+            self.ui.label_announce.setText('Bets are open.')
+            self.ui.groupbox_bet.setStyleSheet(ss.ss_groupbox_bet_active)
+        
+        elif list(self.player_status.values()).count(None) >= 4 - len(self.players) and self.countdown == 0:
+            self.ui.label_cd.setText('')
+            r = self.ui.label_round_number.text()
+            self.ui.label_announce.setText(f'Round {r} has started!')
+            self.ui.groupbox_move.setStyleSheet(ss.ss_groupbox_move_active)
+
+        elif 'blackjack' not in self.player_status.values() and any(s is not None for s in self.player_status.values()):
+            self.ui.label_announce.setText('Round ends!')
+
+        for player, status in self.player_status.items():
+            if player == 'dealer' and status == 'blackjack':
+                self.ui.label_announce.setText('Dealer Blackjack!')
+        
+
+    def update_status_board(self, reset:bool):
+        if reset:
+            for player in self.players:
+                frame = self.findChild(QFrame, f'frame_status_{player}') 
+                frame.setStyleSheet(
+                """
+                QLabel {
+	            color: rgba(212,185,58, 200)
+                }
+                """
+                )
+            return
+
+        for player, status in self.player_status.items():
+            if status:
+                frame = self.findChild(QFrame, f'frame_status_{player}') 
+                frame.setText(status.capitalize())
+    
+
+    def update_lp_board(self,reset:bool):
+        if reset:
+            for player in self.players:
+                frame = self.findChild(QFrame, f'frame_lp_{player}') 
+                frame.setStyleSheet(
+                """
+                QLabel {
+	            color: rgba(212,185,58, 200)
+                }
+                """
+                )
+            return
+
+ 
+    def set_total(self, include_close_card:bool=False):
+        for player in self.players:
+            if player == 'dealer' and len(self.hands['dealer']) == 2 and include_close_card == False:
+                label = self.findChild(QLabel, f'label_{player}_total')
+                open_card = self.hands[player][0]
+                open_card_value = self.card_values[open_card]
+                label.setText(f"{open_card_value}")
+            else: 
+                total_label = self.findChild(QLabel, f'label_{player}_total')
+                total = self.hand_values[player]
+                total_label.setText(f"{total}")
+
+
+    def set_chips(self, reset:bool, bets:bool):
+        if reset:
+            for player in self.players:
+                if player != 'dealer':
+                    label = self.findChild(QLabel, f'label_{player}_chips_image')
+                    label.setPixmap(QPixmap(""))
+            
+
+        elif bets: 
+            for player in self.players:
+                if player != 'dealer':
+                    chip_label_1 = self.findChild(QLabel, f'label_{player}_chips_image')
+                    chip_label_2 = self.findChild(QLabel, f'label_{player}_chips_image_2')
+                    if self.bankroll[player] <= 5:
+                        chip_label_1.setPixmap(QPixmap(f":/chips/chips{self.bankroll[player]}.png"))
+                        chip_label_2.setPixmap(QPixmap(""))
+                    else: 
+                        chip_label_1.setPixmap(QPixmap(":/chips/chips5.png"))
+                        chip_label_2.setPixmap(QPixmap(f":/chips/chips{self.bankroll[player] - 5}.png"))
+        
+        else: 
+            for player, status in self.player_status.items():
+                if status == 'blackjack':
+                    label = self.findChild(QLabel, f'label_{player}_chips_image')
+                    label.setPixmap(QPixmap("")) 
+        
+
+    def dealer_turn(self):
+
+        if self.hand_values['dealer'] < 17 and self.countdown == 0:
+            self.countdown += 1
+        
+
+        elif self.countdown == 0:
+            self.timer.stop()
+            self.event_loop.quit()
+            return
+        
+
+        elif self.hand_values['dealer'] >= 17 and self.hand_values['dealer'] < 21:
+            highest_hand = 0
+            winner_list = []
+            for player in self.players:
+                if self.hand_values[player] >= highest_hand and self.hand_values[player] <= 21:
+                    highest_hand = self.hand_values[player]
+                    winner_list.append(player)
+                
+            self.announce(winner=winner_list)
+            self.set_table(winner=winner_list)
+
+            self.init_next_round()
+            return
+
+                
+
+        elif self.hand_values['dealer'] == 21:
+            blackjack_hands = []
+            for player in self.players:
+                if self.hand_values[player] == 21:
+                    blackjack_hands.append(player)
+
+            if len(blackjack_hands) == 1:
+                self.announce(winner=['dealer'])
+            
+            else:
+                winner_list = []
+                for player in blackjack_hands:
+                    if len(self.hands[player]) == 2:
+                        winner_list.append(player)
+                        self.announce(winner=winner_list)
+
+                    else: self.announce()
+            
+            self.init_next_round()
+            return
+
+
+        elif self.hand_values['dealer'] > 21:
+            highest_hand = 0
+            winner_list = []
+            for player in self.players:
+                if self.hand_values[player] >= highest_hand and self.hand_values[player] <= 21:
+                    highest_hand = self.hand_values[player]
+                    winner_list.append(player)
+
+            self.announce(winner=winner_list)
+
+            self.init_next_round()
+            return
+        
+        if self.close_card_shown:
+            super().hit('dealer')
+            super().update_hand_values()
+            self.display_cards(['dealer'], True)
+            self.set_total(True)
+
+        
+        else:
+            self.display_cards(['dealer'], True)
+            self.set_total(True)
+            
+            self.close_card_shown = True
+             
+    
+    def menu_page(self):
+        self.ui.stackedwidget_content.setCurrentIndex(0)
+
+
+    def game_page(self):
+        self.ui.stackedwidget_content.setCurrentIndex(1)
+
+
+    def payout(self):
+        for player, status in self.player_status.items():
+            if status == 'win' or 'double win':
+                # $10 -> $10 + initial
+                profit = self.bets[player] + self.bets[player]
+                self.bankroll[player] = profit
+
+            
+            elif status == 'blackjack':
+                # $10 -> $15 + initial
+                profit = self.bets[player] * 3/2 + self.bets[player]
+                self.bankroll[player] = profit
+            
+            elif status == 'push':
+                # initial
+                profit = self.bets[player]
+                self.bankroll[player] = profit
+
+            if status:
+                label = self.findChild(QLabel, f'label_{player}_budget_amount')
+                label.setText(str(self.bankroll[player]))
+    
+    
+    # Multiple Player Games Functions ------------------------
+    
+    def opponent_turn(self, player:str):
+        if self.countdown == 0:
+            self.timer.stop()
+            self.event_loop.quit()
+            return
+        
+        if player not in self.players_bust:
+            super().hit(player)
+            super().update_hand_values()
+            self.display_cards([player])
+            self.set_total()
+
+
+            if self.hand_values[player] > 21:
+                self.players_bust.add(player)
+                self.set_table(bust=player)
+    
+
+    def opponents_bet(self):
+        pass
+        
+    
+    # PIPELINES ---------------------------------------
+
+    def pipeline_init_next_round(self, cd:int=4):
+        self.countdown = cd
+        self.init_timer(mode='init')
+        if self.ui.stackedwidget_content.currentIndex() == 0: return
+        self.init_next_round()
+    
+
+    def pipeline_end_game(self):
+        self.set_table()
+        self.set_players_cocktail_and_smoke()
+        self.update_status_board()
+        self.payout()
+
+
+    def pipeline_check_blackjack(self):
+        self.check_blackjack()
+
+        # Blackjack hand exists
+        if 'blackjack' in self.player_status.values():
+            # Figure out these seperetaly
+                # If dealer blackjack
+                # if players blackjack
+
+
+            # Dealer has Blackjack hand
+            if self.player_status['dealer'] == 'blackjack':
+                self.pipeline_end_game()
+                return True
+            
+            # If it's multiple player game, player takes but game go on.
+            elif list(self.player_status.values()).count('blackjack') < len(self.players) - 1:
+                return False
+            
+            # If it's one player game round ends, player takes.
+            else: 
+                 self.pipeline_end_game()
+                 return True
+
+
+        else:
+            return False
+
+        # Blackjack hand does not exists
+
+            # Game go on
 

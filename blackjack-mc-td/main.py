@@ -1,10 +1,11 @@
 from PyQt6.QtWidgets import QApplication
-from game_gui import Blackjack_GUI
+from game_gui import BlackjackGUI
 import sys
 
 app = QApplication(sys.argv)
 
-window = Blackjack_GUI()
+window = BlackjackGUI()
 window.show()
+
 
 app.exec()
