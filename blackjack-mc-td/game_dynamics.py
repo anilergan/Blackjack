@@ -48,8 +48,6 @@ class BlackjackDynamics():
 
         }
 
-        self.players_stand = set()
-        self.players_bust = set()
 
         self.stakes = {
             'seat1': None,
@@ -75,7 +73,7 @@ class BlackjackDynamics():
 
 
     def update_status(self, player:str, status:str):
-        possible_status = ['in play', 'stand', 'win', 'draw', 'bust', 'double', 'double bust', 'double win']
+        possible_status = ['in play', 'blackjack', 'stand', 'win', 'push', 'bust', 'double']
         if status not in possible_status:
             raise Exception('Status could not be updated: VALID STATUS.')
         

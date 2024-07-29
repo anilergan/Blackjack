@@ -1,7 +1,15 @@
 liste = ['seat1', 'seat2', 'seat3', 'seat1']
 
-dict1 = {key: value for key, value in zip([item for item in liste if item != 'seat1'], [10]*len(liste))}
-print(dict1)
+dict1 = {
+    'seat1': 'double',
+    'seat2': 'in play',
+    'delaer': 'in play'
+}
+
+if dict1['seat1'] not in ['in play', 'bust', 'double']:
+    print('oh yeah')
+
+else: print('OH NO')
 
 # print(liste.count('seat1'))
 
