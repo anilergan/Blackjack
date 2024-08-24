@@ -1,13 +1,12 @@
 <RCC>
-  <qresource prefix="icons">
-    <file>blackjack.png</file>
-  </qresource>
   <qresource prefix="status">
     <file>double.png</file>
-    <file>jack.png</file>
     <file>draw.png</file>
     <file>lose.png</file>
     <file>win.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>blackjack.png</file>
   </qresource>
   <qresource prefix="images"/>
   <qresource prefix="chips">

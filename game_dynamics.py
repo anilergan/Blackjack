@@ -43,17 +43,6 @@ class BlackjackDynamics():
             'seat1': None,
             'seat2': None
         }
-
-        self.player_loss_profit = {
-
-        }
-
-
-        self.stakes = {
-            'seat1': None,
-            'seat2': None
-        }
-
        
         self.house = 100  # it's random number but 100 picked to make it easy to calculate gain/loss of house
 
@@ -72,15 +61,50 @@ class BlackjackDynamics():
     
 
 
-    def update_status(self, player:str, status:str):
-        possible_status = ['in play', 'blackjack', 'stand', 'win', 'push', 'bust', 'double']
-        if status not in possible_status:
-            raise Exception('Status could not be updated: VALID STATUS.')
+    def update_status(self, player:str=None, status:str=None):
+
+
+        possible_status = ['in play', 'blackjack', 'stand', 'win', 'push', 'bust', 'double', 'bankrupt']
+        possible_players = ['dealer', 'seat1', 'seat2']
+        if (status not in possible_status or player not in possible_players) and (status is not None and player is not None):
+            print(f'Status could not be updated: Valid Status or Player!\nStatus: {status}\nPlayer: {player}')
+    
+        elif status is not None and player is not None:
+            self.player_status[player] = status
         
-        if player not in self.players:
-            raise Exception('Status could not be updated: VALID PLAYER')
+
+        for p, v in self.hand_values.items():
+            if v > 21:
+                self.player_status[p] = 'bust'
         
-        self.player_status[player] = status
+
+        if self.player_status['dealer'] == 'bust':
+            for p, s in self.player_status.items():
+                if s is not None and s not in ['bust', 'bankrupt']: self.player_status[p] = 'win'
+        
+        
+        if self.player_status['dealer'] == 'stand':
+            for p, s in self.player_status.items():
+                if p == 'dealer': continue
+                if s in ['stand', 'double'] and self.hand_values[p] > self.hand_values['dealer']:
+                    self.player_status[p] = 'win'
+                
+                elif s in ['stand', 'double'] and self.hand_values[p] == self.hand_values['dealer']:
+                    self.player_status[p] = 'push'
+                    self.player_status['dealer'] = 'push'
+                
+                elif s in ['stand', 'double'] and self.hand_values[p] < self.hand_values['dealer']:
+                    self.player_status['dealer'] = 'win'
+        
+        if list(self.player_status.values()).count('blackjack') == len(self.players):
+            for player in self.players:
+                self.player_status[player] = 'push'
+        
+        
+
+
+
+
             
 
         
