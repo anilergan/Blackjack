@@ -68,11 +68,13 @@ class BlackjackDynamics():
         possible_players = ['dealer', 'seat1', 'seat2']
         if (status not in possible_status or player not in possible_players) and (status is not None and player is not None):
             print(f'Status could not be updated: Valid Status or Player!\nStatus: {status}\nPlayer: {player}')
-    
+
+        # Menuel
         elif status is not None and player is not None:
             self.player_status[player] = status
+            return
         
-
+        # Auto
         for p, v in self.hand_values.items():
             if v > 21:
                 self.player_status[p] = 'bust'

@@ -26,7 +26,7 @@ class Play(BlackjackDynamics):
             card = choice(self.deck)
             self.hands[player].append(card)
         
-        self.hands['dealer'] = ['Q', 'A']
+        # self.hands['dealer'] = ['Q', 'A']
         super().update_hand_values()
     
     def hit(self, player = 'seat1'):

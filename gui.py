@@ -62,6 +62,7 @@ class BlackjackGUI(QMainWindow, Play):
         self.move_buttons_usability(False)
         self.bet_frame_usabilty(False)
         self.set_lp_board(reset=True)
+        self.set_status_board()
 
         Play.__init__(self)
         self.game_page()
@@ -150,6 +151,7 @@ class BlackjackGUI(QMainWindow, Play):
 
 
     def func_bet_slider(self, value:int):
+        if not 'seat1' in self.players: return
 
         if self.bankroll['seat1'] < 10 and value > self.bankroll['seat1']:
             self.ui.slider_bet.setValue(self.bankroll['seat1'])
@@ -168,32 +170,22 @@ class BlackjackGUI(QMainWindow, Play):
 # UI SUPPORT FUNCTIONS ---------------------------------
 
     def init_next_round(self):        
-        if len(self.players) == 1:
-            self.announce(game_over=True)
-            return
         
-        self.players_lp = {
-            'dealer': 0,
-            'seat1': 0
-        }
+        self.players_lp = {}
+        for player in self.players:
+            self.players_lp[player] = 0
 
         self.round += 1
-        print('Round:', self.round)
 
-        self.set_move_box()
-        self.move_buttons_usability(True)
-
-        self.set_bet_box(deactive=True)
-        self.bet_frame_usabilty(False)
+        if 'seat1' in self.players:
+            self.set_move_box()
+            self.move_buttons_usability(True)
+            self.set_bet_box(deactive=True)
+            self.bet_frame_usabilty(False)
 
         super().initialize_hands(self.players)
 
         if self.pipeline_check_blackjack():
-            self.set_total()
-            self.set_total_and_status()
-            self.close_card_shown = True
-            self.display_cards()
-            self.set_chips(reset=True)
             self.pipeline_end_game()
             self.pipeline_init_next_round()
         
@@ -219,35 +211,36 @@ class BlackjackGUI(QMainWindow, Play):
 
 
     def handle_timeout(self, mode):
-        print('--> countdown:', self.countdown)
         if mode == 'init':
             # If user quit game page
             if self.ui.stackedwidget_content.currentIndex() == 0:
                 self.timer.stop()
                 return 
-            
-            
-            self.set_status_board()
-            
 
             if self.countdown == 4:
-                self.func_bet_slider(value=1)
-                self.bet_frame_usabilty(True)
-            
-            elif self.countdown == 3:
                 self.display_cards(reset=True)
                 self.set_total(reset=True)
                 self.set_total_and_status(reset=True)
+
+                self.bankrupt()
+                if len(self.players) == 1:
+                    self.pipeline_reset_game_page()
+                    self.announce(game_over=True)
+                    self.timer.stop()
+                    return
+                else:
+                    Play.__init__(self)
+
+                self.func_bet_slider(value=1)
+                self.bet_frame_usabilty(True)
+                    
 
             elif self.countdown == 0:
                 self.timer.stop()
                 self.bankroll['seat1'] = self.bankroll['seat1'] - self.bets['seat1']
                 self.set_budget()
                 self.init_next_round()
-            
 
-            
-        
 
         elif mode == 'dealer_hit':
             if self.player_status['dealer'] == 'in play':
@@ -273,6 +266,11 @@ class BlackjackGUI(QMainWindow, Play):
         
     
     def move_buttons_usability(self, usability:bool):
+        if not 'seat1' in self.players:
+            self.ui.button_stand.setEnabled(False)
+            self.ui.button_hit.setEnabled(False)
+            return 
+
         self.ui.button_stand.setEnabled(usability)
         self.ui.button_hit.setEnabled(usability)
         
@@ -284,6 +282,9 @@ class BlackjackGUI(QMainWindow, Play):
 
     
     def bet_frame_usabilty(self, usability:bool):
+        if not 'seat1' in self.players:
+            self.ui.slider_bet.setEnabled(False)
+            return
         self.ui.slider_bet.setEnabled(usability)
 
 
@@ -302,12 +303,19 @@ class BlackjackGUI(QMainWindow, Play):
             if player != 'dealer':
                 label = self.findChild(QLabel, f'label_{player}_budget_amount')
                 label.setText(str(self.bankroll[player]))
+                if self.bankroll[player] >= 1:
+                    label.setText(str(self.bankroll[player]))
+                else:
+                    label.setText('')
                 label = self.findChild(QLabel, f'label_{player}_budget_dollar')
-                label.setText('$')
+                if self.bankroll[player] >= 1:
+                    label.setText('$')
+                else:
+                    label.setText('')
+                            
 
 
     def set_total_and_status(self, reset:bool = False):
-
         if reset:
             for player in self.players:
                 frame = self.findChild(QFrame, f'frame_{player}_total')
@@ -444,7 +452,7 @@ class BlackjackGUI(QMainWindow, Play):
             return
         
         elif game_over:
-            self.ui.label_announce.setText("Game over. Thank you for playing!")
+            self.ui.label_announce.setText("Thank you for playing! Game is over.")
             self.ui.label_cd.setText("")
             return
         
@@ -452,18 +460,19 @@ class BlackjackGUI(QMainWindow, Play):
             self.ui.label_cd.setText(str(self.countdown))
         else:
             self.ui.label_cd.setText('')
+        
 
-        if list(self.player_status.values()).count(None) == 3 and self.countdown > 5:
+        if self.round == 1 and self.countdown >= 5:
             self.ui.label_announce.setText('Welcome! Take your place.')
+        
+        elif self.countdown >= 5:
+            self.ui.label_announce.setText('Round ends!')
 
         elif list(self.player_status.values()).count(None) == 3 and self.countdown == 0:
             self.ui.label_cd.setText('')
             self.ui.label_announce.setText(f'Round {self.round} has started!')
 
-        elif list(self.player_status.values()).count(None) == 3 - len(self.players) and self.countdown == 5:
-            self.ui.label_announce.setText('Round ends!')
-
-        elif list(self.player_status.values()).count(None) == 3 and self.countdown <= 5:
+        elif list(self.player_status.values()).count(None) == 3 and self.countdown <= 4:
             self.ui.label_announce.setText('Bets are open.')
             
 
@@ -501,11 +510,12 @@ class BlackjackGUI(QMainWindow, Play):
                 }
                 """
                 )
-        
-        for player, status in self.player_status.items():
-            if status:
-                label = self.findChild(QLabel, f'label_status_{player}')
-                label.setText(status)
+        try:
+            for player, status in self.player_status.items():
+                if status:
+                    label = self.findChild(QLabel, f'label_status_{player}')
+                    label.setText(status)
+        except: pass
 
 
     
@@ -552,6 +562,10 @@ class BlackjackGUI(QMainWindow, Play):
 
 
     def set_bet_box(self, reset:bool = False, deactive:bool = False):
+        if not 'seat1' in self.players:
+            self.ui.groupbox_bet.setStyleSheet('')
+            self.ui.label_stake_amount.setText('')
+            self.ui.label_stake_dollar.setText('')
 
         if reset:
             self.ui.groupbox_bet.setStyleSheet('')
@@ -700,6 +714,7 @@ class BlackjackGUI(QMainWindow, Play):
                 lp = round(self.bets[player] * 3/2, 1)
                 if isinstance(lp, float) and lp.is_integer():
                     lp = int(lp)
+
             elif status == 'push':
                 lp = 0            
             
@@ -707,14 +722,12 @@ class BlackjackGUI(QMainWindow, Play):
                 lp = -self.bets[player]
 
             self.bankroll[player] += self.bets[player] + lp
+
             if isinstance(self.bankroll[player], float) and self.bankroll[player].is_integer():
                 self.bankroll[player] = int(self.bankroll[player])
 
             self.players_lp[player] = lp
-
-            label = self.findChild(QLabel, f'label_{player}_budget_amount')
-            label.setText(str(self.bankroll[player]))
-        
+    
         self.players_lp['dealer'] = -sum([lp for player, lp in self.players_lp.items() if player != 'dealer'])
         
         total_bankroll = sum([value for player, value in self.bankroll.items() if player != 'dealer'])
@@ -723,24 +736,29 @@ class BlackjackGUI(QMainWindow, Play):
         self.set_lp_board()
         for player, bankroll in self.bankroll.items():
             if player == 'dealer': continue
-            if bankroll < 1: self.update_status(player, 'bankrupt')
+            if bankroll < 1:
+                self.update_status(player, 'bankrupt')
 
 
     def bankrupt(self):
         for player, status in self.player_status.items():
-            if status == 'bankrupt': self.players.remove(player)
+            if status == 'bankrupt': 
+                self.players.remove(player)
 
-            frame = self.findChild(QFrame, f'frame_status_{player}')
-            frame.setStyleSheet(
-            """
-            QLabel {
-            color: rgba(212,185,58,100)
-            }
-            """
-            )
+                frame = self.findChild(QFrame, f'frame_status_{player}')
+                frame.setStyleSheet(
+                """
+                QLabel {
+                color: rgba(212,185,58,100)
+                }
+                """
+                )
+                    
 
-
-    
+    # label_seat1_budget_dollar
+    # label_seat1_budget_amount
+    # label_seat1_stake_dollar
+    # label_seat1_stake_amount
     
     # Multiple Player Game Functions ------------------------
     
@@ -769,20 +787,24 @@ class BlackjackGUI(QMainWindow, Play):
     
     # PIPELINES ---------------------------------------
 
-    def pipeline_init_next_round(self, cd:int=5):
+    def pipeline_init_next_round(self, cd:int=6):
         self.countdown = cd
         self.init_timer(mode='init')
 
 
     def pipeline_end_game(self):
-        self.payout()
-        self.set_budget()
-        self.bankrupt()
-        self.set_status_board()
+        self.close_card_shown = True
+        self.display_cards()
+        self.set_total()
         self.set_total_and_status()
+        self.set_chips(reset=True)
+        self.set_bet_box(reset=True)
+        self.set_status_board()
         self.set_players_cocktail_and_smoke()
         self.announce()
-        Play.__init__(self)
+        self.payout()
+        self.set_budget()
+        # Play.__init__(self)
 
 
     def pipeline_check_blackjack(self):
@@ -802,8 +824,8 @@ class BlackjackGUI(QMainWindow, Play):
             # If it's multiple player game, player takes but game go on.
             elif len(self.players) > 2 and list(self.player_status.values()).count('blackjack') == 1:
                 return 
-        else:
-            return 
+        elif list(self.player_status.values()).count('push') >= 2: return True
+        else: return 
 
 
     def pipeline_reset_game_page(self):
@@ -815,6 +837,7 @@ class BlackjackGUI(QMainWindow, Play):
         
         # Reset boards
         self.set_status_board(reset=True)
+        self.set_lp_board(reset=True)
         self.set_bet_box(reset=True)
         self.set_move_box(deactive=True)
 
