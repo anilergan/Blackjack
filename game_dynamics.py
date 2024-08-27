@@ -1,3 +1,4 @@
+from numpy.random import choice
 
 class BlackjackDynamics():
     def __init__(self):
@@ -44,8 +45,7 @@ class BlackjackDynamics():
             'seat2': None
         }
        
-        self.house = 100  # it's random number but 100 picked to make it easy to calculate gain/loss of house
-
+        self.close_card_shown = False
 
 
     def update_hand_values(self):
@@ -58,12 +58,9 @@ class BlackjackDynamics():
                     total -= 10
                     ace_num -= 1
             self.hand_values[player] = total
-    
 
 
     def update_status(self, player:str=None, status:str=None):
-
-
         possible_status = ['in play', 'blackjack', 'stand', 'win', 'push', 'bust', 'double', 'bankrupt']
         possible_players = ['dealer', 'seat1', 'seat2']
         if (status not in possible_status or player not in possible_players) and (status is not None and player is not None):
@@ -102,8 +99,24 @@ class BlackjackDynamics():
             for player in self.players:
                 self.player_status[player] = 'push'
         
-        
 
+    def initialize_hands(self, players):
+        
+        for player in players:
+            self.hands[player] = []
+            # Kurpiyer kendine 2 kart çeker. 
+            card = choice(self.deck)
+            self.hands[player].append(card)
+            card = choice(self.deck)
+            self.hands[player].append(card)
+        
+        # self.hands['dealer'] = ['Q', 'A']
+        self.update_hand_values()
+    
+    def hit(self, player = 'seat1'):
+        card = choice(self.deck)
+        self.hands[player].append(card)
+        self.update_hand_values()
 
 
 

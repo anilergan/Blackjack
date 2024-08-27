@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QGroupBox,
-    QHBoxLayout, QLabel, QLayout, QMainWindow,
-    QPushButton, QSizePolicy, QSlider, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+    QGroupBox, QHBoxLayout, QLabel, QLayout,
+    QMainWindow, QPushButton, QSizePolicy, QSlider,
+    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 import resources_rc
 import resources2_rc
 
@@ -80,7 +80,6 @@ class Ui_MainWindow(object):
 "border-radius: 25px;\n"
 "color: rgba(212,185,58,255);\n"
 "background-color: rgba(39,52,45,255);\n"
-"\n"
 "}\n"
 "\n"
 "\n"
@@ -104,13 +103,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#frame_play_buttons{\n"
-"border: 3px solid rgb(120,124,116);;\n"
-"border-radius: 25px;\n"
-"}\n"
-"\n"
-"#frame_play_buttons{\n"
 "border-radius: 25px;\n"
 "background-color: rgba(120,124,116, 55);\n"
+"border: 3px solid rgb(120,124,116);\n"
 "}")
         self.verticalLayout_2 = QVBoxLayout(self.page_1_menu)
         self.verticalLayout_2.setSpacing(10)
@@ -154,7 +149,47 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.frame)
 
-        self.game_image = QLabel(self.page_1_menu)
+        self.stackedwidget_options = QStackedWidget(self.page_1_menu)
+        self.stackedwidget_options.setObjectName(u"stackedwidget_options")
+        self.stackedwidget_options.setMinimumSize(QSize(0, 300))
+        self.stackedwidget_options.setStyleSheet(u"#page_1_blackjack  {\n"
+"background-color:transparent;\n"
+"}\n"
+"\n"
+"#page_2_agent_game_options {\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#page_3_train_agent_options {\n"
+"background-color: transparent;\n"
+"\n"
+"}\n"
+"\n"
+"QFrame * {\n"
+"border: None;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover {\n"
+"border: 2px solid rgba(212,185,58,255);\n"
+"background-color: rgba(212,185,58,25);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"font: 18pt \"Arial\";\n"
+"border: 2px solid  rgb(120,124,116);\n"
+"border-radius: 20px;\n"
+"color: rgba(212,185,58,255);\n"
+"background-color: rgba(39,52,45,255);\n"
+"}\n"
+"")
+        self.page_1_blackjack = QWidget()
+        self.page_1_blackjack.setObjectName(u"page_1_blackjack")
+        self.verticalLayout_15 = QVBoxLayout(self.page_1_blackjack)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.game_image = QLabel(self.page_1_blackjack)
         self.game_image.setObjectName(u"game_image")
         self.game_image.setMinimumSize(QSize(250, 250))
         self.game_image.setMaximumSize(QSize(250, 250))
@@ -168,7 +203,191 @@ class Ui_MainWindow(object):
         self.game_image.setScaledContents(True)
         self.game_image.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
-        self.verticalLayout_2.addWidget(self.game_image, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.verticalLayout_15.addWidget(self.game_image, 0, Qt.AlignmentFlag.AlignHCenter)
+
+        self.stackedwidget_options.addWidget(self.page_1_blackjack)
+        self.page_2_agent_game_options = QWidget()
+        self.page_2_agent_game_options.setObjectName(u"page_2_agent_game_options")
+        self.page_2_agent_game_options.setStyleSheet(u"QLabel {\n"
+"    font: 24pt \"Forte\"; /* \u0130stedi\u011finiz font ve punto */\n"
+"    color: rgba(212,185,58,255); /* Metin rengi */\n"
+"color: rgb(39,52,45);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/* QComboBox Genel Stili */\n"
+"QComboBox {\n"
+"    font: 16pt \"Arial\"; /* \u0130stedi\u011finiz font ve punto */\n"
+"    color: rgba(212,185,58,255);; /* Metin rengi */\n"
+"    background-color: rgba(39,52,45,255); /* Arka plan rengi */\n"
+"    border: 2px solid rgb(120,124,116); /* Kenarl\u0131k */\n"
+"    border-radius:20px; /* Tam yuvarlak k\u00f6\u015feler */\n"
+"    padding: 5px 10px; /* \u0130\u00e7 bo\u015fluk */\n"
+"    min-width: 150px; /* Minimum geni\u015flik */\n"
+"}\n"
+"\n"
+"/* QComboBox Hover Durumu */\n"
+"QComboBox:hover {\n"
+"    background-color: rgba(120,124,116,50); /* Hafif arka plan de\u011fi\u015fikli\u011fi */\n"
+"}\n"
+"\n"
+"/* QComboBox A\u00e7\u0131l\u0131r Men\u00fc (Drop-down) Butonu */\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"	marg"
+                        "in: 5 5 5 0;\n"
+"    width: 15px;\n"
+"    border-left: 2px solid rgb(120,124,116);\n"
+"    background-color: rgb(120,124,116); /* Ana arka plan rengi */\n"
+"    border-bottom-right-radius: 12px;; /* Tam yuvarlak k\u00f6\u015feler */\n"
+"	border-top-right-radius: 12px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.horizontalLayout_5 = QHBoxLayout(self.page_2_agent_game_options)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.groupBox_agent_game_options = QGroupBox(self.page_2_agent_game_options)
+        self.groupBox_agent_game_options.setObjectName(u"groupBox_agent_game_options")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.groupBox_agent_game_options.sizePolicy().hasHeightForWidth())
+        self.groupBox_agent_game_options.setSizePolicy(sizePolicy1)
+        self.groupBox_agent_game_options.setMinimumSize(QSize(250, 0))
+        self.groupBox_agent_game_options.setMaximumSize(QSize(250, 16777215))
+        self.groupBox_agent_game_options.setStyleSheet(u"#frame_agent_game_options{\n"
+"\n"
+"}\n"
+"\n"
+"QGroupBox {\n"
+"	font: 700 27pt \"Forte\";\n"
+"	color:  rgba(212,185,58,255);\n"
+"    margin-top: 0.9em;\n"
+"	border-radius: 25px;\n"
+"	background-color: rgba(120,124,116, 55);\n"
+"	border: 3px solid rgb(120,124,116);\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* Ba\u015fl\u0131\u011f\u0131 ortalamak i\u00e7in */\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"")
+        self.verticalLayout_23 = QVBoxLayout(self.groupBox_agent_game_options)
+        self.verticalLayout_23.setSpacing(0)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_23.setContentsMargins(10, 10, 10, 10)
+        self.label_agent_game_mode_text = QLabel(self.groupBox_agent_game_options)
+        self.label_agent_game_mode_text.setObjectName(u"label_agent_game_mode_text")
+
+        self.verticalLayout_23.addWidget(self.label_agent_game_mode_text)
+
+        self.frame_agent_game_mode = QFrame(self.groupBox_agent_game_options)
+        self.frame_agent_game_mode.setObjectName(u"frame_agent_game_mode")
+        self.frame_agent_game_mode.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_agent_game_mode.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_47 = QHBoxLayout(self.frame_agent_game_mode)
+        self.horizontalLayout_47.setSpacing(0)
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
+        self.combobox_agent_game_mode = QComboBox(self.frame_agent_game_mode)
+        self.combobox_agent_game_mode.addItem("")
+        self.combobox_agent_game_mode.addItem("")
+        self.combobox_agent_game_mode.setObjectName(u"combobox_agent_game_mode")
+        self.combobox_agent_game_mode.setMinimumSize(QSize(174, 40))
+        self.combobox_agent_game_mode.setMaximumSize(QSize(180, 40))
+        self.combobox_agent_game_mode.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.combobox_agent_game_mode.setStyleSheet(u"")
+
+        self.horizontalLayout_47.addWidget(self.combobox_agent_game_mode, 0, Qt.AlignmentFlag.AlignLeft)
+
+        self.button_agent_game_mode_info = QPushButton(self.frame_agent_game_mode)
+        self.button_agent_game_mode_info.setObjectName(u"button_agent_game_mode_info")
+        self.button_agent_game_mode_info.setMinimumSize(QSize(40, 40))
+        self.button_agent_game_mode_info.setMaximumSize(QSize(40, 40))
+        self.button_agent_game_mode_info.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.button_agent_game_mode_info.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.button_agent_game_mode_info.setStyleSheet(u"")
+
+        self.horizontalLayout_47.addWidget(self.button_agent_game_mode_info)
+
+
+        self.verticalLayout_23.addWidget(self.frame_agent_game_mode)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_23.addItem(self.verticalSpacer_2)
+
+        self.label_agent_selection_text = QLabel(self.groupBox_agent_game_options)
+        self.label_agent_selection_text.setObjectName(u"label_agent_selection_text")
+
+        self.verticalLayout_23.addWidget(self.label_agent_selection_text)
+
+        self.frame_agent_selection = QFrame(self.groupBox_agent_game_options)
+        self.frame_agent_selection.setObjectName(u"frame_agent_selection")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.frame_agent_selection.sizePolicy().hasHeightForWidth())
+        self.frame_agent_selection.setSizePolicy(sizePolicy2)
+        self.frame_agent_selection.setMinimumSize(QSize(0, 40))
+        self.frame_agent_selection.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_agent_selection.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_38 = QHBoxLayout(self.frame_agent_selection)
+        self.horizontalLayout_38.setSpacing(0)
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
+        self.horizontalLayout_38.setContentsMargins(0, 0, 0, 0)
+        self.combobox_agent_selection = QComboBox(self.frame_agent_selection)
+        self.combobox_agent_selection.addItem("")
+        self.combobox_agent_selection.setObjectName(u"combobox_agent_selection")
+        self.combobox_agent_selection.setMinimumSize(QSize(174, 40))
+        self.combobox_agent_selection.setMaximumSize(QSize(180, 40))
+        self.combobox_agent_selection.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+
+        self.horizontalLayout_38.addWidget(self.combobox_agent_selection, 0, Qt.AlignmentFlag.AlignLeft)
+
+        self.button_agent_selection_info = QPushButton(self.frame_agent_selection)
+        self.button_agent_selection_info.setObjectName(u"button_agent_selection_info")
+        self.button_agent_selection_info.setMinimumSize(QSize(40, 40))
+        self.button_agent_selection_info.setMaximumSize(QSize(40, 40))
+        self.button_agent_selection_info.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.button_agent_selection_info.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.button_agent_selection_info.setStyleSheet(u"")
+
+        self.horizontalLayout_38.addWidget(self.button_agent_selection_info)
+
+
+        self.verticalLayout_23.addWidget(self.frame_agent_selection)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_23.addItem(self.verticalSpacer_5)
+
+        self.button_agent_game_options_play = QPushButton(self.groupBox_agent_game_options)
+        self.button_agent_game_options_play.setObjectName(u"button_agent_game_options_play")
+        self.button_agent_game_options_play.setMinimumSize(QSize(100, 40))
+        self.button_agent_game_options_play.setMaximumSize(QSize(100, 40))
+        self.button_agent_game_options_play.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.button_agent_game_options_play.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.button_agent_game_options_play.setStyleSheet(u"")
+
+        self.verticalLayout_23.addWidget(self.button_agent_game_options_play, 0, Qt.AlignmentFlag.AlignHCenter)
+
+
+        self.horizontalLayout_5.addWidget(self.groupBox_agent_game_options)
+
+        self.stackedwidget_options.addWidget(self.page_2_agent_game_options)
+        self.page_3_train_agent_options = QWidget()
+        self.page_3_train_agent_options.setObjectName(u"page_3_train_agent_options")
+        self.stackedwidget_options.addWidget(self.page_3_train_agent_options)
+
+        self.verticalLayout_2.addWidget(self.stackedwidget_options)
 
         self.verticalSpacer1 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -176,7 +395,7 @@ class Ui_MainWindow(object):
 
         self.frame_menu_buttons = QFrame(self.page_1_menu)
         self.frame_menu_buttons.setObjectName(u"frame_menu_buttons")
-        self.frame_menu_buttons.setMinimumSize(QSize(0, 400))
+        self.frame_menu_buttons.setMinimumSize(QSize(0, 0))
         self.frame_menu_buttons.setStyleSheet(u"")
         self.frame_menu_buttons.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_menu_buttons.setFrameShadow(QFrame.Shadow.Raised)
@@ -214,15 +433,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(10)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 10, 0, 10)
-        self.button_against_dealer = QPushButton(self.frame_play_buttons)
-        self.button_against_dealer.setObjectName(u"button_against_dealer")
-        self.button_against_dealer.setMinimumSize(QSize(225, 50))
-        self.button_against_dealer.setMaximumSize(QSize(225, 50))
-        self.button_against_dealer.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.button_against_dealer.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.button_against_dealer.setStyleSheet(u"")
+        self.button_one_player_game = QPushButton(self.frame_play_buttons)
+        self.button_one_player_game.setObjectName(u"button_one_player_game")
+        self.button_one_player_game.setMinimumSize(QSize(225, 50))
+        self.button_one_player_game.setMaximumSize(QSize(225, 50))
+        self.button_one_player_game.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.button_one_player_game.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.button_one_player_game.setStyleSheet(u"")
 
-        self.verticalLayout_6.addWidget(self.button_against_dealer, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.verticalLayout_6.addWidget(self.button_one_player_game, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.button_agent_game = QPushButton(self.frame_play_buttons)
         self.button_agent_game.setObjectName(u"button_agent_game")
@@ -281,9 +500,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 10, 0, 10)
         self.frame_announce = QFrame(self.page_2_game)
         self.frame_announce.setObjectName(u"frame_announce")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.frame_announce.sizePolicy().hasHeightForWidth())
         self.frame_announce.setSizePolicy(sizePolicy1)
         self.frame_announce.setMinimumSize(QSize(0, 60))
@@ -331,11 +547,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.setContentsMargins(0, 0, 30, 0)
         self.frame_announce_inner = QFrame(self.frame_announce)
         self.frame_announce_inner.setObjectName(u"frame_announce_inner")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.frame_announce_inner.sizePolicy().hasHeightForWidth())
-        self.frame_announce_inner.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.frame_announce_inner.sizePolicy().hasHeightForWidth())
+        self.frame_announce_inner.setSizePolicy(sizePolicy3)
         self.frame_announce_inner.setMinimumSize(QSize(620, 50))
         self.frame_announce_inner.setMaximumSize(QSize(16777215, 60))
         self.frame_announce_inner.setStyleSheet(u"")
@@ -347,11 +563,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(2, 0, 2, 0)
         self.label_announce = QLabel(self.frame_announce_inner)
         self.label_announce.setObjectName(u"label_announce")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.label_announce.sizePolicy().hasHeightForWidth())
-        self.label_announce.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label_announce.sizePolicy().hasHeightForWidth())
+        self.label_announce.setSizePolicy(sizePolicy4)
         self.label_announce.setMinimumSize(QSize(0, 50))
         self.label_announce.setMaximumSize(QSize(16777215, 50))
         self.label_announce.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
@@ -675,11 +891,11 @@ class Ui_MainWindow(object):
 
         self.frame_seat2_total = QFrame(self.frame_seat2)
         self.frame_seat2_total.setObjectName(u"frame_seat2_total")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.frame_seat2_total.sizePolicy().hasHeightForWidth())
-        self.frame_seat2_total.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.frame_seat2_total.sizePolicy().hasHeightForWidth())
+        self.frame_seat2_total.setSizePolicy(sizePolicy5)
         self.frame_seat2_total.setMinimumSize(QSize(0, 140))
         self.frame_seat2_total.setMaximumSize(QSize(50, 16777215))
         self.frame_seat2_total.setFrameShape(QFrame.Shape.StyledPanel)
@@ -1962,8 +2178,8 @@ class Ui_MainWindow(object):
 
         self.frame_options = QFrame(self.frame_content)
         self.frame_options.setObjectName(u"frame_options")
-        sizePolicy4.setHeightForWidth(self.frame_options.sizePolicy().hasHeightForWidth())
-        self.frame_options.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.frame_options.sizePolicy().hasHeightForWidth())
+        self.frame_options.setSizePolicy(sizePolicy5)
         self.frame_options.setStyleSheet(u"#groupbox_bet {\n"
 "	font: 700 24pt \"Forte\";\n"
 "	color:  rgba(212,185,58,80);\n"
@@ -2596,11 +2812,11 @@ class Ui_MainWindow(object):
 
         self.frame_stake_amount = QFrame(self.groupbox_bet)
         self.frame_stake_amount.setObjectName(u"frame_stake_amount")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.frame_stake_amount.sizePolicy().hasHeightForWidth())
-        self.frame_stake_amount.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.frame_stake_amount.sizePolicy().hasHeightForWidth())
+        self.frame_stake_amount.setSizePolicy(sizePolicy6)
         self.frame_stake_amount.setMinimumSize(QSize(180, 20))
         self.frame_stake_amount.setMaximumSize(QSize(16777215, 20))
         self.frame_stake_amount.setFrameShape(QFrame.Shape.StyledPanel)
@@ -2694,8 +2910,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.button_hit = QPushButton(self.groupbox_move)
         self.button_hit.setObjectName(u"button_hit")
-        sizePolicy2.setHeightForWidth(self.button_hit.sizePolicy().hasHeightForWidth())
-        self.button_hit.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_hit.sizePolicy().hasHeightForWidth())
+        self.button_hit.setSizePolicy(sizePolicy3)
         self.button_hit.setMinimumSize(QSize(65, 0))
         self.button_hit.setMaximumSize(QSize(65, 16777215))
         self.button_hit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
@@ -2709,8 +2925,8 @@ class Ui_MainWindow(object):
 
         self.button_stand = QPushButton(self.groupbox_move)
         self.button_stand.setObjectName(u"button_stand")
-        sizePolicy2.setHeightForWidth(self.button_stand.sizePolicy().hasHeightForWidth())
-        self.button_stand.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_stand.sizePolicy().hasHeightForWidth())
+        self.button_stand.setSizePolicy(sizePolicy3)
         self.button_stand.setMinimumSize(QSize(65, 0))
         self.button_stand.setMaximumSize(QSize(65, 16777215))
         self.button_stand.setCursor(QCursor(Qt.CursorShape.OpenHandCursor))
@@ -2729,8 +2945,8 @@ class Ui_MainWindow(object):
         self.button_double = QPushButton(self.groupbox_move)
         self.button_double.setObjectName(u"button_double")
         self.button_double.setEnabled(True)
-        sizePolicy2.setHeightForWidth(self.button_double.sizePolicy().hasHeightForWidth())
-        self.button_double.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_double.sizePolicy().hasHeightForWidth())
+        self.button_double.setSizePolicy(sizePolicy3)
         self.button_double.setMinimumSize(QSize(65, 0))
         self.button_double.setMaximumSize(QSize(65, 16777215))
         self.button_double.setCursor(QCursor(Qt.CursorShape.ClosedHandCursor))
@@ -2763,7 +2979,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedwidget_content.setCurrentIndex(1)
+        self.stackedwidget_content.setCurrentIndex(0)
+        self.stackedwidget_options.setCurrentIndex(1)
+        self.combobox_agent_game_mode.setCurrentIndex(0)
+        self.combobox_agent_selection.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2774,8 +2993,21 @@ class Ui_MainWindow(object):
         self.game_header.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Blackjack</p></body></html>", None))
         self.by_anil_ergan.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">by An\u0131l ERGAN</p></body></html>", None))
         self.game_image.setText("")
+        self.groupBox_agent_game_options.setTitle(QCoreApplication.translate("MainWindow", u"Agent Game Options", None))
+        self.label_agent_game_mode_text.setText(QCoreApplication.translate("MainWindow", u"Agent Game Mode", None))
+        self.combobox_agent_game_mode.setItemText(0, QCoreApplication.translate("MainWindow", u"Agent vs Dealer", None))
+        self.combobox_agent_game_mode.setItemText(1, QCoreApplication.translate("MainWindow", u"Agent/Player vs Dealer", None))
+
+        self.combobox_agent_game_mode.setCurrentText(QCoreApplication.translate("MainWindow", u"Agent vs Dealer", None))
+        self.button_agent_game_mode_info.setText(QCoreApplication.translate("MainWindow", u"?", None))
+        self.label_agent_selection_text.setText(QCoreApplication.translate("MainWindow", u"Agent Selection", None))
+        self.combobox_agent_selection.setItemText(0, QCoreApplication.translate("MainWindow", u"Rule-Based-1", None))
+
+        self.combobox_agent_selection.setCurrentText(QCoreApplication.translate("MainWindow", u"Rule-Based-1", None))
+        self.button_agent_selection_info.setText(QCoreApplication.translate("MainWindow", u"?", None))
+        self.button_agent_game_options_play.setText(QCoreApplication.translate("MainWindow", u"Play", None))
         self.button_train_agent.setText(QCoreApplication.translate("MainWindow", u"Train an Agent", None))
-        self.button_against_dealer.setText(QCoreApplication.translate("MainWindow", u"Against Dealer", None))
+        self.button_one_player_game.setText(QCoreApplication.translate("MainWindow", u"One Player Game", None))
         self.button_agent_game.setText(QCoreApplication.translate("MainWindow", u"Agent Game", None))
         self.button_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
 #if QT_CONFIG(tooltip)
