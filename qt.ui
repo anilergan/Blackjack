@@ -521,31 +521,34 @@ QGroupBox::title {
                     </item>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QPushButton" name="button_agent_game_mode_info">
+                  <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                   <widget class="QLabel" name="label_agent_game_mode_info">
                     <property name="minimumSize">
                      <size>
-                      <width>40</width>
-                      <height>40</height>
+                      <width>30</width>
+                      <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>40</width>
-                      <height>40</height>
+                      <width>30</width>
+                      <height>30</height>
                      </size>
                     </property>
                     <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
+                     <cursorShape>BusyCursor</cursorShape>
                     </property>
-                    <property name="layoutDirection">
-                     <enum>Qt::LayoutDirection::LeftToRight</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
+                    <property name="toolTip">
+                     <string>Info</string>
                     </property>
                     <property name="text">
-                     <string>?</string>
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap resource="resources2.qrc">:/info/info.png</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>
@@ -638,31 +641,34 @@ QGroupBox::title {
                     </item>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QPushButton" name="button_agent_selection_info">
+                  <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                   <widget class="QLabel" name="label_agent_selection_info">
                     <property name="minimumSize">
                      <size>
-                      <width>40</width>
-                      <height>40</height>
+                      <width>30</width>
+                      <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>40</width>
-                      <height>40</height>
+                      <width>30</width>
+                      <height>30</height>
                      </size>
                     </property>
                     <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
+                     <cursorShape>BusyCursor</cursorShape>
                     </property>
-                    <property name="layoutDirection">
-                     <enum>Qt::LayoutDirection::LeftToRight</enum>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
+                    <property name="toolTip">
+                     <string>Info </string>
                     </property>
                     <property name="text">
-                     <string>?</string>
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap resource="resources2.qrc">:/info/info.png</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>

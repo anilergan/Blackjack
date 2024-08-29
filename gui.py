@@ -139,8 +139,18 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
     def func_agent_game(self):
         self.options_agent_game()
     
-    def func_agent_game_play(self):
+    def func_play_agent_game(self):
+        self.mode = self.ui.combobox_agent_game_mode.currentText()
+        self.agent = self.ui.combobox_agent_selection.currentText()
+
+
+    def play_game_agent_vs_dealer(self):
         pass
+
+
+    def play_agent_game(self):
+
+        
 
     # Game page Signal-Slots ---------------------------------       
     def func_button_exit(self):
@@ -169,24 +179,24 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
                     self.move_buttons_usability(False)
                     self.set_move_box(deactive=True)
 
-                opponent = [x for x in self.players if x not in ['dealer', player]]
-                if opponent: opponent = opponent[0]
+                agent = [x for x in self.players if x not in ['dealer', player]]
+                if agent: agent = agent[0]
                
-                # if opponent is bust as well or there is no opponent, round ends.
-                if len(self.players) == 2 or self.player_status[opponent] == 'bust': 
+                # if agent is bust as well or there is no agent, round ends.
+                if len(self.players) == 2 or self.player_status[agent] == 'bust': 
                     self.update_status('dealer', 'win')
                     self.pipeline_end_game()
                     self.pipeline_init_next_round()
                     
                 
-                # if opponent is not 'in play' too.
-                elif self.player_status[opponent] in ['stand', 'double']:
+                # if agent is not 'in play' too.
+                elif self.player_status[agent] in ['stand', 'double']:
                     self.countdown = 0
                     self.init_timer(mode='dealer_hit')
 
 
-                # so opponent is still in play
-                elif self.player_status[opponent] == 'in play':
+                # so agent is still in play
+                elif self.player_status[agent] == 'in play':
                     pass
             
                 return 'bust'
@@ -748,8 +758,8 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
             else: 
                 self.timer.stop()
 
-        elif mode == 'opponent_hit':            
-            self.opponent_turn()
+        elif mode == 'agent_hit':            
+            self.agent_turn()
             
         self.announce()
         self.countdown -= 1
@@ -786,7 +796,6 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
 
             self.set_status_board()
             
-
     def dealer_turn(self):
         
         if self.close_card_shown: super().hit('dealer')
@@ -809,6 +818,7 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
         self.pipeline_end_game()
         self.pipeline_init_next_round()
 
+    def agent_turn(self):
 
 
 
