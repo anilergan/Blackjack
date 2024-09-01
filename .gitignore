@@ -2,7 +2,9 @@ venv/
 __pycache__/
 
 *.png
-*.qrc
+
+resources.qrc
+resources2.qrc
 
 temp.ipynb
 exp_timer.py

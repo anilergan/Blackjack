@@ -119,7 +119,7 @@ class BlackjackGUI(QMainWindow, BlackjackDynamics):
         self.set_status_board()
         self.set_players_cocktail_and_smoke()
         self.announce()
-        self.payout()é
+        self.payout()
         self.set_budget()
 
 # SİGNAL-SLOTS Functions -------------------------------------
