@@ -299,6 +299,7 @@ class Ui_MainWindow(object):
         self.combobox_agent_game_mode = QComboBox(self.frame_agent_game_mode)
         self.combobox_agent_game_mode.addItem("")
         self.combobox_agent_game_mode.addItem("")
+        self.combobox_agent_game_mode.addItem("")
         self.combobox_agent_game_mode.setObjectName(u"combobox_agent_game_mode")
         self.combobox_agent_game_mode.setMinimumSize(QSize(174, 40))
         self.combobox_agent_game_mode.setMaximumSize(QSize(180, 40))
@@ -307,15 +308,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_47.addWidget(self.combobox_agent_game_mode, 0, Qt.AlignmentFlag.AlignLeft)
 
-        self.button_agent_game_mode_info = QPushButton(self.frame_agent_game_mode)
-        self.button_agent_game_mode_info.setObjectName(u"button_agent_game_mode_info")
-        self.button_agent_game_mode_info.setMinimumSize(QSize(40, 40))
-        self.button_agent_game_mode_info.setMaximumSize(QSize(40, 40))
-        self.button_agent_game_mode_info.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.button_agent_game_mode_info.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.button_agent_game_mode_info.setStyleSheet(u"")
+        self.label_agent_game_mode_info = QLabel(self.frame_agent_game_mode)
+        self.label_agent_game_mode_info.setObjectName(u"label_agent_game_mode_info")
+        self.label_agent_game_mode_info.setMinimumSize(QSize(30, 30))
+        self.label_agent_game_mode_info.setMaximumSize(QSize(30, 30))
+        self.label_agent_game_mode_info.setCursor(QCursor(Qt.CursorShape.BusyCursor))
+        self.label_agent_game_mode_info.setPixmap(QPixmap(u":/info/info.png"))
+        self.label_agent_game_mode_info.setScaledContents(True)
 
-        self.horizontalLayout_47.addWidget(self.button_agent_game_mode_info)
+        self.horizontalLayout_47.addWidget(self.label_agent_game_mode_info, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.verticalLayout_23.addWidget(self.frame_agent_game_mode)
@@ -352,15 +353,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_38.addWidget(self.combobox_agent_selection, 0, Qt.AlignmentFlag.AlignLeft)
 
-        self.button_agent_selection_info = QPushButton(self.frame_agent_selection)
-        self.button_agent_selection_info.setObjectName(u"button_agent_selection_info")
-        self.button_agent_selection_info.setMinimumSize(QSize(40, 40))
-        self.button_agent_selection_info.setMaximumSize(QSize(40, 40))
-        self.button_agent_selection_info.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.button_agent_selection_info.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.button_agent_selection_info.setStyleSheet(u"")
+        self.label_agent_selection_info = QLabel(self.frame_agent_selection)
+        self.label_agent_selection_info.setObjectName(u"label_agent_selection_info")
+        self.label_agent_selection_info.setMinimumSize(QSize(30, 30))
+        self.label_agent_selection_info.setMaximumSize(QSize(30, 30))
+        self.label_agent_selection_info.setCursor(QCursor(Qt.CursorShape.BusyCursor))
+        self.label_agent_selection_info.setPixmap(QPixmap(u":/info/info.png"))
+        self.label_agent_selection_info.setScaledContents(True)
 
-        self.horizontalLayout_38.addWidget(self.button_agent_selection_info)
+        self.horizontalLayout_38.addWidget(self.label_agent_selection_info, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.verticalLayout_23.addWidget(self.frame_agent_selection)
@@ -663,10 +664,10 @@ class Ui_MainWindow(object):
         self.frame_seat2.setObjectName(u"frame_seat2")
         sizePolicy1.setHeightForWidth(self.frame_seat2.sizePolicy().hasHeightForWidth())
         self.frame_seat2.setSizePolicy(sizePolicy1)
-        self.frame_seat2.setMinimumSize(QSize(590, 150))
+        self.frame_seat2.setMinimumSize(QSize(590, 140))
         self.frame_seat2.setMaximumSize(QSize(590, 150))
         self.frame_seat2.setStyleSheet(u"#frame_seat2_cards {\n"
-"background-color: rgba(0,0,0,40);\n"
+"background-color: rgba(255,255,255,10);\n"
 "border-radius: 20\n"
 "}\n"
 "\n"
@@ -698,9 +699,9 @@ class Ui_MainWindow(object):
 "\n"
 "#frame_seat2_stake_amount {\n"
 "border-radius: 10px;\n"
-"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,58,58,25), stop:0.85 rgba(212,58,58,55), stop:1 rgba(212,58,58,105));\n"
-""
-                        "border: 1 solid rgba(112,51,47,255);\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,58,58,25), stop:0.85 rgba(212,58,58,55), stop:1 rgba(212,58,58,105))"
+                        ";\n"
+"border: 1 solid rgba(112,51,47,255);\n"
 "}\n"
 "\n"
 "\n"
@@ -959,11 +960,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card9 = QLabel(self.frame_seat2_card9)
-        self.label_seat3_card9.setObjectName(u"label_seat3_card9")
-        self.label_seat3_card9.setScaledContents(True)
+        self.label_seat2_card9 = QLabel(self.frame_seat2_card9)
+        self.label_seat2_card9.setObjectName(u"label_seat2_card9")
+        self.label_seat2_card9.setScaledContents(True)
 
-        self.horizontalLayout_18.addWidget(self.label_seat3_card9)
+        self.horizontalLayout_18.addWidget(self.label_seat2_card9)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card9, 1, 1, 1, 1)
@@ -978,11 +979,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card10 = QLabel(self.frame_seat2_card10)
-        self.label_seat3_card10.setObjectName(u"label_seat3_card10")
-        self.label_seat3_card10.setScaledContents(True)
+        self.label_seat2_card10 = QLabel(self.frame_seat2_card10)
+        self.label_seat2_card10.setObjectName(u"label_seat2_card10")
+        self.label_seat2_card10.setScaledContents(True)
 
-        self.horizontalLayout_17.addWidget(self.label_seat3_card10)
+        self.horizontalLayout_17.addWidget(self.label_seat2_card10)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card10, 1, 0, 1, 1)
@@ -997,11 +998,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_30.setSpacing(0)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card8 = QLabel(self.frame_seat2_card8)
-        self.label_seat3_card8.setObjectName(u"label_seat3_card8")
-        self.label_seat3_card8.setScaledContents(True)
+        self.label_seat2_card8 = QLabel(self.frame_seat2_card8)
+        self.label_seat2_card8.setObjectName(u"label_seat2_card8")
+        self.label_seat2_card8.setScaledContents(True)
 
-        self.horizontalLayout_30.addWidget(self.label_seat3_card8)
+        self.horizontalLayout_30.addWidget(self.label_seat2_card8)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card8, 1, 2, 1, 1)
@@ -1016,11 +1017,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_32.setSpacing(0)
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
         self.horizontalLayout_32.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card6 = QLabel(self.frame_seat2_card6)
-        self.label_seat3_card6.setObjectName(u"label_seat3_card6")
-        self.label_seat3_card6.setScaledContents(True)
+        self.label_seat2_card6 = QLabel(self.frame_seat2_card6)
+        self.label_seat2_card6.setObjectName(u"label_seat2_card6")
+        self.label_seat2_card6.setScaledContents(True)
 
-        self.horizontalLayout_32.addWidget(self.label_seat3_card6)
+        self.horizontalLayout_32.addWidget(self.label_seat2_card6)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card6, 1, 4, 1, 1)
@@ -1035,11 +1036,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_31.setSpacing(0)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
         self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card7 = QLabel(self.frame_seat2_card7)
-        self.label_seat3_card7.setObjectName(u"label_seat3_card7")
-        self.label_seat3_card7.setScaledContents(True)
+        self.label_seat2_card7 = QLabel(self.frame_seat2_card7)
+        self.label_seat2_card7.setObjectName(u"label_seat2_card7")
+        self.label_seat2_card7.setScaledContents(True)
 
-        self.horizontalLayout_31.addWidget(self.label_seat3_card7)
+        self.horizontalLayout_31.addWidget(self.label_seat2_card7)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card7, 1, 3, 1, 1)
@@ -1054,11 +1055,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_33.setSpacing(0)
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
         self.horizontalLayout_33.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card1 = QLabel(self.frame_seat2_card1)
-        self.label_seat3_card1.setObjectName(u"label_seat3_card1")
-        self.label_seat3_card1.setScaledContents(True)
+        self.label_seat2_card1 = QLabel(self.frame_seat2_card1)
+        self.label_seat2_card1.setObjectName(u"label_seat2_card1")
+        self.label_seat2_card1.setScaledContents(True)
 
-        self.horizontalLayout_33.addWidget(self.label_seat3_card1)
+        self.horizontalLayout_33.addWidget(self.label_seat2_card1)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card1, 2, 4, 1, 1)
@@ -1073,11 +1074,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_34.setSpacing(0)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card2 = QLabel(self.frame_seat2_card2)
-        self.label_seat3_card2.setObjectName(u"label_seat3_card2")
-        self.label_seat3_card2.setScaledContents(True)
+        self.label_seat2_card2 = QLabel(self.frame_seat2_card2)
+        self.label_seat2_card2.setObjectName(u"label_seat2_card2")
+        self.label_seat2_card2.setScaledContents(True)
 
-        self.horizontalLayout_34.addWidget(self.label_seat3_card2)
+        self.horizontalLayout_34.addWidget(self.label_seat2_card2)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card2, 2, 3, 1, 1)
@@ -1092,11 +1093,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_35.setSpacing(0)
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card3 = QLabel(self.frame_seat2_card3)
-        self.label_seat3_card3.setObjectName(u"label_seat3_card3")
-        self.label_seat3_card3.setScaledContents(True)
+        self.label_seat2_card3 = QLabel(self.frame_seat2_card3)
+        self.label_seat2_card3.setObjectName(u"label_seat2_card3")
+        self.label_seat2_card3.setScaledContents(True)
 
-        self.horizontalLayout_35.addWidget(self.label_seat3_card3)
+        self.horizontalLayout_35.addWidget(self.label_seat2_card3)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card3, 2, 2, 1, 1)
@@ -1111,11 +1112,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.setSpacing(0)
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
         self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card4 = QLabel(self.frame_seat2_card4)
-        self.label_seat3_card4.setObjectName(u"label_seat3_card4")
-        self.label_seat3_card4.setScaledContents(True)
+        self.label_seat2_card4 = QLabel(self.frame_seat2_card4)
+        self.label_seat2_card4.setObjectName(u"label_seat2_card4")
+        self.label_seat2_card4.setScaledContents(True)
 
-        self.horizontalLayout_36.addWidget(self.label_seat3_card4)
+        self.horizontalLayout_36.addWidget(self.label_seat2_card4)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card4, 2, 1, 1, 1)
@@ -1130,11 +1131,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_40.setSpacing(0)
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
         self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
-        self.label_seat3_card5 = QLabel(self.frame_seat2_card5)
-        self.label_seat3_card5.setObjectName(u"label_seat3_card5")
-        self.label_seat3_card5.setScaledContents(True)
+        self.label_seat2_card5 = QLabel(self.frame_seat2_card5)
+        self.label_seat2_card5.setObjectName(u"label_seat2_card5")
+        self.label_seat2_card5.setScaledContents(True)
 
-        self.horizontalLayout_40.addWidget(self.label_seat3_card5)
+        self.horizontalLayout_40.addWidget(self.label_seat2_card5)
 
 
         self.gridLayout_6.addWidget(self.frame_seat2_card5, 2, 0, 1, 1)
@@ -1186,7 +1187,7 @@ class Ui_MainWindow(object):
 "\n"
 "#frame_blackjack_text *{\n"
 "	font: 24pt \"Forte\";\n"
-"	color: rgba(212,185,58,20);\n"
+"	color: rgba(212,185,58,30);\n"
 "\n"
 "}\n"
 "\n"
@@ -1201,8 +1202,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_28.setContentsMargins(5, 5, 5, 5)
         self.frame_dealer_cards = QFrame(self.frame_table)
         self.frame_dealer_cards.setObjectName(u"frame_dealer_cards")
-        self.frame_dealer_cards.setMinimumSize(QSize(140, 320))
-        self.frame_dealer_cards.setMaximumSize(QSize(140, 320))
+        self.frame_dealer_cards.setMinimumSize(QSize(140, 260))
+        self.frame_dealer_cards.setMaximumSize(QSize(140, 260))
         self.frame_dealer_cards.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_cards.setFrameShadow(QFrame.Shadow.Raised)
         self.gridLayout_4 = QGridLayout(self.frame_dealer_cards)
@@ -1211,8 +1212,8 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setContentsMargins(5, 5, 5, 5)
         self.frame_dealer_card2 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card2.setObjectName(u"frame_dealer_card2")
-        self.frame_dealer_card2.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card2.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card2.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card2.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card2.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_dealer_card2)
@@ -1221,6 +1222,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card2 = QLabel(self.frame_dealer_card2)
         self.label_dealer_card2.setObjectName(u"label_dealer_card2")
+        self.label_dealer_card2.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card2.setMaximumSize(QSize(60, 50))
         self.label_dealer_card2.setScaledContents(True)
 
         self.horizontalLayout_13.addWidget(self.label_dealer_card2)
@@ -1230,8 +1233,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card8 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card8.setObjectName(u"frame_dealer_card8")
-        self.frame_dealer_card8.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card8.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card8.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card8.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card8.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card8.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.frame_dealer_card8)
@@ -1240,6 +1243,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card8 = QLabel(self.frame_dealer_card8)
         self.label_dealer_card8.setObjectName(u"label_dealer_card8")
+        self.label_dealer_card8.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card8.setMaximumSize(QSize(60, 50))
         self.label_dealer_card8.setScaledContents(True)
 
         self.horizontalLayout_10.addWidget(self.label_dealer_card8)
@@ -1249,8 +1254,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card3 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card3.setObjectName(u"frame_dealer_card3")
-        self.frame_dealer_card3.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card3.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card3.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card3.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card3.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card3.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_14 = QHBoxLayout(self.frame_dealer_card3)
@@ -1259,6 +1264,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card3 = QLabel(self.frame_dealer_card3)
         self.label_dealer_card3.setObjectName(u"label_dealer_card3")
+        self.label_dealer_card3.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card3.setMaximumSize(QSize(60, 50))
         self.label_dealer_card3.setScaledContents(True)
 
         self.horizontalLayout_14.addWidget(self.label_dealer_card3)
@@ -1268,8 +1275,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card5 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card5.setObjectName(u"frame_dealer_card5")
-        self.frame_dealer_card5.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card5.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card5.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card5.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card5.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card5.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_15 = QHBoxLayout(self.frame_dealer_card5)
@@ -1278,6 +1285,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card5 = QLabel(self.frame_dealer_card5)
         self.label_dealer_card5.setObjectName(u"label_dealer_card5")
+        self.label_dealer_card5.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card5.setMaximumSize(QSize(60, 50))
         self.label_dealer_card5.setScaledContents(True)
 
         self.horizontalLayout_15.addWidget(self.label_dealer_card5)
@@ -1287,8 +1296,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card10 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card10.setObjectName(u"frame_dealer_card10")
-        self.frame_dealer_card10.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card10.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card10.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card10.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card10.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card10.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_dealer_card10)
@@ -1297,6 +1306,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card10 = QLabel(self.frame_dealer_card10)
         self.label_dealer_card10.setObjectName(u"label_dealer_card10")
+        self.label_dealer_card10.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card10.setMaximumSize(QSize(60, 50))
         self.label_dealer_card10.setScaledContents(True)
 
         self.horizontalLayout_12.addWidget(self.label_dealer_card10)
@@ -1306,8 +1317,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card4 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card4.setObjectName(u"frame_dealer_card4")
-        self.frame_dealer_card4.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card4.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card4.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card4.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card4.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card4.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_dealer_card4)
@@ -1316,6 +1327,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card4 = QLabel(self.frame_dealer_card4)
         self.label_dealer_card4.setObjectName(u"label_dealer_card4")
+        self.label_dealer_card4.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card4.setMaximumSize(QSize(60, 50))
         self.label_dealer_card4.setScaledContents(True)
 
         self.horizontalLayout_16.addWidget(self.label_dealer_card4)
@@ -1325,8 +1338,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card9 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card9.setObjectName(u"frame_dealer_card9")
-        self.frame_dealer_card9.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card9.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card9.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card9.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card9.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card9.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.frame_dealer_card9)
@@ -1335,6 +1348,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card9 = QLabel(self.frame_dealer_card9)
         self.label_dealer_card9.setObjectName(u"label_dealer_card9")
+        self.label_dealer_card9.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card9.setMaximumSize(QSize(60, 50))
         self.label_dealer_card9.setScaledContents(True)
 
         self.horizontalLayout_11.addWidget(self.label_dealer_card9)
@@ -1344,8 +1359,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card1 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card1.setObjectName(u"frame_dealer_card1")
-        self.frame_dealer_card1.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card1.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card1.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card1.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card1.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card1.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_dealer_card1)
@@ -1354,6 +1369,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card1 = QLabel(self.frame_dealer_card1)
         self.label_dealer_card1.setObjectName(u"label_dealer_card1")
+        self.label_dealer_card1.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card1.setMaximumSize(QSize(60, 50))
         self.label_dealer_card1.setScaledContents(True)
 
         self.horizontalLayout_7.addWidget(self.label_dealer_card1)
@@ -1363,8 +1380,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card7 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card7.setObjectName(u"frame_dealer_card7")
-        self.frame_dealer_card7.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card7.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card7.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card7.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card7.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card7.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_9 = QHBoxLayout(self.frame_dealer_card7)
@@ -1373,6 +1390,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card7 = QLabel(self.frame_dealer_card7)
         self.label_dealer_card7.setObjectName(u"label_dealer_card7")
+        self.label_dealer_card7.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card7.setMaximumSize(QSize(60, 50))
         self.label_dealer_card7.setScaledContents(True)
 
         self.horizontalLayout_9.addWidget(self.label_dealer_card7)
@@ -1382,8 +1401,8 @@ class Ui_MainWindow(object):
 
         self.frame_dealer_card6 = QFrame(self.frame_dealer_cards)
         self.frame_dealer_card6.setObjectName(u"frame_dealer_card6")
-        self.frame_dealer_card6.setMinimumSize(QSize(50, 60))
-        self.frame_dealer_card6.setMaximumSize(QSize(50, 60))
+        self.frame_dealer_card6.setMinimumSize(QSize(60, 50))
+        self.frame_dealer_card6.setMaximumSize(QSize(60, 50))
         self.frame_dealer_card6.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_dealer_card6.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.frame_dealer_card6)
@@ -1392,6 +1411,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.label_dealer_card6 = QLabel(self.frame_dealer_card6)
         self.label_dealer_card6.setObjectName(u"label_dealer_card6")
+        self.label_dealer_card6.setMinimumSize(QSize(60, 50))
+        self.label_dealer_card6.setMaximumSize(QSize(60, 50))
         self.label_dealer_card6.setScaledContents(True)
 
         self.horizontalLayout_8.addWidget(self.label_dealer_card6)
@@ -1404,8 +1425,8 @@ class Ui_MainWindow(object):
 
         self.frame_blackjack_text = QFrame(self.frame_table)
         self.frame_blackjack_text.setObjectName(u"frame_blackjack_text")
-        self.frame_blackjack_text.setMinimumSize(QSize(25, 320))
-        self.frame_blackjack_text.setMaximumSize(QSize(25, 320))
+        self.frame_blackjack_text.setMinimumSize(QSize(25, 280))
+        self.frame_blackjack_text.setMaximumSize(QSize(25, 280))
         self.frame_blackjack_text.setStyleSheet(u"")
         self.frame_blackjack_text.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_blackjack_text.setFrameShadow(QFrame.Shadow.Raised)
@@ -1671,6 +1692,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_26.addItem(self.horizontalSpacer_9)
 
+        self.label_seat1_text = QLabel(self.frame_table_inner)
+        self.label_seat1_text.setObjectName(u"label_seat1_text")
+        self.label_seat1_text.setGeometry(QRect(180, 300, 100, 25))
+        self.label_seat1_text.setMinimumSize(QSize(100, 25))
+        self.label_seat1_text.setMaximumSize(QSize(100, 25))
+        self.label_seat1_text.setStyleSheet(u"color: rgba(255,255,255,30);\n"
+"")
+        self.label_seat1_text.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.label_seat2_text = QLabel(self.frame_table_inner)
+        self.label_seat2_text.setObjectName(u"label_seat2_text")
+        self.label_seat2_text.setGeometry(QRect(180, 0, 100, 25))
+        self.label_seat2_text.setMinimumSize(QSize(100, 25))
+        self.label_seat2_text.setMaximumSize(QSize(100, 25))
+        self.label_seat2_text.setStyleSheet(u"#label_seat2_text {\n"
+"color: rgba(255,255,255,30);\n"
+"\n"
+"}")
+        self.label_seat2_text.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_28.addWidget(self.frame_table_inner)
 
@@ -1684,9 +1723,10 @@ class Ui_MainWindow(object):
         self.frame_seat1.setMinimumSize(QSize(590, 150))
         self.frame_seat1.setMaximumSize(QSize(590, 150))
         self.frame_seat1.setStyleSheet(u"#frame_seat1_cards {\n"
-"background-color: rgba(0,0,0,40);\n"
+"background-color: rgba(255,255,255,10);\n"
 "border-radius: 20;\n"
 "}\n"
+"\n"
 "\n"
 "#frame_seat1_cards * {\n"
 "background-color: transparent;\n"
@@ -1716,9 +1756,9 @@ class Ui_MainWindow(object):
 "\n"
 "#frame_seat1_stake_amount {\n"
 "border-radius: 10px;\n"
-"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,58,58,25), stop:0.85 rgba(212,58,58,55), stop:1 rgba(212,58,58,105));\n"
-""
-                        "border: 1 solid rgba(112,51,47,255);\n"
+"background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,58,58,25), stop:0.85 rgba(212,58,58,55), stop:1 rgba(212,58,58"
+                        ",105));\n"
+"border: 1 solid rgba(112,51,47,255);\n"
 "}\n"
 "\n"
 "\n"
@@ -1777,7 +1817,6 @@ class Ui_MainWindow(object):
         self.label_seat1_budget_chips.setMaximumSize(QSize(50, 50))
         self.label_seat1_budget_chips.setStyleSheet(u"")
         self.label_seat1_budget_chips.setLineWidth(1)
-        self.label_seat1_budget_chips.setPixmap(QPixmap(u":/chips/chips.png"))
         self.label_seat1_budget_chips.setScaledContents(True)
         self.label_seat1_budget_chips.setMargin(0)
 
@@ -2438,7 +2477,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_46 = QHBoxLayout(self.frame_status_dealer)
         self.horizontalLayout_46.setSpacing(5)
         self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
-        self.horizontalLayout_46.setContentsMargins(10, 0, 0, 0)
+        self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
         self.label_status_dealer_text = QLabel(self.frame_status_dealer)
         self.label_status_dealer_text.setObjectName(u"label_status_dealer_text")
         self.label_status_dealer_text.setMinimumSize(QSize(0, 15))
@@ -2591,7 +2630,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_39 = QHBoxLayout(self.frame_lp_dealer)
         self.horizontalLayout_39.setSpacing(5)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
-        self.horizontalLayout_39.setContentsMargins(10, 0, 0, 0)
+        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
         self.label_lp_dealer_text = QLabel(self.frame_lp_dealer)
         self.label_lp_dealer_text.setObjectName(u"label_lp_dealer_text")
         self.label_lp_dealer_text.setMinimumSize(QSize(0, 15))
@@ -2979,7 +3018,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedwidget_content.setCurrentIndex(0)
+        self.stackedwidget_content.setCurrentIndex(1)
         self.stackedwidget_options.setCurrentIndex(1)
         self.combobox_agent_game_mode.setCurrentIndex(0)
         self.combobox_agent_selection.setCurrentIndex(0)
@@ -2997,21 +3036,28 @@ class Ui_MainWindow(object):
         self.label_agent_game_mode_text.setText(QCoreApplication.translate("MainWindow", u"Agent Game Mode", None))
         self.combobox_agent_game_mode.setItemText(0, QCoreApplication.translate("MainWindow", u"Agent vs Dealer", None))
         self.combobox_agent_game_mode.setItemText(1, QCoreApplication.translate("MainWindow", u"Agent/Player vs Dealer", None))
+        self.combobox_agent_game_mode.setItemText(2, QCoreApplication.translate("MainWindow", u"Agent/Agent vs Dealer", None))
 
         self.combobox_agent_game_mode.setCurrentText(QCoreApplication.translate("MainWindow", u"Agent vs Dealer", None))
-        self.button_agent_game_mode_info.setText(QCoreApplication.translate("MainWindow", u"?", None))
+#if QT_CONFIG(tooltip)
+        self.label_agent_game_mode_info.setToolTip(QCoreApplication.translate("MainWindow", u"Info", None))
+#endif // QT_CONFIG(tooltip)
+        self.label_agent_game_mode_info.setText("")
         self.label_agent_selection_text.setText(QCoreApplication.translate("MainWindow", u"Agent Selection", None))
-        self.combobox_agent_selection.setItemText(0, QCoreApplication.translate("MainWindow", u"Rule-Based-1", None))
+        self.combobox_agent_selection.setItemText(0, QCoreApplication.translate("MainWindow", u"Rubi001", None))
 
-        self.combobox_agent_selection.setCurrentText(QCoreApplication.translate("MainWindow", u"Rule-Based-1", None))
-        self.button_agent_selection_info.setText(QCoreApplication.translate("MainWindow", u"?", None))
+        self.combobox_agent_selection.setCurrentText(QCoreApplication.translate("MainWindow", u"Rubi001", None))
+#if QT_CONFIG(tooltip)
+        self.label_agent_selection_info.setToolTip(QCoreApplication.translate("MainWindow", u"Info ", None))
+#endif // QT_CONFIG(tooltip)
+        self.label_agent_selection_info.setText("")
         self.button_agent_game_options_play.setText(QCoreApplication.translate("MainWindow", u"Play", None))
         self.button_train_agent.setText(QCoreApplication.translate("MainWindow", u"Train an Agent", None))
         self.button_one_player_game.setText(QCoreApplication.translate("MainWindow", u"One Player Game", None))
         self.button_agent_game.setText(QCoreApplication.translate("MainWindow", u"Agent Game", None))
         self.button_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
 #if QT_CONFIG(tooltip)
-        self.label_announce.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Welcome to Blackjack!</p></body></html>", None))
+        self.label_announce.setToolTip("")
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(whatsthis)
         self.label_announce.setWhatsThis(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
@@ -3034,16 +3080,16 @@ class Ui_MainWindow(object):
         self.label_seat2_status.setText("")
         self.label_seat2_total_text.setText(QCoreApplication.translate("MainWindow", u"total", None))
         self.label_seat2_total.setText("")
-        self.label_seat3_card9.setText("")
-        self.label_seat3_card10.setText("")
-        self.label_seat3_card8.setText("")
-        self.label_seat3_card6.setText("")
-        self.label_seat3_card7.setText("")
-        self.label_seat3_card1.setText("")
-        self.label_seat3_card2.setText("")
-        self.label_seat3_card3.setText("")
-        self.label_seat3_card4.setText("")
-        self.label_seat3_card5.setText("")
+        self.label_seat2_card9.setText("")
+        self.label_seat2_card10.setText("")
+        self.label_seat2_card8.setText("")
+        self.label_seat2_card6.setText("")
+        self.label_seat2_card7.setText("")
+        self.label_seat2_card1.setText("")
+        self.label_seat2_card2.setText("")
+        self.label_seat2_card3.setText("")
+        self.label_seat2_card4.setText("")
+        self.label_seat2_card5.setText("")
         self.label_dealer_card2.setText("")
         self.label_dealer_card8.setText("")
         self.label_dealer_card3.setText("")
@@ -3073,6 +3119,8 @@ class Ui_MainWindow(object):
         self.label_seat1_chips_count.setText("")
         self.label_seat1_chips_image.setText("")
         self.label_seat1_chips_image_2.setText("")
+        self.label_seat1_text.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>S  E  A  T  1</p></body></html>", None))
+        self.label_seat2_text.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>S E A T 2</p></body></html>", None))
         self.label_seat1_budget_chips.setText("")
         self.label_seat1_martini.setText("")
         self.label_seat1_budget_dollar.setText("")
@@ -3098,9 +3146,9 @@ class Ui_MainWindow(object):
         self.label_status.setText(QCoreApplication.translate("MainWindow", u"Status", None))
         self.label_status_dealer_text.setText(QCoreApplication.translate("MainWindow", u"dealer:", None))
         self.label_status_dealer.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_status_botseat_text.setText(QCoreApplication.translate("MainWindow", u"bot seat:", None))
+        self.label_status_botseat_text.setText(QCoreApplication.translate("MainWindow", u"seat 1: ", None))
         self.label_status_seat1.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_status_topseat_text.setText(QCoreApplication.translate("MainWindow", u"top seat:", None))
+        self.label_status_topseat_text.setText(QCoreApplication.translate("MainWindow", u"seat 2:", None))
         self.label_status_seat2.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_lp.setText(QCoreApplication.translate("MainWindow", u"Loss & Profit", None))
         self.label_lp_lt.setText(QCoreApplication.translate("MainWindow", u"latest / total", None))
@@ -3108,14 +3156,17 @@ class Ui_MainWindow(object):
         self.label_lp_latest_dealer.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_lp_slash_3.setText(QCoreApplication.translate("MainWindow", u"/", None))
         self.label_lp_total_dealer.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_lp_botseat.setText(QCoreApplication.translate("MainWindow", u"bot seat:", None))
+        self.label_lp_botseat.setText(QCoreApplication.translate("MainWindow", u"seat1:", None))
         self.label_lp_latest_seat1.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_lp_slash_2.setText(QCoreApplication.translate("MainWindow", u"/", None))
         self.label_lp_total_seat1.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.label_lp_topseat.setText(QCoreApplication.translate("MainWindow", u"top seat:", None))
+        self.label_lp_topseat.setText(QCoreApplication.translate("MainWindow", u"seat2:", None))
         self.label_lp_latest_seat2.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_lp_slash.setText(QCoreApplication.translate("MainWindow", u"/", None))
         self.label_lp_total_seat2.setText(QCoreApplication.translate("MainWindow", u"-", None))
+#if QT_CONFIG(tooltip)
+        self.groupbox_bet.setToolTip("")
+#endif // QT_CONFIG(tooltip)
         self.groupbox_bet.setTitle(QCoreApplication.translate("MainWindow", u"Place Your Bet!", None))
         self.label_stake.setText(QCoreApplication.translate("MainWindow", u"Stake", None))
         self.label_stake_amount.setText("")

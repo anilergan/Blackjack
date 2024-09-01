@@ -102,6 +102,7 @@ class BlackjackDynamics():
 
     def initialize_hands(self, players):
         
+        self.deck = ['3', 'A', 'Q']
         for player in players:
             self.hands[player] = []
             # Kurpiyer kendine 2 kart çeker. 
@@ -113,6 +114,7 @@ class BlackjackDynamics():
         # self.hands['dealer'] = ['Q', 'A']
         self.update_hand_values()
     
+
     def hit(self, player = 'seat1'):
         card = choice(self.deck)
         self.hands[player].append(card)

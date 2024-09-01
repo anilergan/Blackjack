@@ -103,7 +103,7 @@ border: None;
        <enum>QFrame::Shadow::Raised</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_1_menu">
        <property name="layoutDirection">
@@ -519,6 +519,11 @@ QGroupBox::title {
                       <string>Agent/Player vs Dealer</string>
                      </property>
                     </item>
+                    <item>
+                     <property name="text">
+                      <string>Agent/Agent vs Dealer</string>
+                     </property>
+                    </item>
                    </widget>
                   </item>
                   <item alignment="Qt::AlignmentFlag::AlignHCenter">
@@ -629,14 +634,14 @@ QGroupBox::title {
                      <cursorShape>PointingHandCursor</cursorShape>
                     </property>
                     <property name="currentText">
-                     <string>Rule-Based-1</string>
+                     <string>Rubi001</string>
                     </property>
                     <property name="currentIndex">
                      <number>0</number>
                     </property>
                     <item>
                      <property name="text">
-                      <string>Rule-Based-1</string>
+                      <string>Rubi001</string>
                      </property>
                     </item>
                    </widget>
@@ -1136,7 +1141,7 @@ color:white;
                  </size>
                 </property>
                 <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Welcome to Blackjack!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string/>
                 </property>
                 <property name="whatsThis">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1375,7 +1380,7 @@ border-top-right-radius: 50px;
                 <property name="minimumSize">
                  <size>
                   <width>590</width>
-                  <height>150</height>
+                  <height>140</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -1386,7 +1391,7 @@ border-top-right-radius: 50px;
                 </property>
                 <property name="styleSheet">
                  <string notr="true">#frame_seat2_cards {
-background-color: rgba(0,0,0,40);
+background-color: rgba(255,255,255,10);
 border-radius: 20
 }
 
@@ -2122,7 +2127,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card9">
+                        <widget class="QLabel" name="label_seat2_card9">
                          <property name="text">
                           <string/>
                          </property>
@@ -2171,7 +2176,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card10">
+                        <widget class="QLabel" name="label_seat2_card10">
                          <property name="text">
                           <string/>
                          </property>
@@ -2220,7 +2225,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card8">
+                        <widget class="QLabel" name="label_seat2_card8">
                          <property name="text">
                           <string/>
                          </property>
@@ -2269,7 +2274,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card6">
+                        <widget class="QLabel" name="label_seat2_card6">
                          <property name="text">
                           <string/>
                          </property>
@@ -2318,7 +2323,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card7">
+                        <widget class="QLabel" name="label_seat2_card7">
                          <property name="text">
                           <string/>
                          </property>
@@ -2367,7 +2372,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card1">
+                        <widget class="QLabel" name="label_seat2_card1">
                          <property name="text">
                           <string/>
                          </property>
@@ -2416,7 +2421,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card2">
+                        <widget class="QLabel" name="label_seat2_card2">
                          <property name="text">
                           <string/>
                          </property>
@@ -2465,7 +2470,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card3">
+                        <widget class="QLabel" name="label_seat2_card3">
                          <property name="text">
                           <string/>
                          </property>
@@ -2514,7 +2519,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card4">
+                        <widget class="QLabel" name="label_seat2_card4">
                          <property name="text">
                           <string/>
                          </property>
@@ -2563,7 +2568,7 @@ color: rgba(212,58,58,200);
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_seat3_card5">
+                        <widget class="QLabel" name="label_seat2_card5">
                          <property name="text">
                           <string/>
                          </property>
@@ -2633,7 +2638,7 @@ background-color: rgba(144,144,144,20);
 
 #frame_blackjack_text *{
 	font: 24pt &quot;Forte&quot;;
-	color: rgba(212,185,58,20);
+	color: rgba(212,185,58,30);
 
 }
 
@@ -2668,13 +2673,13 @@ background-color: rgba(144,144,144,20);
                    <property name="minimumSize">
                     <size>
                      <width>140</width>
-                     <height>320</height>
+                     <height>260</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
                      <width>140</width>
-                     <height>320</height>
+                     <height>260</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -2703,14 +2708,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card2">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2737,6 +2742,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card2">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2752,14 +2769,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card8">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2786,6 +2803,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card8">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2801,14 +2830,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card3">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2835,6 +2864,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card3">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2850,14 +2891,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card5">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2884,6 +2925,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card5">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2899,14 +2952,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card10">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2933,6 +2986,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card10">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2948,14 +3013,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card4">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -2982,6 +3047,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card4">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -2997,14 +3074,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card9">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -3031,6 +3108,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card9">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -3046,14 +3135,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card1">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -3080,6 +3169,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card1">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -3095,14 +3196,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card7">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -3129,6 +3230,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card7">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -3144,14 +3257,14 @@ background-color: rgba(144,144,144,20);
                      <widget class="QFrame" name="frame_dealer_card6">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>60</height>
+                        <width>60</width>
+                        <height>50</height>
                        </size>
                       </property>
                       <property name="frameShape">
@@ -3178,6 +3291,18 @@ background-color: rgba(144,144,144,20);
                        </property>
                        <item>
                         <widget class="QLabel" name="label_dealer_card6">
+                         <property name="minimumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>60</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -3197,13 +3322,13 @@ background-color: rgba(144,144,144,20);
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
-                     <height>320</height>
+                     <height>280</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
                      <width>25</width>
-                     <height>320</height>
+                     <height>280</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -3967,6 +4092,72 @@ background-color: rgba(144,144,144,20);
                      </item>
                     </layout>
                    </widget>
+                   <widget class="QLabel" name="label_seat1_text">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>300</y>
+                      <width>100</width>
+                      <height>25</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgba(255,255,255,30);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S  E  A  T  1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_seat2_text">
+                    <property name="geometry">
+                     <rect>
+                      <x>180</x>
+                      <y>0</y>
+                      <width>100</width>
+                      <height>25</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">#label_seat2_text {
+color: rgba(255,255,255,30);
+
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S E A T 2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                    </property>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -3994,9 +4185,10 @@ background-color: rgba(144,144,144,20);
                 </property>
                 <property name="styleSheet">
                  <string notr="true">#frame_seat1_cards {
-background-color: rgba(0,0,0,40);
+background-color: rgba(255,255,255,10);
 border-radius: 20;
 }
+
 
 #frame_seat1_cards * {
 background-color: transparent;
@@ -4169,9 +4361,6 @@ color: rgba(212,58,58,200);
                       </property>
                       <property name="text">
                        <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>:/chips/chips.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -5588,7 +5777,7 @@ border-radius: 15px;
                         <number>5</number>
                        </property>
                        <property name="leftMargin">
-                        <number>10</number>
+                        <number>0</number>
                        </property>
                        <property name="topMargin">
                         <number>0</number>
@@ -5704,7 +5893,7 @@ border-radius: 15px;
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>bot seat:</string>
+                          <string>seat 1: </string>
                          </property>
                         </widget>
                        </item>
@@ -5788,7 +5977,7 @@ border-radius: 15px;
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>top seat:</string>
+                          <string>seat 2:</string>
                          </property>
                         </widget>
                        </item>
@@ -5989,7 +6178,7 @@ border-radius: 15px;
                         <number>5</number>
                        </property>
                        <property name="leftMargin">
-                        <number>10</number>
+                        <number>0</number>
                        </property>
                        <property name="topMargin">
                         <number>0</number>
@@ -6146,7 +6335,7 @@ border-radius: 15px;
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>bot seat:</string>
+                          <string>seat1:</string>
                          </property>
                         </widget>
                        </item>
@@ -6274,7 +6463,7 @@ border-radius: 15px;
                           <string notr="true"/>
                          </property>
                          <property name="text">
-                          <string>top seat:</string>
+                          <string>seat2:</string>
                          </property>
                         </widget>
                        </item>
@@ -6388,6 +6577,9 @@ border-radius: 15px;
                   <width>200</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="toolTip">
+                 <string/>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
