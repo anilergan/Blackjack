@@ -1,4 +1,3 @@
-
 ss_groupbox_bet_active = """
 #groupbox_bet {
 	font: 700 20pt "Forte";
@@ -51,7 +50,7 @@ ss_groupbox_bet_active = """
 }
 
 #groupbox_bet QSlider::handle:horizontal {
-	image: url(:/chips/coin.png);
+	image: url(:/icons/coin.png);
     width: 20px;
     height: 20px;
     /* margin: -5px 0; Handle, groove'da ortalanacak */
@@ -71,13 +70,14 @@ background-color: transparent;
 """
 
 ss_groupbox_move_active = """
+
 #groupbox_move {
 	font: 700 20pt "Forte";
-	color: rgba(212,185,58,255);
+	color:  rgba(212,185,58,255);
 	background-color: rgb(33,44,38);
 	border-radius: 20px;	
     margin-top: 0.9em;
-    border: 1px solid rgb(212,185,58);
+	border: 1px solid rgb(212,185,58)
 }
 
 #groupbox_move::title{
@@ -87,65 +87,55 @@ ss_groupbox_move_active = """
 }
 
 
-#groupbox_move #label_stake_amount {
-	font: 700 16pt "Forte";
-}
-
-
-#groupbox_move QPushButton {
-	background-color: rgba(212, 185, 58,20);
-	border-radius: 20px;
-	font: 700 16pt "Forte";
-	color: rgb(212, 185, 58);
-}
-
-#groupbox_move QPushButton::hover {
-	background-color:rgba(212, 185, 58,50);
-}
-
-#groupbox_move  #button_hit::hover {
-border-bottom-left-radius: 0px;
-}
-
-#groupbox_move  #button_stand::hover {
-border-bottom-right-radius: 0px;
-}
-
-#groupbox_move #frame_stake {
-background-color: transparent;
-}
-
-#groupbox_move #frame_stand_hit {
-	font: 700 16pt "Forte";
-	color:  rgb(150,150,150);
+#frame_button_hit {
 	background-color:  transparent;
-	border-radius: 10px;	
+	border-top-left-radius:  20px;	
+	border-bottom-left-radius:  20px;	
 }
 
-#groupbox_move QLabel {
-	background-color: transparent;
-	font: 700 16pt "Forte";
-	color: rgba(180,180,180,200)
+#frame_button_hit::hover, #frame_button_stand::hover, #frame_button_double::hover  {
+	background-color:  rgba(212,185,58,25);
 }
 
-#groupbox_move QPushButton {
+#frame_button_stand {
+	background-color:  transparent;
+	border-radius: 0px;
+}
+
+#frame_button_double {
+	background-color:  transparent;
+	border-top-right-radius:  20px;	
+	border-bottom-right-radius:  20px;	
+}
+
+QPushButton {
 border:none;
 background-color: transparent;
 }
+"""
 
-
-#groupbox_move QPushButton::hover {
-background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.1 rgba(0, 0, 0, 0), stop:1 rgba(212,185,58,80));
-
+ss_button_next_round_active = """
+QPushButton::hover {
+border: 2px solid rgba(212,185,58,255);
+background-color: rgba(212,185,58,25);
 }
 
-#groupbox_move #button_double::hover {
-background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0.1 rgba(0, 0, 0, 0), stop:1 rgba(166,42,53,100));
+QPushButton{
+font: 16pt "Arial";
+border: 2px solid  rgb(120,124,116);
+border-radius: 15px;
+color: rgba(212,185,58,255);
+background-color:  rgb(45, 20, 9);
 
-}
-
-#groupbox_move Line {
-background-color: rgba(212,185,58,100);
 }
 """
 
+ss_button_next_round_deactive = """
+QPushButton{
+font: 16pt "Arial";
+border: 2px solid  rgba(120,124,116,0.1);
+border-radius: 15px;
+color: rgba(212,185,58,0.1);
+background-color:  rgba(45, 20, 9,0);
+}
+"""

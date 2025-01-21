@@ -1,0 +1,43 @@
+<RCC>
+  <qresource prefix="cards">
+    <file>2.png</file>
+    <file>3.png</file>
+    <file>4.png</file>
+    <file>5.png</file>
+    <file>6.png</file>
+    <file>7.png</file>
+    <file>8.png</file>
+    <file>9.png</file>
+    <file>10.png</file>
+    <file>close_card.png</file>
+    <file>deck.png</file>
+    <file>A.png</file>
+    <file>J.png</file>
+    <file>K.png</file>
+    <file>Q.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>cocktail.png</file>
+    <file>coin.png</file>
+    <file>double.png</file>
+    <file>double-up.png</file>
+    <file>draw.png</file>
+    <file>hit.png</file>
+    <file>lose.png</file>
+    <file>martini.png</file>
+    <file>smoke.png</file>
+    <file>stand.png</file>
+    <file>whiskey.png</file>
+    <file>win.png</file>
+    <file>wins_chips.png</file>
+    <file>game.png</file>
+  </qresource>
+  <qresource prefix="chips">
+    <file>chips.png</file>
+    <file>chips1.png</file>
+    <file>chips2.png</file>
+    <file>chips3.png</file>
+    <file>chips4.png</file>
+    <file>chips5.png</file>
+  </qresource>
+</RCC>

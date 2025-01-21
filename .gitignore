@@ -1,1 +1,3 @@
-bjvenv
+.venv/
+src/exp.py
+*.png

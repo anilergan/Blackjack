@@ -1,9 +1,13 @@
+from random import choice 
+
 
 class BlackjackDynamics():
     def __init__(self):
         # GAME DYNAMICS -----------------------------
          # Shoe: Blackjack masasında kullanılan ve birden fazla deste kartın saklandığı cihaza "shoe" denir. Krupiyer, kartları bu ayakkabıdan çeker ve dağıtır.
-        
+
+        self.close_card_shown = False
+
         number_cards = ('2','3','4','5','6','7','8','9','10')
         face_cards = ('K', 'Q', 'J', 'A')
         self.deck = number_cards + face_cards
@@ -24,8 +28,6 @@ class BlackjackDynamics():
             'A': 11,
         }
 
-
-        # Hands:  Bir oyuncunun elindeki kartlara "hand" denir. Blackjack'te oyuncular ellerini oluştururken veya kararlar alırken "hand" terimi sıkça kullanılır.
         self.hands = {
             'dealer': [],
             'seat1': [],
@@ -48,7 +50,6 @@ class BlackjackDynamics():
 
         }
 
-
         self.stakes = {
             'seat1': None,
             'seat2': None
@@ -56,8 +57,6 @@ class BlackjackDynamics():
 
        
         self.house = 100  # it's random number but 100 picked to make it easy to calculate gain/loss of house
-
-
 
     def update_hand_values(self):
         for player, hand in self.hands.items():
@@ -71,7 +70,6 @@ class BlackjackDynamics():
             self.hand_values[player] = total
     
 
-
     def update_status(self, player:str, status:str):
         possible_status = ['in play', 'blackjack', 'stand', 'win', 'push', 'bust', 'double']
         if status not in possible_status:
@@ -81,7 +79,21 @@ class BlackjackDynamics():
             raise Exception('Status could not be updated: VALID PLAYER')
         
         self.player_status[player] = status
-            
+               
+    def initialize_hands(self, players):
+        for player in players:
+            self.hands[player] = []
+            # Kurpiyer kendine 2 kart çeker. 
+            card = choice(self.deck)
+            self.hands[player].append(card)
+            card = choice(self.deck)
+            self.hands[player].append(card)
 
-        
+        self.update_hand_values()
+    
+    def hit(self, player = 'seat1'):
+        card = choice(self.deck)
+        self.hands[player].append(card)
+
+        self.update_hand_values()
 
