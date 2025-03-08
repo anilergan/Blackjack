@@ -1266,7 +1266,30 @@ class Ui_MainWindow(object):
 "color:  rgba(48, 12, 20, 135);\n"
 "}\n"
 "\n"
+"QListWidget QScrollBar:vertical {\n"
+"        background-color: rgba(180,185,186,50);\n"
+"		background-color: rgb(19,36,39);\n"
+"		 margin: 5px px 5px 0px;\n"
+"		 height: 20px;\n"
+"        border-radius: 5px;\n"
+"    }\n"
 "\n"
+"QListWidget QScrollBar::handle:vertical {\n"
+"        background-color: rgba(180,185,186,100);\n"
+"		background-color: rgb(5,23,26);\n"
+"        margin: 3px 3px 3px 3px;\n"
+"        border-radius: 2px;\n"
+"    }\n"
+"\n"
+"QListWidget QScrollBar::add-line:vertical, QListWidget QScrollBar"
+                        "::sub-line:vertical {\n"
+"        background: none;\n"
+"        height: 0px;\n"
+"    }\n"
+"\n"
+"QListWidget QScrollBar::add-page:vertical, QListWidget QScrollBar::sub-page:vertical {\n"
+"        background: none;\n"
+"    }\n"
 "\n"
 "\n"
 "\n"
@@ -1538,45 +1561,14 @@ class Ui_MainWindow(object):
         self.listWidget_console = QListWidget(self.frame_table)
         self.listWidget_console.setObjectName(u"listWidget_console")
         self.listWidget_console.setGeometry(QRect(250, 70, 301, 191))
-        self.listWidget_console.setStyleSheet(u"QListWidget, QListWidget *{\n"
-"font: 10pt \"Arial\";\n"
-"background:rgba(45, 20, 9, 0.33);\n"
-"border-radius: 25px;\n"
-"padding: 5px;\n"
-"}\n"
-"\n"
-"QScrollBar:vertical {\n"
-"        background-color: rgba(180,185,186,50);\n"
-"		background-color: rgb(19,36,39);\n"
-"		 margin: 5px px 5px 0px;\n"
-"		 height: 20px;\n"
-"        border-radius: 5px;\n"
-"    }\n"
-"\n"
-"QScrollBar::handle:vertical {\n"
-"        background-color: rgba(180,185,186,100);\n"
-"		background-color: rgb(5,23,26);\n"
-"        margin: 3px 3px 3px 3px;\n"
-"        border-radius: 2px;\n"
-"    }\n"
-"\n"
-"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
-"        background: none;\n"
-"        height: 0px;\n"
-"    }\n"
-"\n"
-"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
-"        background: none;\n"
-"    }\n"
-"")
+        self.listWidget_console.setStyleSheet(u"")
         self.listWidget_console.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.label_training_console = QLabel(self.frame_table)
         self.label_training_console.setObjectName(u"label_training_console")
         self.label_training_console.setGeometry(QRect(320, 49, 161, 21))
         self.label_training_console.setMinimumSize(QSize(0, 0))
         self.label_training_console.setMaximumSize(QSize(16777215, 16777215))
-        self.label_training_console.setStyleSheet(u"font: 16pt \"Forte\";\n"
-"color: rgb(45, 20, 9);")
+        self.label_training_console.setStyleSheet(u"color:transparent;")
         self.label_training_console.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout.addWidget(self.frame_table, 1, 0, 1, 1)
@@ -3263,7 +3255,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedwidget_content.setCurrentIndex(0)
+        self.stackedwidget_content.setCurrentIndex(1)
         self.stackedWidget_menu.setCurrentIndex(1)
         self.stackedWidget_agent_game_selection.setCurrentIndex(2)
         self.comboBox_single_agent_1.setCurrentIndex(-1)

@@ -53,7 +53,7 @@ from game_utils import (
     add_trained_agent_to_interface,
 )
 from qt.qt_blackjack import Ui_MainWindow
-from ss import ss_frame_seat2_activate, ss_frame_seat_deactive
+from ss import ss_frame_seat2_activate, ss_frame_seat_deactive, ss_label_training_console, ss_listWidget_console
 
 
 class BlackjackGUI(QMainWindow):
@@ -301,7 +301,10 @@ class BlackjackGUI(QMainWindow):
         self.ui.frame_seat1.setStyleSheet(ss_frame_seat_deactive)
         self.ui.frame_seat2.setStyleSheet(ss_frame_seat2_activate)
         self.ui.stackedWidget_options.setCurrentIndex(1)
+        self.ui.label_training_console.setStyleSheet(ss_label_training_console)
+        self.ui.listWidget_console.setStyleSheet(ss_listWidget_console)
         train_option_usability(self, True)
+
         self.ui.stackedwidget_content.setCurrentIndex(1)
 
     def func_start_training(self):
@@ -628,6 +631,8 @@ class BlackjackGUI(QMainWindow):
             pass
 
         self.pipeline_reset_game_page()
+        self.ui.label_training_console.setStyleSheet("color: transparent")
+        self.ui.listWidget_console.setStyleSheet("")
         menu_page(self)
 
 

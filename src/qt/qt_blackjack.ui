@@ -111,7 +111,7 @@ background-color: rgb(19,19,19)
        <enum>QFrame::Shadow::Raised</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_0_menu">
        <property name="layoutDirection">
@@ -2285,7 +2285,29 @@ font: 28pt &quot;Forte&quot;;
 color:  rgba(48, 12, 20, 135);
 }
 
+QListWidget QScrollBar:vertical {
+        background-color: rgba(180,185,186,50);
+		background-color: rgb(19,36,39);
+		 margin: 5px px 5px 0px;
+		 height: 20px;
+        border-radius: 5px;
+    }
 
+QListWidget QScrollBar::handle:vertical {
+        background-color: rgba(180,185,186,100);
+		background-color: rgb(5,23,26);
+        margin: 3px 3px 3px 3px;
+        border-radius: 2px;
+    }
+
+QListWidget QScrollBar::add-line:vertical, QListWidget QScrollBar::sub-line:vertical {
+        background: none;
+        height: 0px;
+    }
+
+QListWidget QScrollBar::add-page:vertical, QListWidget QScrollBar::sub-page:vertical {
+        background: none;
+    }
 
 
 
@@ -3143,37 +3165,7 @@ color: rgba(255,255,255,150)
                   </rect>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">QListWidget, QListWidget *{
-font: 10pt &quot;Arial&quot;;
-background:rgba(45, 20, 9, 0.33);
-border-radius: 25px;
-padding: 5px;
-}
-
-QScrollBar:vertical {
-        background-color: rgba(180,185,186,50);
-		background-color: rgb(19,36,39);
-		 margin: 5px px 5px 0px;
-		 height: 20px;
-        border-radius: 5px;
-    }
-
-QScrollBar::handle:vertical {
-        background-color: rgba(180,185,186,100);
-		background-color: rgb(5,23,26);
-        margin: 3px 3px 3px 3px;
-        border-radius: 2px;
-    }
-
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-        background: none;
-        height: 0px;
-    }
-
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-        background: none;
-    }
-</string>
+                  <string notr="true"/>
                  </property>
                  <property name="horizontalScrollBarPolicy">
                   <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
@@ -3201,8 +3193,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">font: 16pt &quot;Forte&quot;;
-color: rgb(45, 20, 9);</string>
+                  <string notr="true">color:transparent;</string>
                  </property>
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Training Console&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

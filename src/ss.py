@@ -248,3 +248,17 @@ font: 10pt "Forte";
 ss_label_seat2_agent_name_active = """
 font: 10pt "Forte";
 """
+
+ss_label_training_console = """
+font: 16pt "Forte";
+color: rgb(45, 20, 9);
+"""
+
+ss_listWidget_console = """
+QListWidget, QListWidget *{
+font: 10pt "Arial";
+background:rgba(45, 20, 9, 0.33);
+border-radius: 25px;
+padding: 5px;
+}
+"""
