@@ -139,3 +139,112 @@ color: rgba(212,185,58,0.1);
 background-color:  rgba(45, 20, 9,0);
 }
 """
+
+ss_frame_seat2_activate = """
+#frame_seat2_gainloss, #frame_seat2_budget{
+border:none;
+}
+
+#frame_seat2_cards {
+background-color: rgba(0,0,0,40);
+border-radius: 20;
+}
+
+#frame_seat2_cards * {
+background-color: transparent;
+}
+
+#label_seat2_total {
+font: 16pt "Forte";
+color: white;
+}
+
+#frame_seat2_budget * {
+font: 16pt "Forte";
+color: rgba(212,185,58,255);
+}
+
+#frame_seat2_budget_amount {
+border-radius: 10px;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,185,58,25), stop:0.85 rgba(212,185,58,50), stop:1 rgba(212,185,58,75));
+border: 1 solid rgb(104,102,50);
+}
+
+#label_seat2_budget_text {
+font: 10pt "Forte";
+}
+
+#label_seat2_total {
+border-radius: 10px;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(255,255,255,25), stop:0.85 rgba(255,255,255,50), stop:1 rgba(255,255,255,75));
+border:1 solid rgb(144,144,144)
+}
+
+#label_seat2_total_text {
+font: 10pt "Forte";
+color: rgba(255,255,255,150)
+}
+
+"""
+
+ss_frame_seat_deactive = """
+border:none;
+background-color:transparent;
+color:transparent;
+"""
+
+ss_frame_seat1_activate = """
+#frame_seat1_gainloss, #frame_seat1_budget{
+border:none;
+}
+
+#frame_seat1_cards {
+background-color: rgba(0,0,0,40);
+border-radius: 20;
+}
+
+#frame_seat1_cards * {
+background-color: transparent;
+}
+
+#label_seat1_total {
+font: 16pt "Forte";
+color: white;
+}
+
+#frame_seat1_budget * {
+font: 16pt "Forte";
+color: rgba(212,185,58,255);
+}
+
+#frame_seat1_budget_amount {
+border-radius: 10px;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(212,185,58,25), stop:0.85 rgba(212,185,58,50), stop:1 rgba(212,185,58,75));
+border: 1 solid rgb(104,102,50);
+}
+
+#label_seat1_budget_text {
+font: 10pt "Forte";
+}
+
+#label_seat1_total {
+border-radius: 10px;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 0, 0), stop: 0.7 rgba(255,255,255,25), stop:0.85 rgba(255,255,255,50), stop:1 rgba(255,255,255,75));
+border:1 solid rgb(144,144,144)
+}
+
+#label_seat1_total_text {
+font: 10pt "Forte";
+color: rgba(255,255,255,150)
+}
+
+"""
+
+ss_label_seat2_agent_name_deactive = """
+color: rgba(53,63,46,255);
+font: 10pt "Forte";
+"""
+
+ss_label_seat2_agent_name_active = """
+font: 10pt "Forte";
+"""

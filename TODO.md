@@ -1,5 +1,7 @@
 BUGFIX:
 - [ ] Hit bitti gibi
+- [ ] Round yazmıyor
+- [ ] Board güncellenmiyor.
 
 Stand sorunları şöyle:
 - [ ] Kazanmama rağmen lose status icon geldi.
@@ -16,3 +18,5 @@ Stand sorunları şöyle:
 - [ ]
 - [ ]
 - [ ]
+
+from qt.resource import resources_rc

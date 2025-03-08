@@ -17,6 +17,8 @@
     <file>Q.png</file>
   </qresource>
   <qresource prefix="icons">
+    <file>bankrupt.png</file>
+    <file>blackjack.png</file>
     <file>cocktail.png</file>
     <file>coin.png</file>
     <file>double.png</file>
@@ -24,13 +26,20 @@
     <file>draw.png</file>
     <file>hit.png</file>
     <file>lose.png</file>
-    <file>martini.png</file>
     <file>smoke.png</file>
     <file>stand.png</file>
-    <file>whiskey.png</file>
     <file>win.png</file>
     <file>wins_chips.png</file>
     <file>game.png</file>
+  </qresource>
+  <qresource prefix="menu">
+    <file>trash.png</file>
+    <file>exit.png</file>
+    <file>multi_agent_game.png</file>
+    <file>single_agent_game.png</file>
+    <file>one_player_game.png</file>
+    <file>train_agent.png</file>
+    <file>agent_list.png</file>
   </qresource>
   <qresource prefix="chips">
     <file>chips.png</file>
