@@ -269,7 +269,7 @@ color: rgb(12,12,12)</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="resource/resources.qrc">:/icons/game.png</pixmap>
+           <pixmap>:/icons/game.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -373,7 +373,7 @@ background-color: rgba(212,185,58,25);
                   <string>One Player</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="resource/resources.qrc">
+                  <iconset>
                    <normaloff>:/menu/one_player_game.png</normaloff>:/menu/one_player_game.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -524,7 +524,7 @@ border-radius: 20px;
                             <string> Single Agent</string>
                            </property>
                            <property name="icon">
-                            <iconset resource="resource/resources.qrc">
+                            <iconset>
                              <normaloff>:/menu/single_agent_game.png</normaloff>:/menu/single_agent_game.png</iconset>
                            </property>
                            <property name="iconSize">
@@ -562,7 +562,7 @@ border-radius: 20px;
                             <string> Multiple Agent</string>
                            </property>
                            <property name="icon">
-                            <iconset resource="resource/resources.qrc">
+                            <iconset>
                              <normaloff>:/menu/multi_agent_game.png</normaloff>:/menu/multi_agent_game.png</iconset>
                            </property>
                            <property name="iconSize">
@@ -1268,7 +1268,7 @@ background-color: rgba(48, 12, 20, 100);
                          <string> Train Agent</string>
                         </property>
                         <property name="icon">
-                         <iconset resource="resource/resources.qrc">
+                         <iconset>
                           <normaloff>:/menu/train_agent.png</normaloff>:/menu/train_agent.png</iconset>
                         </property>
                         <property name="iconSize">
@@ -1314,7 +1314,7 @@ background-color: rgba(48, 12, 20, 100);
                          <string> Agent List</string>
                         </property>
                         <property name="icon">
-                         <iconset resource="resource/resources.qrc">
+                         <iconset>
                           <normaloff>:/menu/agent_list.png</normaloff>:/menu/agent_list.png</iconset>
                         </property>
                         <property name="iconSize">
@@ -1446,8 +1446,8 @@ color: rgba(212,185,58,1);
                           <rect>
                            <x>0</x>
                            <y>0</y>
-                           <width>445</width>
-                           <height>70</height>
+                           <width>50</width>
+                           <height>30</height>
                           </rect>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_agent_list"/>
@@ -1513,7 +1513,7 @@ background-color: rgba(212, 76, 58,25);
                   <string> Exit</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="resource/resources.qrc">
+                  <iconset>
                    <normaloff>:/menu/exit.png</normaloff>:/menu/exit.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -2706,7 +2706,7 @@ color: rgba(255,255,255,150)
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource/resources.qrc">:/cards/deck.png</pixmap>
+                   <pixmap>:/cards/deck.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -2725,7 +2725,7 @@ color: rgba(255,255,255,150)
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource/resources.qrc">:/cards/deck.png</pixmap>
+                   <pixmap>:/cards/deck.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -5784,7 +5784,7 @@ background-color:  rgba(45, 20, 9,0);
                            <string/>
                           </property>
                           <property name="icon">
-                           <iconset resource="resource/resources.qrc">
+                           <iconset>
                             <normaloff>:/icons/hit.png</normaloff>:/icons/hit.png</iconset>
                           </property>
                           <property name="iconSize">
@@ -5852,7 +5852,7 @@ background-color:  rgba(45, 20, 9,0);
                            <string/>
                           </property>
                           <property name="icon">
-                           <iconset resource="resource/resources.qrc">
+                           <iconset>
                             <normaloff>:/icons/stand.png</normaloff>:/icons/stand.png</iconset>
                           </property>
                           <property name="iconSize">
@@ -5920,7 +5920,7 @@ background-color:  rgba(45, 20, 9,0);
                            <string/>
                           </property>
                           <property name="icon">
-                           <iconset resource="resource/resources.qrc">
+                           <iconset>
                             <normaloff>:/icons/double-up.png</normaloff>:/icons/double-up.png</iconset>
                           </property>
                           <property name="iconSize">
@@ -6425,10 +6425,10 @@ QSpinBox::up-button, QSpinBox::down-button {
                            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                           </property>
                           <property name="minimum">
-                           <number>500</number>
+                           <number>100</number>
                           </property>
                           <property name="maximum">
-                           <number>5000</number>
+                           <number>2000</number>
                           </property>
                           <property name="value">
                            <number>1000</number>
