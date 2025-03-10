@@ -960,6 +960,7 @@ class BlackjackGUI(QMainWindow):
         for player in self.players:
             display_cards(self, player=player)
             set_status_board(self, player=player)
+            set_status_icon(self, player=player)
         set_total(self)
         move_buttons_usability(self, False)
         
